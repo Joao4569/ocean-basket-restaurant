@@ -47,6 +47,24 @@ Once I had the basic scope and logic in place, I then proceeded to design a visu
 
 ***Wireframe placeholder***
 
+## Project Setup
+
+After completing the basic conception of my idea and designing some basic structure to it, I then proceeded to setting up my IDE for the project
+
+### Installing Django and supporting libraries
+
+- 1) Install Django version 3.2 which is the Long Term Support version of Django and recommended by Code Institute for the use on our projects
+- 2) Installed gunicorn as the server to run Django on Heroku
+- 3) Installed supporting libraries, dj_database_url and psycopg2 in order to run PostgreSQL
+- 4) Installed supporting libraries , in order to run cloudinary as storage for the project's images (dj3-cloudinary-storage)
+
+- 5) Create requirements.txt file
+- 6) Create new blank Django project named ocean_basket
+- 7) Create new Django app called online_booking
+- 8) Add online_booking app to settings.py file of ocean_basket project
+- 9) Migrate changes to database after creating online_booking app
+
+
 ## Features
 
 ### Existing Features
@@ -56,6 +74,8 @@ Once I had the basic scope and logic in place, I then proceeded to design a visu
 ### Features Left to Implement
 
 ## Testing
+
+- After creating the online_booking app, I tested it buy running the application and recieved visual confirmation that the application is working successfully from Django.
 
 - Found bug 
   - **Resolved** 
