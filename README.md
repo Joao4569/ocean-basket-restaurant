@@ -97,18 +97,19 @@ After completing the basic conception of my idea and designing some basic struct
 12. Set the OS environment variable to the copied address from Heroku i.e. os.environ["DATABASE_URL"] = "postgres://...."
 13. Create and add "SECRET_KEY" variable to env.py file.
 14. Return to Heroku and create the "SECRET_KEY" variable using your secret key from the env.py file and click the "Add" button.
-15. Reference env.py file in the settings.py file by fist importing the Operating System library in the settings.py file just under the first import in the file.
-16. Next import the dj_database_url library just under.
-17. Now add a conditional statement that if os.path.isfile('env.py') is True, then "env" should be imported in order to prevent errors if the file is not found due to it being allocated to the ".gitignore" file as standard practice within the supplied IDE template provided by Code Institute.
-18. In the settings.py file find the "SECRET_KEY" variable and set it with the value, os.environ.get('SECRET_KEY'), so that it can access our secret key as setup in the env.py file.
+15. Create a variable called "PORT" and set it's value to "8000" and then click the add button.
+16. Reference env.py file in the settings.py file by fist importing the Operating System library in the settings.py file just under the first import in the file.
+17. Next import the dj_database_url library just under.
+18. Now add a conditional statement that if os.path.isfile('env.py') is True, then "env" should be imported in order to prevent errors if the file is not found due to it being allocated to the ".gitignore" file as standard practice within the supplied IDE template provided by Code Institute.
+19. In the settings.py file find the "SECRET_KEY" variable and set it with the value, os.environ.get('SECRET_KEY'), so that it can access our secret key as setup in the env.py file.
 
 ### Wiring up PostgreSQL Database
 
-19. Scroll to DATABASES section of settings.py file and comment out the entire dictionary.
-20. Create a new DATABASES dictionary with a key called "default" with the value of "dj_database_url.parse(os.environ.get('DATABASE_URL'))" in order to get the database url variable as setup in the env.py file so that I can use the Heroku database as the back end of the project.
-21. Run the migration command in the IDE terminal window in order to migrate all migrations on the new database.
-22. Once completed go back to the Heroku page and click once again on the "Resources" tab.
-23. Now click on the Heroku Postgres link in order to check that the database is working as intended.
+20. Scroll to DATABASES section of settings.py file and comment out the entire dictionary.
+21. Create a new DATABASES dictionary with a key called "default" with the value of "dj_database_url.parse(os.environ.get('DATABASE_URL'))" in order to get the database url variable as setup in the env.py file so that I can use the Heroku database as the back end of the project.
+22. Run the migration command in the IDE terminal window in order to migrate all migrations on the new database.
+23. Once completed go back to the Heroku page and click once again on the "Resources" tab.
+24. Now click on the Heroku Postgres link in order to check that the database is working as intended.
 
 
 
