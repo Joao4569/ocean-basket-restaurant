@@ -50,33 +50,33 @@ Once I had the basic scope and logic in place, I then proceeded to design a visu
 ## Project Setup
 
 After completing the basic conception of my idea and designing some basic structure to it, I then proceeded to setting up my IDE for the project using the steps recommended by Code Institute, namely:
- - 1) Install Django and supported libraries
- - 2) Create new Django project and app
- - 3) Deploy project to Heroku --- 4)??
-  - - 4) Set project to use Cloudinary and PostgreSQL --- 3)??
+1. Install Django and supported libraries
+2. Create new Django project and app
+3. Deploy project to Heroku --- 4)??
+4. Set project to use Cloudinary and PostgreSQL --- 3)??
 
 ### Installing Django and supporting libraries
 
-- 1) Install Django version 3.2 which is the Long Term Support version of Django and recommended by Code Institute for the use on our projects
-- 2) Installed gunicorn as the server to run Django on Heroku
-- 3) Installed supporting libraries, dj_database_url and psycopg2 in order to run PostgreSQL
-- 4) Installed supporting libraries , in order to run cloudinary as storage for the project's images (dj3-cloudinary-storage)
+1. Install Django version 3.2 which is the Long Term Support version of Django and recommended by Code Institute for the use on our projects
+2. Installed gunicorn as the server to run Django on Heroku
+3. Installed supporting libraries, dj_database_url and psycopg2 in order to run PostgreSQL
+4. Installed supporting libraries , in order to run cloudinary as storage for the project's images (dj3-cloudinary-storage)
 
 ### Create new Django project and app
 
-- 5) Create requirements.txt file
-- 6) Create new blank Django project named ocean_basket
-- 7) Create new Django app called online_booking
-- 8) Add online_booking app to settings.py file of ocean_basket project
-- 9) Migrate changes to database after creating online_booking app
-- 10) Test if app is working correctly
+1. Create requirements.txt file
+2. Create new blank Django project named ocean_basket
+3. Create new Django app called online_booking
+4. Add online_booking app to settings.py file of ocean_basket project
+5. Migrate changes to database after creating online_booking app
+6. Test if app is working correctly
 
 ## Deployment on Heroku
 
-- 1) Create the Heroku app
-- 2) Attach the PostgreSQL database
-- 3) Prepare the environment and setting.py files
-- 4) Get the static and media files stored on Cloudinary
+1. Create the Heroku app
+2. Attach the PostgreSQL database
+3. Prepare the environment and setting.py files
+4. Get the static and media files stored on Cloudinary
 
 ### Steps to create Heroku App
 
@@ -91,27 +91,27 @@ After completing the basic conception of my idea and designing some basic struct
 
 ### Setting up Config Vars
 
-9. Copy the address next to the "DATABASE_URL", starting with postgres://....
-10. Create an env.py file in the same directory as the manage.py file in order to store your secret environment variables
-11. Import the Operating System library to the env.py file.
-12. Set the OS environment variable to the copied address from Heroku i.e. os.environ["DATABASE_URL"] = "postgres://...."
-13. Create and add "SECRET_KEY" variable to env.py file.
-14. Return to Heroku and create the "SECRET_KEY" variable using your secret key from the env.py file and click the "Add" button.
-15. Create a variable called "PORT" and set it's value to "8000" and then click the add button.
-16. Reference env.py file in the settings.py file by fist importing the Operating System library in the settings.py file just under the first import in the file.
-17. Next import the dj_database_url library just under.
-18. Now add a conditional statement that if os.path.isfile('env.py') is True, then "env" should be imported in order to prevent errors if the file is not found due to it being allocated to the ".gitignore" file as standard practice within the supplied IDE template provided by Code Institute.
-19. In the settings.py file find the "SECRET_KEY" variable and set it with the value, os.environ.get('SECRET_KEY'), so that it can access our secret key as setup in the env.py file.
+1. Copy the address next to the "DATABASE_URL", starting with postgres://....
+2. Create an env.py file in the same directory as the manage.py file in order to store your secret environment variables
+3. Import the Operating System library to the env.py file.
+4. Set the OS environment variable to the copied address from Heroku i.e. os.environ["DATABASE_URL"] = "postgres://...."
+5. Create and add "SECRET_KEY" variable to env.py file.
+6. Return to Heroku and create the "SECRET_KEY" variable using your secret key from the env.py file and click the "Add" button.
+7. Create a variable called "PORT" and set it's value to "8000" and then click the add button.
+8. Reference env.py file in the settings.py file by fist importing the Operating System library in the settings.py file just under the first import in the file.
+9. Next import the dj_database_url library just under.
+10. Now add a conditional statement that if os.path.isfile('env.py') is True, then "env" should be imported in order to prevent errors if the file is not found due to it being allocated to the ".gitignore" file as standard practice within the supplied IDE template provided by Code Institute.
+11. In the settings.py file find the "SECRET_KEY" variable and set it with the value, os.environ.get('SECRET_KEY'), so that it can access our secret key as setup in the env.py file.
 
 ### Wiring up PostgreSQL Database
 
-20. Scroll to DATABASES section of settings.py file and comment out the entire dictionary.
-21. Create a new DATABASES dictionary with a key called "default" with the value of "dj_database_url.parse(os.environ.get('DATABASE_URL'))" in order to get the database url variable as setup in the env.py file so that I can use the Heroku database as the back end of the project.
-22. Run the migration command in the IDE terminal window in order to migrate all migrations on the new database.
-23. Once completed go back to the Heroku page and click once again on the "Resources" tab.
-24. Now click on the Heroku Postgres link in order to check that the database is working as intended.
+1. Scroll to DATABASES section of settings.py file and comment out the entire dictionary.
+2. Create a new DATABASES dictionary with a key called "default" with the value of "dj_database_url.parse(os.environ.get('DATABASE_URL'))" in order to get the database url variable as setup in the env.py file so that I can use the Heroku database as the back end of the project.
+3. Run the migration command in the IDE terminal window in order to migrate all migrations on the new database.
+4. Once completed go back to the Heroku page and click once again on the "Resources" tab.
+5. Now click on the Heroku Postgres link in order to check that the database is working as intended.
 
-
+### Cloudinary Setup
 
 ## Deployment Testing
 
