@@ -98,10 +98,11 @@ After completing the basic conception of my idea and designing some basic struct
 5. Create and add "SECRET_KEY" variable to env.py file.
 6. Return to Heroku and create the "SECRET_KEY" variable using your secret key from the env.py file and click the "Add" button.
 7. Create a variable called "PORT" and set it's value to "8000" and then click the add button.
-8. Reference env.py file in the settings.py file by fist importing the Operating System library in the settings.py file just under the first import in the file.
-9. Next import the dj_database_url library just under.
-10. Now add a conditional statement that if os.path.isfile('env.py') is True, then "env" should be imported in order to prevent errors if the file is not found due to it being allocated to the ".gitignore" file as standard practice within the supplied IDE template provided by Code Institute.
-11. In the settings.py file find the "SECRET_KEY" variable and set it with the value, os.environ.get('SECRET_KEY'), so that it can access our secret key as setup in the env.py file.
+8. Within the env.py file create the environment variable called "PORT" and allocate it the value of "8000".
+9. Reference env.py file in the settings.py file by fist importing the Operating System library in the settings.py file just under the first import in the file.
+10. Next import the dj_database_url library just under.
+11. Now add a conditional statement that if os.path.isfile('env.py') is True, then "env" should be imported in order to prevent errors if the file is not found due to it being allocated to the ".gitignore" file as standard practice within the supplied IDE template provided by Code Institute.
+12. In the settings.py file find the "SECRET_KEY" variable and set it with the value, os.environ.get('SECRET_KEY'), so that it can access our secret key as setup in the env.py file.
 
 ### Wiring up PostgreSQL Database
 
@@ -112,6 +113,17 @@ After completing the basic conception of my idea and designing some basic struct
 5. Now click on the Heroku Postgres link in order to check that the database is working as intended.
 
 ### Cloudinary Setup
+
+1. On the Cloudinary dashboard, once logged in, copy the API Environment variable.
+2. In the env.py file add an environment variable called "CLOUDINARY_URL" and allocate to it the copied API Environment variable from cloudinary while remembering to remove the beginning of the copied variable, which is "CLOUDINARY_URL=".
+3. Once done then on Heroku add the new environment variable to your Config vars, i.e. CLOUDINARY_URL and the copied API Environment variable from cloudinary.
+4. Also add a temporary Config var called "DISABLE_COLLECTSTATIC" and set it's value to "1", this is just to get the skeleton project to deploy without any static content added as yet. (THIS MUST BE REMOVED WHEN DEPLOYING THE FULL PROJECT!!!).
+5. Within the settings.py file, find the section for "INSTALLED_APPS" and add in the Cloudinary libraries, just above the 'django.contrib.staticfiles', add in 'cloudinary_storage' and underneath 'django.contrib.staticfiles', add in 'cloudinary'.
+6. In order for Django to use Cloudinary for storing the media and static files, towards the end of the settings.py file, just below "STATIC_URL = '/static/'", add in the following: "STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'"
+7. In order to set the static files directory add in this in the next line: "STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]"
+8. In order to set the static files root directory add in this in the next line: "STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')"
+9. Then set the media files URL to: MEDIA_URL = '/media/'
+10. Finally set the default media file storage to: DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 ## Deployment Testing
 
