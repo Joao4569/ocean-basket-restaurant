@@ -73,6 +73,10 @@ After completing the basic conception of my idea and designing some basic struct
 
 ## Deployment on Heroku
 
+I chose to deploy early in the construction process in order to be sure that from the start that the development dependencies work as intended and avoid any complications later in the build which could lead to unneccesary complications and issues which are hard to trace and fix.
+
+These were my guidelines for deployment:
+
 1. Create the Heroku app
 2. Attach the PostgreSQL database
 3. Prepare the environment and setting.py files
@@ -132,9 +136,16 @@ After completing the basic conception of my idea and designing some basic struct
 15. Process file (Procfile) was created in order for Heroku to kknow how to run our project.
 16. Inside the Procfile I added the code in order for Heroku to understnad that this process must accept HTTP traffic, and that I will be using a web services gateway interface server by the name of gunicorn. i.e. web: gunicorn ocean_basket.wsgi
 
+### Deployment
+
+1. Open Heroku dashboard and click on the Deploy tab, and select Github as the Deployment method.
+2. Next I searched and selected the Github repository which should be connect to the app.
+3. Thereafter I clicked on the deploy branch button in order to deploy my project.
+4. Once the app was successfully built and deployed, I then clicked on the view button and viewed the app in order to test if the initial deployment was successfull.
+
 ## Deployment Testing
 
-
+Once the app was successfully built and deployed, I then clicked on the view button and viewed the app in order to test if the initial deployment was successfull.
 
 ## Features
 
