@@ -123,7 +123,14 @@ After completing the basic conception of my idea and designing some basic struct
 7. In order to set the static files directory add in this in the next line: "STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]"
 8. In order to set the static files root directory add in this in the next line: "STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')"
 9. Then set the media files URL to: MEDIA_URL = '/media/'
-10. Finally set the default media file storage to: DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+10. Next set the default media file storage to: DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+11. A template directory will also need to be added in order to store our templates, just under the base directory (BASE_DIR), I added the following code: TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates').
+12. Once that is done then the "'DIRS'" key in the TEMPLATES setting needs to have the value of the new templates directory variable just created i.e [TEMPLATES_DIR], in order to complete the process.
+
+13. Once all these steps are completed then I added the address of the application as the value for the ALLOWED_HOSTS variable as the local host.
+14. Next I created the media and static directories.
+15. Process file (Procfile) was created in order for Heroku to kknow how to run our project.
+16. Inside the Procfile I added the code in order for Heroku to understnad that this process must accept HTTP traffic, and that I will be using a web services gateway interface server by the name of gunicorn. i.e. web: gunicorn ocean_basket.wsgi
 
 ## Deployment Testing
 
