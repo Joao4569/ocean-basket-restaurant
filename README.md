@@ -47,6 +47,8 @@ Once I had the basic scope and logic in place, I then proceeded to design a visu
 
 ***Wireframe placeholder***
 
+## Agile
+
 ## Project Setup
 
 After completing the basic conception of my idea and designing some basic structure to it, I then proceeded to setting up my IDE for the project using the steps recommended by Code Institute, namely:
@@ -146,6 +148,10 @@ These were my guidelines for deployment:
 ## Deployment Testing
 
 Once the app was successfully built and deployed, I then clicked on the view button and viewed the app in order to test if the initial deployment was successfull.
+
+## Models
+
+Customer booking details model here!!!!!
 
 ## Features
 
