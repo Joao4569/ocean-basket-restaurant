@@ -197,7 +197,8 @@ I created a superuser in order to access the admin functions with the following 
 
 - After creating the online_booking app, I tested it buy running the application and recieved visual confirmation that the application is working successfully from Django.
 - Once the database was initially linked to the Heroku app, I followed the Heroku Postgres link, in the resources section, in order to check that the database was connected and working after my initial migrations were done.
-- Once I created the Customer Booking details model, I accessed the Django admin page and checked that all fields were created and that the information displayed on screen was displaying as I intended
+- Once I created the Customer Booking details model, I accessed the Django admin page and checked that all fields were created and that the information displayed on screen was displaying as I intended.
+- After creating the url path and view function for the landing page, I then tested the functionality by running the app from the terminal and it was functioning as intended.
 
 - Found bug 
   - **Resolved** 
