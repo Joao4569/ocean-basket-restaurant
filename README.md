@@ -50,6 +50,28 @@ Once I had the basic scope and logic in place, I then proceeded to design a visu
 
 ## Agile
 
+I made use of agile common practises as described in the Code Institute tutorials. I did my best to come up with a complete layout of my agile plan from the get go but found it a bit overwhelming as this was my first project of this scope using a agile methodology. I then decided to atleast make decisions in logical stages and update my diagrams and processes as the project developed while documenting everything as the build progressed.
+
+This is how I approached the challenge:
+
+1. After reading the project requirements and the User's goal for the project idea that I had selected, I came up with the project's themes and epics.
+2. From the Epic's I derived the various user stories, and built on this as the project developed.
+3. Once I had created some user stories, I then came up with the relevant tasks for each user story.
+4. After creating some stucture and scope for how to approach the task at hand, I started recording all my processes on Github:
+    - I created user story templates on Github for efficiency in the Agile process.
+    - I made use of Github issues to create and manage my user stories and for future defects if they arise.
+    - I also came up with user story acceptance criteria which I added to the user stories on Github issues.
+    - I allocated each user story with user story points, just as good practice.
+    - A product backlog was also created using Github molestones, and managed throughout the development of the project in order to structure my development process.
+    - As the build developed I would make refinements to the backlog.
+    - I also created an iteration milestone on Github for use in this project as a timebox.
+    - I made use of MoSCow prioritization by creating labels on Github and allocating them to the relevant user stories.
+    - I created a Kanban board for use as an information radiator in this project by using "projects" on Github.
+
+This is my diagram of my Agile method used for this project:
+
+***Agile wireframe placeholder***
+
 ## Project Setup
 
 After completing the basic conception of my idea and designing some basic structure to it, I then proceeded to setting up my IDE for the project using the steps recommended by Code Institute, namely:
