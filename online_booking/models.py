@@ -20,4 +20,4 @@ class CustomerBookingDetails(models.Model):
         """This will modify the standard Django string method for
         personalisation"""
         return (f'{self.first_name} {self.last_name} table for '
-                f'{self.number_of_seats}')
+                f'{self.number_of_seats} on {self.date}')
