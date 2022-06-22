@@ -7,6 +7,7 @@ My thinking was that given the requirements of the project, it would be very ben
 I made use of the following resources in order to plan and visualise my project after reading the project requirements:
  - I made use of [Lucidchart](https://www.lucidchart.com/pages/) in order to visualise the scope and logic of my ideas and thought processes, as well to manage my project using Agile methodology and common practices, that were appropriate for this project and taught to me by Code Institute.
  - I made use of [Balsamiq](https://balsamiq.com/) in order to create a basic wireframe design for Luigi's webpages.
+ - I made use of [Smartdraw](https://www.smartdraw.com) in order to create an ERD(Entity Relationship diagram) for my models used in this project.
 
 
 ### Project Scope
@@ -59,10 +60,10 @@ After completing the basic conception of my idea and designing some basic struct
 
 ### Installing Django and supporting libraries
 
-1. Install Django version 3.2 which is the Long Term Support version of Django and recommended by Code Institute for the use on our projects
-2. Installed gunicorn as the server to run Django on Heroku
-3. Installed supporting libraries, dj_database_url and psycopg2 in order to run PostgreSQL
-4. Installed supporting libraries , in order to run cloudinary as storage for the project's images (dj3-cloudinary-storage)
+1. Install Django version 3.2 which is the Long Term Support version of Django and recommended by Code Institute for the use on our projects.
+2. Installed gunicorn as the server to run Django on Heroku.
+3. Installed supporting libraries, dj_database_url and psycopg2 in order to run PostgreSQL.
+4. Installed supporting library , in order to run cloudinary as storage for the project's images (dj3-cloudinary-storage)????
 
 ### Create new Django project and app
 
@@ -86,27 +87,27 @@ These were my guidelines for deployment:
 
 ### Steps to create Heroku App
 
-1. While in the Heroku dashboard after logging in, click on the button in the upper right hand section of the sceen and select to create a new app from the dropdown list.
+1. While in the Heroku dashboard after logging in, click on the button in the upper right hand section of the screen and select to create a new app from the dropdown list.
 2. Name the app and select your region of residence from the dropdown list.
 3. Click on the "Create app" button.
 4. Once you return to your dashboard, click in the resources tab.
 5. In the field where you can search for Add-ons, type in postgres and select "Heroku Postgres" result from the search.
 6. There will be an alert window diaplayed on your screen, select the appropriate plan from the dropdown list and click on the "Submit Order Form" button.
-7. Now click on the settings tab.
+7. Click on the settings tab.
 8. Click on the "Reveal Config Vars" button.
 
 ### Setting up Config Vars
 
 1. Copy the address next to the "DATABASE_URL", starting with postgres://....
-2. Create an env.py file in the same directory as the manage.py file in order to store your secret environment variables
+2. Create an env.py file in the same directory as the manage.py file in order to store your secret environment variables.
 3. Import the Operating System library to the env.py file.
-4. Set the OS environment variable to the copied address from Heroku i.e. os.environ["DATABASE_URL"] = "postgres://...."
+4. Set the OS environment variable to the copied address from Heroku.
 5. Create and add "SECRET_KEY" variable to env.py file.
 6. Return to Heroku and create the "SECRET_KEY" variable using your secret key from the env.py file and click the "Add" button.
 7. Create a variable called "PORT" and set it's value to "8000" and then click the add button.
 8. Within the env.py file create the environment variable called "PORT" and allocate it the value of "8000".
 9. Reference env.py file in the settings.py file by fist importing the Operating System library in the settings.py file just under the first import in the file.
-10. Next import the dj_database_url library just under.
+10. Next import the dj_database_url library.
 11. Now add a conditional statement that if os.path.isfile('env.py') is True, then "env" should be imported in order to prevent errors if the file is not found due to it being allocated to the ".gitignore" file as standard practice within the supplied IDE template provided by Code Institute.
 12. In the settings.py file find the "SECRET_KEY" variable and set it with the value, os.environ.get('SECRET_KEY'), so that it can access our secret key as setup in the env.py file.
 
@@ -116,7 +117,7 @@ These were my guidelines for deployment:
 2. Create a new DATABASES dictionary with a key called "default" with the value of "dj_database_url.parse(os.environ.get('DATABASE_URL'))" in order to get the database url variable as setup in the env.py file so that I can use the Heroku database as the back end of the project.
 3. Run the migration command in the IDE terminal window in order to migrate all migrations on the new database.
 4. Once completed go back to the Heroku page and click once again on the "Resources" tab.
-5. Now click on the Heroku Postgres link in order to check that the database is working as intended.
+5. Click on the Heroku Postgres link in order to check that the database is working as intended.
 
 ### Cloudinary Setup
 
@@ -124,26 +125,26 @@ These were my guidelines for deployment:
 2. In the env.py file add an environment variable called "CLOUDINARY_URL" and allocate to it the copied API Environment variable from cloudinary while remembering to remove the beginning of the copied variable, which is "CLOUDINARY_URL=".
 3. Once done then on Heroku add the new environment variable to your Config vars, i.e. CLOUDINARY_URL and the copied API Environment variable from cloudinary.
 4. Also add a temporary Config var called "DISABLE_COLLECTSTATIC" and set it's value to "1", this is just to get the skeleton project to deploy without any static content added as yet. (THIS MUST BE REMOVED WHEN DEPLOYING THE FULL PROJECT!!!).
-5. Within the settings.py file, find the section for "INSTALLED_APPS" and add in the Cloudinary libraries, just above the 'django.contrib.staticfiles', add in 'cloudinary_storage' and underneath 'django.contrib.staticfiles', add in 'cloudinary'.
+5. Within the settings.py file, find the section for "INSTALLED_APPS" and add in the Cloudinary libraries, just above the 'django.contrib.staticfiles', add in 'cloudinary_storage' and underneath this line of code 'django.contrib.staticfiles', add in 'cloudinary'.
 6. In order for Django to use Cloudinary for storing the media and static files, towards the end of the settings.py file, just below "STATIC_URL = '/static/'", add in the following: "STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'"
-7. In order to set the static files directory add in this in the next line: "STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]"
-8. In order to set the static files root directory add in this in the next line: "STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')"
-9. Then set the media files URL to: MEDIA_URL = '/media/'
-10. Next set the default media file storage to: DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+7. In order to set the static files directory I added this in the next line: "STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]"
+8. In order to set the static files root directory I added this in the next line: "STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')"
+9. Then I set the media files URL to: MEDIA_URL = '/media/'
+10. Next I set the default media file storage to: DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 11. A template directory will also need to be added in order to store our templates, just under the base directory (BASE_DIR), I added the following code: TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates').
 12. Once that is done then the "'DIRS'" key in the TEMPLATES setting needs to have the value of the new templates directory variable just created i.e [TEMPLATES_DIR], in order to complete the process.
 
-13. Once all these steps are completed then I added the address of the application as the value for the ALLOWED_HOSTS variable as the local host.
+13. Once all these steps were completed then I added the address of the application as the value for the ALLOWED_HOSTS variable as the local host.
 14. Next I created the media and static directories.
-15. Process file (Procfile) was created in order for Heroku to kknow how to run our project.
-16. Inside the Procfile I added the code in order for Heroku to understnad that this process must accept HTTP traffic, and that I will be using a web services gateway interface server by the name of gunicorn. i.e. web: gunicorn ocean_basket.wsgi
+15. Process file (Procfile) was created in order for Heroku to know how to run the project.
+16. Inside the Procfile I added the code in order for Heroku to understand that this process must accept HTTP traffic, and that I will be using a web services gateway interface server by the name of gunicorn. i.e. web: gunicorn ocean_basket.wsgi
 
 ### Deployment
 
 1. Open Heroku dashboard and click on the Deploy tab, and select Github as the Deployment method.
-2. Next I searched and selected the Github repository which should be connect to the app.
+2. Next I searched and selected the Github repository which should be connected to the app.
 3. Thereafter I clicked on the deploy branch button in order to deploy my project.
-4. Once the app was successfully built and deployed, I then clicked on the view button and viewed the app in order to test if the initial deployment was successfull.
+4. Once the app was built and deployed, I then clicked on the view button and viewed the app in order to test if the initial deployment was successfull.
 
 ## Deployment Testing
 
@@ -151,7 +152,16 @@ Once the app was successfully built and deployed, I then clicked on the view but
 
 ## Models
 
-Customer booking details model here!!!!!
+My first custom model is for storing customer booking details
+
+***ERD placeholder***
+
+## Access Control
+
+I created a superuser in order to access the admin functions with the following credentials:
+Username: AdminSuper
+Password: OceanBasketSuper
+
 
 ## Features
 
@@ -165,6 +175,7 @@ Customer booking details model here!!!!!
 
 - After creating the online_booking app, I tested it buy running the application and recieved visual confirmation that the application is working successfully from Django.
 - Once the database was initially linked to the Heroku app, I followed the Heroku Postgres link, in the resources section, in order to check that the database was connected and working after my initial migrations were done.
+- Once I created the Customer Booking details model, I accessed the Django admin page and checked that all fields were created and that the information displayed on screen was displaying as I intended
 
 - Found bug 
   - **Resolved** 
@@ -189,8 +200,9 @@ Customer booking details model here!!!!!
 
 ### Content
 
- - All flowcharts used in this project were designed by making use of [Lucidchart](https://www.lucidchart.com/pages/)
- - All wireframes used in this project were designed by making use of [Balsamiq](https://balsamiq.com/)
+ - All flowcharts used in this project were designed by making use of [Lucidchart](https://www.lucidchart.com/pages/).
+ - All wireframes used in this project were designed by making use of [Balsamiq](https://balsamiq.com/).
+ - All ERD diagrams used in this project were designed by making use of [Smartdraw](https://www.smartdraw.com).
 
 
 
