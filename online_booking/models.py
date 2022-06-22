@@ -15,3 +15,9 @@ class CustomerBookingDetails(models.Model):
     number_of_seats = models.SmallIntegerField(null=False, blank=False)
     service = models.CharField(max_length=6, null=False, blank=False)
     date = models.DateField(null=False, blank=False)
+
+    def __str__(self):
+        """This will modify the standard Django string method for
+        personalisation"""
+        return (f'{self.first_name} {self.last_name} table for '
+                f'{self.number_of_seats}')
