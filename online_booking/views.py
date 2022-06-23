@@ -10,4 +10,4 @@ def get_home_page(request):
     context = {
         'bookings': bookings
     }
-    return render(request, 'online_booking/home_page.html', context)
+    return render(request, 'online_booking/index.html', context)
