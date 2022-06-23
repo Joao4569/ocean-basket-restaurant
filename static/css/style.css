@@ -1,3 +1,20 @@
+/*header {
+  height: 150px;
+}*/
+
 h1 {
   color: blue;
+}
+
+.logo {
+  background-color: blueviolet;
+}
+
+.sub-logo {
+  height: 20px;
+  background-color: brown;
+}
+
+#didn {
+  background-color: pink;
 }

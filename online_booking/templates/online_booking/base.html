@@ -15,14 +15,25 @@
   <!-- link for custom stylesheet -->
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
+
 <body>
+  <header class="row">
+    <div class="logo col-8">
+      <a class="nav-link active" href="#">
+        <h1>Luigi's</h1>
+      </a>
+      <div class="sub-logo container-fluid">
+        <p>Italian Fine Dining Restaurant</p>
+      </div>
+    </div>
+    <div id="didn" class="col-4">col-4</div>
+  </header>
   <main class="flex-shrink-0 main-bg">
     {% block content %}
 
     {% endblock content %}
   </main>
-    
-  <h1>Testing</h1>
+
   <!-- bootstrap plugins -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
