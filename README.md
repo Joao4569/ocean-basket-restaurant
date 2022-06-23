@@ -208,6 +208,7 @@ I created a superuser in order to access the admin functions with the following 
 - Once I created the Customer Booking details model, I accessed the Django admin page and checked that all fields were created and that the information displayed on screen was displaying as I intended.
 - After creating the url path and view function for the landing page, I then tested the functionality by running the app from the terminal and it was functioning as intended.
 - After creating the base.html and index.html I manually tested if the templates rendered as expected.
+- Once the custom CSS file was created, I did a manual test by changing the colour of the text in order to test if it is working as intended, no errors found.
 
 - Found bug 
   - **Resolved** 
