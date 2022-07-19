@@ -18,12 +18,16 @@ h1 {
   
 }
 
-.footer {
-  background-color: red;
+footer {
   border-top: 3px solid black;
+  height: 5rem;
 }
 
 .login-status {
-  font-size: 1rem;
   margin-left: 1rem;
+}
+
+.social-links a {
+  padding: 0 1rem 0 1rem;
+  font-size: 3rem;
 }
