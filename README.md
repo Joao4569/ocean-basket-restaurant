@@ -203,6 +203,8 @@ I created a superuser in order to access the admin functions with the following 
 
 ## Testing
 
+### Manual testing
+
 - After creating the online_booking app, I tested it buy running the application and recieved visual confirmation that the application is working successfully from Django.
 - Once the database was initially linked to the Heroku app, I followed the Heroku Postgres link, in the resources section, in order to check that the database was connected and working after my initial migrations were done.
 - Once I created the Customer Booking details model, I accessed the Django admin page and checked that all fields were created and that the information displayed on screen was displaying as I intended.
@@ -210,6 +212,7 @@ I created a superuser in order to access the admin functions with the following 
 - After creating the url path and view function for the landing page, I then tested the functionality by running the app from the terminal and it was functioning as intended.
 - After creating the base.html and index.html I manually tested if the templates rendered as expected.
 - Once the custom CSS file was created, I did a manual test by changing the colour of the text in order to test if it is working as intended, no errors found.
+- Throughout development I made many manual tests using Google developer tools in order to test for responsiveness and visual appeal in order to have a successfull UX design.
 
 - Found bug 
   - **Resolved** 
@@ -237,6 +240,7 @@ I created a superuser in order to access the admin functions with the following 
  - All flowcharts used in this project were designed by making use of [Lucidchart](https://www.lucidchart.com/pages/).
  - All wireframes used in this project were designed by making use of [Balsamiq](https://balsamiq.com/).
  - All ERD diagrams used in this project were designed by making use of [Smartdraw](https://www.smartdraw.com).
+ - I sourced my Google font pairing suggestion from [GoVisually](https://govisually.com/blog/2020s-top-20-google-font-pairs-for-your-next-project/), I decided to use the pairing suggestion of Elsie with Roboto fonts.
 
 
 
