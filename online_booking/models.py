@@ -12,9 +12,9 @@ class CustomerBookingDetails(models.Model):
     last_name = models.CharField(max_length=30, null=False, blank=False)
     contact_number = models.IntegerField(null=False, blank=False)
     email = models.CharField(max_length=50)
-    number_of_seats = models.SmallIntegerField(null=False, blank=False)
     service = models.CharField(max_length=6, null=False, blank=False)
     date = models.DateField(null=False, blank=False)
+    number_of_seats = models.SmallIntegerField(null=False, blank=False)
 
     def __str__(self):
         """This will modify the standard Django string method for
