@@ -186,6 +186,8 @@ My first custom model is for storing customer booking details
 2. create template to render the view
 3. connect up to our URL's 
 
+### Templates
+
 1. Base.html
 2. Index.html
 
