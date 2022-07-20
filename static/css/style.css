@@ -10,26 +10,22 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  color: black;
 }
 
 #logo {
   font-family: 'Elsie', cursive;
+  color: black;
+  font-size: 6rem;
+  font-weight: 800;
 }
 
 .logo {
-  position: relative;
   border-bottom: 3px solid black;
 }
 
-h1 {
-  color: blue;
-}
-
-.header-btn {
-  position: absolute;
-  right: 5%;
-  bottom: 10%;
-  
+#logo-sub {
+  margin-left: 3rem;
 }
 
 footer {
