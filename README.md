@@ -186,6 +186,9 @@ My first custom model is for storing customer booking details
 2. create template to render the view
 3. connect up to our URL's 
 
+1. Base.html
+2. Index.html
+
 ## Access Control
 
 I created a superuser in order to access the admin functions with the following credentials:
