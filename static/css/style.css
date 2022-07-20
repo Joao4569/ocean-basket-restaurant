@@ -1,8 +1,22 @@
-/*header {
-  height: 150px;
-}*/
+/* google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Elsie&family=Roboto&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+#logo {
+  font-family: 'Elsie', cursive;
+}
+
 .logo {
-  /*background-color: blueviolet;*/
   position: relative;
   border-bottom: 3px solid black;
 }
