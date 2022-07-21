@@ -19,7 +19,6 @@ body {
 /* header */
 
 .logo {
-  font-family: 'Elsie', cursive;
   color: black;
   font-size: 6rem;
   font-weight: 800;
@@ -41,6 +40,18 @@ footer {
 }
 
 /* index.html */
+
+.main-paragraph-text {
+  font-size: 1.25rem;
+}
+
+.font-elsie {
+  font-family: 'Elsie', cursive;
+}
+
+.btn-lg {
+  font-size: 2rem;
+}
 
 /* media queries */
 
