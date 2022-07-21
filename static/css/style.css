@@ -25,39 +25,19 @@ body {
   font-weight: 800;
 }
 
-header {
-  border-bottom: 3px solid black;
-}
-
-.badge {
-  width: 100%;
-  margin: 0 auto;
-}
-
 #logo-sub-text {
-  text-align: center;
   font-size: 1.5rem;
 }
 
 /* footer */
 
 footer {
-  border-top: 3px solid black;
   height: 5rem;
 }
 
-#login-status {
-  margin: 1rem auto 1rem auto
-}
-
 #social-links a {
-  padding: 0 1rem 0 1rem;
   font-size: 3rem;
   color: black;
-}
-
-#copyright {
-  margin: 1rem auto 1rem auto
 }
 
 /* index.html */
