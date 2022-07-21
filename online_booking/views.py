@@ -6,8 +6,8 @@ from .models import CustomerBookingDetails
 
 def get_home_page(request):
     """This function will display the home page"""
-    bookings = CustomerBookingDetails.objects.all()
+    """bookings = CustomerBookingDetails.objects.all()
     context = {
         'bookings': bookings
-    }
-    return render(request, 'online_booking/index.html', context)
+    }"""
+    return render(request, 'online_booking/index.html')#, context)
