@@ -22,3 +22,10 @@ class HomePage(View):
     def get(self, request):
         """This function will display the home page"""
         return render(request, "online_booking/index.html")
+
+
+class RegistrationPage(View):
+
+    def get(self, request):
+        """This function will display the registration page"""
+        return render(request, "online_booking/register.html")

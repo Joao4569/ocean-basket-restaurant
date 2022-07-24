@@ -21,4 +21,5 @@ from online_booking import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.HomePage.as_view(), name='Home'),
+    path('register/', views.RegistrationPage.as_view(), name='Register'),
 ]
