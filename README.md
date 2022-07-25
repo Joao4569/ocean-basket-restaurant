@@ -1,14 +1,63 @@
 # Ocean Basket Restaurant Online Bookings
 
+## Introduction
+
+Content here.........
+
+## Table of Contents
+
+* [Conception](#Conception)
+  * [Project Scope](#Project-Scope)
+  * [Project Logic](#Project-Logic)
+  * [Basic Wireframe Design](#Basic-Wireframe-Design)
+  * [Agile](#Agile)
+
+* [Project Setup](#Project-Setup)
+  * [Installing Django and supporting libraries](#Installing-Django-and-supporting-libraries)
+  * [Create new Django project and app](#Create-new-Django-project-and-app)
+  * [Deployment on Heroku](#Deployment-on-Heroku)
+    * [Steps to create Heroku App](#Steps-to-create-Heroku-App)
+    * [Setting up Config Vars](#Setting-up-Config-Vars)
+    * [Wiring up the Database](#Wiring-up-the-Database)
+    * [Cloudinary Setup](Cloudinary-Setup)
+    * [Deployment](#Deployment)
+
+* [Deployment Testing](#Deployment-Testing)
+
+* [MVT Architecture](#MVT-Architecture)
+  * [Models](#Models)
+  * [Views](#Views)
+  * [Templates](#Templates)
+
+* [Access Control](#Access-Control)
+
+* [Features](#Features)
+  * [Existing Features](#Existing-Features)
+  * [Features Left to Implement](#Features-Left-to-Implement)
+
+* [Testing](#Testing)
+  * [Manual Testing](#Manual-Testing)
+  * [Validator Testing](#Validator-Testing)
+    * [Initial Validator Tests](#Initial-Validator-Tests)
+    * [Final Validator Tests](#Final-Validator-Tests)
+  * [Unfixed Bugs](#Unfixed-Bugs)
+
+* [Credits](#Credits)
+  * [Content](#Content)
+  * [Content](#Content)
+
+
+
+
 ## Conception
 
 My thinking was that given the requirements of the project, it would be very beneficial to formulate some kind of plan which would lay out the basic scope, logic and design of my project in order to have some kind of structure with which to work with in order to avoid missing any crucial steps during construction and make the whole construction process as efficient as possible.
 
-I made use of the following resources in order to plan and visualise my project after reading the project requirements:
- - I made use of [Lucidchart](https://www.lucidchart.com/pages/) in order to visualise the scope and logic of my ideas and thought processes, as well to manage my project using Agile methodology and common practices, that were appropriate for this project and taught to me by Code Institute.
- - I made use of [Balsamiq](https://balsamiq.com/) in order to create a basic wireframe design for Luigi's webpages.
- - I made use of [Smartdraw](https://www.smartdraw.com) in order to create an ERD(Entity Relationship diagram) for my models used in this project.
-
+I made use of the following resources in order to plan and visualise my project, named Ocean Basket:
+ - I made use of [Lucidchart](https://www.lucidchart.com/pages/) to design flowcharts in order to visualise the scope and logic of my ideas and thought processes.
+ - I also made use [Lucidchart](https://www.lucidchart.com/pages/) to plan my use of Agile methodology and common practices, taught to me by Code Institute.
+ - [Lucidchart](https://www.lucidchart.com/pages/) has a ERD diagram template which I used to plan Ocean Basket's models.
+ - I made use of [Balsamiq](https://balsamiq.com/) in order to create a basic wireframe design for Ocean Basket's webpages.
 
 ### Project Scope
 
@@ -48,7 +97,7 @@ Once I had the basic scope and logic in place, I then proceeded to design a visu
 
 ***Wireframe placeholder***
 
-## Agile
+### Agile
 
 I made use of agile common practises as described in the Code Institute tutorials. I did my best to come up with a complete layout of my agile plan from the get go but found it a bit overwhelming as this was my first project of this scope using a agile methodology. I then decided to atleast make decisions in logical stages and update my diagrams and processes as the project developed while documenting everything as the build progressed.
 
@@ -133,7 +182,7 @@ These were my guidelines for deployment:
 11. Now add a conditional statement that if os.path.isfile('env.py') is True, then "env" should be imported in order to prevent errors if the file is not found due to it being allocated to the ".gitignore" file as standard practice within the supplied IDE template provided by Code Institute.
 12. In the settings.py file find the "SECRET_KEY" variable and set it with the value, os.environ.get('SECRET_KEY'), so that it can access our secret key as setup in the env.py file.
 
-### Wiring up PostgreSQL Database
+### Wiring up the Database
 
 1. Scroll to DATABASES section of settings.py file and comment out the entire dictionary.
 2. Create a new DATABASES dictionary with a key called "default" with the value of "dj_database_url.parse(os.environ.get('DATABASE_URL'))" in order to get the database url variable as setup in the env.py file so that I can use the Heroku database as the back end of the project.
@@ -208,7 +257,7 @@ I created a superuser in order to access the admin functions with the following 
 
 ## Testing
 
-### Manual testing
+### Manual Testing
 
 - After creating the online_booking app, I tested it buy running the application and recieved visual confirmation that the application is working successfully from Django.
 - Once the database was initially linked to the Heroku app, I followed the Heroku Postgres link, in the resources section, in order to check that the database was connected and working after my initial migrations were done.
@@ -242,9 +291,8 @@ I created a superuser in order to access the admin functions with the following 
 
 ### Content
 
- - All flowcharts used in this project were designed by making use of [Lucidchart](https://www.lucidchart.com/pages/).
+ - All flowcharts and ERD diagrams used in this project were designed by making use of [Lucidchart](https://www.lucidchart.com/pages/).
  - All wireframes used in this project were designed by making use of [Balsamiq](https://balsamiq.com/).
- - All ERD diagrams used in this project were designed by making use of [Smartdraw](https://www.smartdraw.com).
  - I sourced my Google font pairing suggestion from [GoVisually](https://govisually.com/blog/2020s-top-20-google-font-pairs-for-your-next-project/), I decided to use the pairing suggestion of Elsie with Roboto fonts.
 
 
