@@ -61,9 +61,9 @@ I made use of the following resources in order to plan and visualise my project,
 
 ### Project Scope
 
-After reading the requirements for the project and the User's goal for the idea that I chose, I started working on a flowchart in order to visualise my idea and the thought processes behind it. I came up with four main categories of requirements for the project, functionality required from the application, data needed for the required functionality, data tables which will store the data required and technologies that I would like to make use of for the project.
+After reading the requirements for the project and the User's goal for the idea that I chose, I started working on flowcharts in order to visualise my idea and the thought processes behind it. I came up with four main categories of requirements for the project: functionality required from the application, data needed for the required functionality, data models which will store the data required and technologies that I would make use of for the construction of the project.
 
-I did this in order to have some basic structure and goals laid out which I could use as a guideline for the construction of the project and as a form of checklist which I could use to keep track of my progression as I proceed with the constsruction of the application.
+I did this in order to have some basic structure and goals laid out which I could use as a guideline for the construction of the project and as a checklist which I could use to keep track of my progression as I proceed with the constsruction of the project.
 
 ***Scope flowchart placeholder***
 
