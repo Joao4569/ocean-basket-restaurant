@@ -104,7 +104,7 @@ I made use of agile common practises as described in the Code Institute tutorial
 This is how I approached the challenge:
 
 1. After reading the project requirements and the User's goal for the project idea that I had selected, I came up with the project's themes and epics.
-2. From the Epic's I derived the various user stories, and built on this as the project developed.
+2. From the epic's I derived the various user stories and built on this as the project developed.
 3. Once I had created some user stories, I then came up with the relevant tasks for each user story.
 4. After creating some stucture and scope for how to approach the task at hand, I started recording all my processes on Github:
     - I created user story templates on Github for efficiency in the Agile process.
@@ -117,7 +117,7 @@ This is how I approached the challenge:
     - I made use of MoSCow prioritization by creating labels on Github and allocating them to the relevant user stories.
     - I created a Kanban board for use as an information radiator in this project by using "projects" on Github.
 
-This is my diagram of my Agile method used for this project:
+This is my diagram of my Agile methodology used for this project:
 
 ***Agile wireframe placeholder***
 
@@ -133,13 +133,13 @@ After completing the basic conception of my idea and designing some basic struct
 
 1. Install Django version 3.2 which is the Long Term Support version of Django and recommended by Code Institute for the use on our projects.
 2. Installed gunicorn as the server to run Django on Heroku.
-3. Installed supporting libraries, dj_database_url and psycopg2 in order to run PostgreSQL.
+3. I Installed the supporting libraries, dj_database_url and psycopg2 in order to run PostgreSQL!!!!!!!!.
 4. Installed supporting library , in order to run cloudinary as storage for the project's images (dj3-cloudinary-storage)????
 
 ### Create new Django project and app
 
 1. Create requirements.txt file
-2. Create new blank Django project named ocean_basket
+2. Create new blank Django project and name it ocean_basket.
 3. Create new Django app called online_booking
 4. Add online_booking app to settings.py file of ocean_basket project
 5. Migrate changes to database after creating online_booking app
@@ -151,10 +151,10 @@ I chose to deploy early in the construction process in order to be sure that fro
 
 These were my guidelines for deployment:
 
-1. Create the Heroku app
-2. Attach the PostgreSQL database
-3. Prepare the environment and setting.py files
-4. Get the static and media files stored on Cloudinary
+1. Create the Heroku app.
+2. Attach the PostgreSQL database.
+3. Prepare the environment and setting.py files.
+4. Get the static and media files stored on Cloudinary.
 
 ### Steps to create Heroku App
 
