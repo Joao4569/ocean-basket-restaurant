@@ -267,6 +267,8 @@ I created a superuser in order to access the admin functions with the following 
 - After creating the base.html and index.html I manually tested if the templates rendered as expected.
 - Once the custom CSS file was created, I did a manual test by changing the colour of the text in order to test if it is working as intended, no errors found.
 - Throughout development I made many manual tests using Google developer tools in order to test for responsiveness and visual appeal in order to have a successfull UX design.
+- I tested my various HTML templates manually buy creating test headings when each file was created in order to test if their URL's were wired up correctly.
+- Once Django-allauth authentication was added, I tested it buy manually typing in the the URL's and testing if they would direct and re-direct as I expected.
 
 - Found bug 
   - **Resolved** 
