@@ -14,11 +14,8 @@ from django.views import View
 # return render(request, 'online_booking/index.html')#, context)
 
 
-"""This function will display the home page"""
-
-
 class HomePage(View):
-
+    """This function will display the home page"""
     def get(self, request):
         """This function will display the home page"""
         return render(request, "online_booking/index.html")
