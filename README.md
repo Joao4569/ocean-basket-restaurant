@@ -133,12 +133,12 @@ After completing the basic conception of my idea and designing some basic struct
 
 1. Install Django version 3.2 which is the Long Term Support version of Django and recommended by Code Institute for the use on our projects.
 2. Installed gunicorn as the server to run Django on Heroku.
-3. I Installed the supporting libraries, dj_database_url and psycopg2 in order to run PostgreSQL!!!!!!!!.
+3. I Installed the supporting libraries, dj_database_url and psycopg2 in order to run PostgreSQL!!!!!!!!SQLite3.
 4. Installed supporting library , in order to run cloudinary as storage for the project's images (dj3-cloudinary-storage)????
 
 ### Create new Django project and app
 
-1. Create requirements.txt file
+1. Create `requirements.txt` file
 2. Create new blank Django project and name it ocean_basket.
 3. Create new Django app called online_booking
 4. Add online_booking app to settings.py file of ocean_basket project
@@ -169,46 +169,46 @@ These were my guidelines for deployment:
 
 ### Setting up Config Vars
 
-1. Copy the address next to the "DATABASE_URL", starting with postgres://....
-2. Create an env.py file in the same directory as the manage.py file in order to store your secret environment variables.
-3. Import the Operating System library to the env.py file.
+1. Copy the address next to the `DATABASE_URL`, starting with `postgres://....`
+2. Create an `env.py` file in the same directory as the `manage.py` file in order to store your secret environment variables.
+3. Import the Operating System library to the `env.py` file.
 4. Set the OS environment variable to the copied address from Heroku.
-5. Create and add "SECRET_KEY" variable to env.py file.
-6. Return to Heroku and create the "SECRET_KEY" variable using your secret key from the env.py file and click the "Add" button.
-7. Create a variable called "PORT" and set it's value to "8000" and then click the add button.
-8. Within the env.py file create the environment variable called "PORT" and allocate it the value of "8000".
-9. Reference env.py file in the settings.py file by fist importing the Operating System library in the settings.py file just under the first import in the file.
-10. Next import the dj_database_url library.
-11. Now add a conditional statement that if os.path.isfile('env.py') is True, then "env" should be imported in order to prevent errors if the file is not found due to it being allocated to the ".gitignore" file as standard practice within the supplied IDE template provided by Code Institute.
-12. In the settings.py file find the "SECRET_KEY" variable and set it with the value, os.environ.get('SECRET_KEY'), so that it can access our secret key as setup in the env.py file.
+5. Create and add `SECRET_KEY` variable to `env.py` file.
+6. Return to Heroku and create the `SECRET_KEY` variable using your secret key from the `env.py` file and click the "Add" button.
+7. Create a variable called `PORT` and set it's value to `8000` and then click the add button.
+8. Within the `env.py` file create the environment variable called `PORT` and allocate it the value of `8000`.
+9. Reference `env.py` file in the `settings.py` file by fist importing the Operating System library in the `settings.py` file just under the first import in the file.
+10. Next import the `dj_database_url` library.
+11. Now add a conditional statement that, ``if os.path.isfile(`env.py`)`` is `True`, then `env` should be imported in order to prevent errors if the file is not found due to it being allocated to the `.gitignore` file as standard practice within the supplied IDE template provided by Code Institute.
+12. In the `settings.py` file find the `SECRET_KEY` variable and set it with the value of `os.environ.get('SECRET_KEY')` so that it can access the secret key as setup in the `env.py` file.
 
 ### Wiring up the Database
 
-1. Scroll to DATABASES section of settings.py file and comment out the entire dictionary.
-2. Create a new DATABASES dictionary with a key called "default" with the value of "dj_database_url.parse(os.environ.get('DATABASE_URL'))" in order to get the database url variable as setup in the env.py file so that I can use the Heroku database as the back end of the project.
-3. Run the migration command in the IDE terminal window in order to migrate all migrations on the new database.
+1. Scroll to `DATABASES` section of `settings.py` file and comment out the entire dictionary.
+2. Create a new `DATABASES` dictionary with a `key` called `default` with the `value` of `dj_database_url.parse(os.environ.get('DATABASE_URL'))` in order to get the database url variable as setup in the `env.py` file so that I can use the Heroku database as the back end of the project.
+3. Run the `migration` command in the IDE terminal window in order to migrate all migrations on the new database.
 4. Once completed go back to the Heroku page and click once again on the "Resources" tab.
 5. Click on the Heroku Postgres link in order to check that the database is working as intended.
 
 ### Cloudinary Setup
 
 1. On the Cloudinary dashboard, once logged in, copy the API Environment variable.
-2. In the env.py file add an environment variable called "CLOUDINARY_URL" and allocate to it the copied API Environment variable from cloudinary while remembering to remove the beginning of the copied variable, which is "CLOUDINARY_URL=".
-3. Once done then on Heroku add the new environment variable to your Config vars, i.e. CLOUDINARY_URL and the copied API Environment variable from cloudinary.
-4. Also add a temporary Config var called "DISABLE_COLLECTSTATIC" and set it's value to "1", this is just to get the skeleton project to deploy without any static content added as yet. (THIS MUST BE REMOVED WHEN DEPLOYING THE FULL PROJECT!!!).
-5. Within the settings.py file, find the section for "INSTALLED_APPS" and add in the Cloudinary libraries, just above the 'django.contrib.staticfiles', add in 'cloudinary_storage' and underneath this line of code 'django.contrib.staticfiles', add in 'cloudinary'.
-6. In order for Django to use Cloudinary for storing the media and static files, towards the end of the settings.py file, just below "STATIC_URL = '/static/'", add in the following: "STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'"
-7. In order to set the static files directory I added this in the next line: "STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]"
-8. In order to set the static files root directory I added this in the next line: "STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')"
-9. Then I set the media files URL to: MEDIA_URL = '/media/'
-10. Next I set the default media file storage to: DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-11. A template directory will also need to be added in order to store our templates, just under the base directory (BASE_DIR), I added the following code: TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates').
-12. Once that is done then the "'DIRS'" key in the TEMPLATES setting needs to have the value of the new templates directory variable just created i.e [TEMPLATES_DIR], in order to complete the process.
+2. In the `env.py` file add an environment variable called `CLOUDINARY_URL` and allocate it the copied API Environment variable from cloudinary while remembering to remove the beginning of the copied variable, which is `CLOUDINARY_URL=`.
+3. Once done then on Heroku add the new environment variable to your Config vars, i.e. `CLOUDINARY_URL` and the copied API Environment variable from cloudinary.
+4. Also add a temporary Config var called `DISABLE_COLLECTSTATIC` and set it's value to `1`, this is just to get the skeleton project to deploy without any static content added as yet. **(THIS MUST BE REMOVED WHEN DEPLOYING THE FULL PROJECT!!!)**.
+5. Within the `settings.py` file, find the section for `INSTALLED_APPS` and add in the Cloudinary libraries, just above `django.contrib.staticfiles`, add in `cloudinary_storage` and underneath this line of code: `django.contrib.staticfiles`, add in `cloudinary`.
+6. In order for Django to use Cloudinary for storing media and static files, towards the end of the `settings.py` file, just below: `STATIC_URL = '/static/'`, add in the following code: "STATICFILES_STORAGE = `cloudinary_storage.storage.StaticHashedCloudinaryStorage`.
+7. In order to setup the static files directory I added this code in the next line: `STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]`.
+8. In order to setup the static files root directory I added this code in the next line: `STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')`.
+9. Then I set the media files URL to: `MEDIA_URL = '/media/'`.
+10. Next I set the default media file storage to: `DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'`
+11. A template directory will also need to be added in order to store the templates required, just under the base directory (`BASE_DIR`), I added the following code: `TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')`.
+12. Once that is done then the `'DIRS'` key in the `TEMPLATES` setting needs to have the value of the new templates directory variable just created i.e `[TEMPLATES_DIR]`, in order to complete the process.
 
-13. Once all these steps were completed then I added the address of the application as the value for the ALLOWED_HOSTS variable as the local host.
+13. Once all these steps were completed then I added the address of the application as the value for the `ALLOWED_HOSTS` variable as the local host.
 14. Next I created the media and static directories.
-15. Process file (Procfile) was created in order for Heroku to know how to run the project.
-16. Inside the Procfile I added the code in order for Heroku to understand that this process must accept HTTP traffic, and that I will be using a web services gateway interface server by the name of gunicorn. i.e. web: gunicorn ocean_basket.wsgi
+15. A Process file (Procfile) was created in order for Heroku to know how to run the project.
+16. Inside the Procfile I added the code needed in order for Heroku to understand that this process must accept HTTP traffic, and that I will be using a web services gateway interface server by the name of gunicorn. i.e. `web: gunicorn ocean_basket.wsgi`
 
 ### Deployment
 
@@ -259,7 +259,7 @@ I created a superuser in order to access the admin functions with the following 
 
 ### Manual Testing
 
-- After creating the online_booking app, I tested it buy running the application and recieved visual confirmation that the application is working successfully from Django.
+- After creating the `online_booking` app, I tested it buy running the application and recieved visual confirmation that the application is working successfully from Django.
 - Once the database was initially linked to the Heroku app, I followed the Heroku Postgres link, in the resources section, in order to check that the database was connected and working after my initial migrations were done.
 - Once I created the Customer Booking details model, I accessed the Django admin page and checked that all fields were created and that the information displayed on screen was displaying as I intended.
 - I manually added data to the Customer Booking Details model, on the admin page, to test how it displays for a better UX.
@@ -296,6 +296,7 @@ I created a superuser in order to access the admin functions with the following 
  - All flowcharts and ERD diagrams used in this project were designed by making use of [Lucidchart](https://www.lucidchart.com/pages/).
  - All wireframes used in this project were designed by making use of [Balsamiq](https://balsamiq.com/).
  - I sourced my Google font pairing suggestion from [GoVisually](https://govisually.com/blog/2020s-top-20-google-font-pairs-for-your-next-project/), I decided to use the pairing suggestion of Elsie with Roboto fonts.
+ - I learned how to use `inline code blocks` in a Markdown file on [RIP Tutorial](https://riptutorial.com/markdown/example/1802/inline-code).
 
 
 
