@@ -76,6 +76,13 @@ footer {
 
 }
 
+/* forms */
+
+.form {
+  margin: 5rem auto;
+  width: 30%;
+}
+
 /* for screen width less than 400px */
 @media screen and (max-width: 400px) {
 
