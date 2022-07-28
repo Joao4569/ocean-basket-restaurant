@@ -14,7 +14,7 @@ class CustomerDetails(models.Model):
     contact_number = models.CharField(max_length=12, null=False, blank=False)
     email = models.CharField(max_length=50)
     username = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="user_username")
+        User, on_delete=models.CASCADE, related_name="try_username")
     password = models.CharField(max_length=50)
 
     # def __str__(self):
