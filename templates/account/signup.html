@@ -9,7 +9,7 @@
 {% load crispy_forms_tags %}
 
 <div class="container form border border-dark rounded p-3">
-  <h1 class="text-center">{% trans "Step One:" %}</h1>
+  <h1 class="text-center font-elsie">{% trans "Registration:" %}</h1>
 
   <p class="text-center">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
 
@@ -19,7 +19,7 @@
     {% if redirect_field_value %}
     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
     {% endif %}
-    <button type="submit">{% trans "Sign Up" %} &raquo;</button>
+    <button type="submit">{% trans "Register" %} &raquo;</button>
   </form>
 </div>
 

@@ -53,10 +53,28 @@ footer {
   font-size: 2rem;
 }
 
+/* forms */
+
+.form {
+  margin: 5rem auto;
+  width: 30%;
+}
+
 /* media queries */
 
-/* for screen width less than 595px */
-@media screen and (max-width: 595px) {
+/* for screen width less than 1200px */
+@media screen and (max-width: 1200px) {
+
+  /* forms */
+
+  .form {
+    width: 50%;
+  }
+
+}
+
+/* for screen width less than 650px */
+@media screen and (max-width: 650px) {
 
   /* header */
 
@@ -74,13 +92,12 @@ footer {
     font-size: 2rem;
   }
 
-}
+  /* forms */
 
-/* forms */
+  .form {
+    width: 70%;
+  }
 
-.form {
-  margin: 5rem auto;
-  width: 30%;
 }
 
 /* for screen width less than 400px */
