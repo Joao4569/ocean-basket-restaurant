@@ -60,6 +60,14 @@ footer {
   width: 30%;
 }
 
+.form-text-bold {
+  font-weight: 800;
+}
+
+.allauth-btn {
+  font-size: 2rem;
+}
+
 /* media queries */
 
 /* for screen width less than 1200px */
