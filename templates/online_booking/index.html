@@ -14,7 +14,7 @@
 
   <div class="container w-50 my-5">
     <div class="row text-center">
-      <div class="col-6 py-3">
+      <div class="col-12 col-lg-6 py-3">
         <p class="main-paragraph-text">
           First Booking?
         </p>
@@ -22,7 +22,7 @@
           <button type="button" class="btn-lg btn-dark font-elsie font-weight-bold">Register</button>
         </a>
       </div>
-      <div class="col-6 py-3">
+      <div class="col-12 col-lg-6 py-3">
         {% if user.is_authenticated %}
         <a href="{% url 'account_logout' %}">
           <button type="button" class="btn-lg btn-dark font-elsie font-weight-bold">Logout</button>
