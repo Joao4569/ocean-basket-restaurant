@@ -5,18 +5,6 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class CustomerDetails(models.Model):
-    """
-    Create a database model for storing online customer details
-    """
-    first_name = models.CharField(max_length=30, null=False, blank=False)
-    last_name = models.CharField(max_length=30, null=False, blank=False)
-    contact_number = models.CharField(max_length=12, null=False, blank=False)
-    email = models.CharField(max_length=50)
-    username = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="try_username")
-    password = models.CharField(max_length=50)
-
     # def __str__(self):
     # """This will modify the standard Django string method for
     # personalisation"""
