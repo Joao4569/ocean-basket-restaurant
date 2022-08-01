@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views import View
-from .forms import BookingInformation
+from .forms import BookingForm
 # from .models import CustomerDetails
 
 # Create your views here.
@@ -22,14 +22,14 @@ class HomePage(View):
         return render(request, "online_booking/index.html")
 
 
-class RegistrationPage(View):
+class RegisteredUser(View):
 
     def get(self, request):
         """This function will display the registration page"""
         return render(
             request,
-            "online_booking/register.html",
+            "online_booking/registered_user.html",
             {
-                "booking_form": BookingInformation()
+                "booking_form": BookingForm()
             }
         )

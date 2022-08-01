@@ -1,0 +1,9 @@
+{% extends "online_booking/base.html" %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+{{ booking_form | crispy }}
+
+{% endblock %}

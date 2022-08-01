@@ -21,4 +21,4 @@ class BookingForm(forms.ModelForm):
     class Meta:
         model = BookingInformation
         fields = ('booking_title', 'number_of_seats', 'contact_number', 'date',
-                  'username')
+                  'username',)
