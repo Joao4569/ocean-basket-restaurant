@@ -269,6 +269,9 @@ I created a superuser in order to access the admin functions with the following 
 - Throughout development I made many manual tests using Google developer tools in order to test for responsiveness and visual appeal in order to have a successfull UX design.
 - I tested my various HTML templates manually buy creating test headings when each file was created in order to test if their URL's were wired up correctly.
 - Once Django-allauth authentication was added, I tested it buy manually typing in the the URL's and testing if they would direct and re-direct as I expected.
+- Once I installed crispy forms I also did manual testing of all the current forms in order to test if all forms were behaving as expected.
+- Once custom fields were added to the standard Django allauth Signup form, I procedeeded with manually signing up and seeing if the extra fields were captured by the application.
+- All form redirects and associated linking of buttons were tested for the expected functionality.
 
 - Found bug 
   - **Resolved** 
