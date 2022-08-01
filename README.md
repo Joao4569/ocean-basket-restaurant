@@ -272,6 +272,7 @@ I created a superuser in order to access the admin functions with the following 
 - Once I installed crispy forms I also did manual testing of all the current forms in order to test if all forms were behaving as expected.
 - Once custom fields were added to the standard Django allauth Signup form, I procedeeded with manually signing up and seeing if the extra fields were captured by the application.
 - All form redirects and associated linking of buttons were tested for the expected functionality.
+- After creating a basic table with the logged in users booking, I made use of the built in Django admin panel to create users and test if the data for the tables were displaying as intended i.e. only the logged in users data displayed and if there is no data then an alternate message will display.
 
 - Found bug 
   - **Resolved** 
