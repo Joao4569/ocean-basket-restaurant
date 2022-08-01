@@ -21,7 +21,7 @@ class BookingInformation(models.Model):
         max_length=2,
         choices=SERVICE_CHOICES,
     )
-    username = models.CharField(max_length=50)
+    username = models.ForeignKey(User, on_delete=models.CASCADE)
     booking_title = models.CharField(max_length=50)
     number_of_seats = models.SmallIntegerField(null=False, blank=False)
     date = models.DateField(null=False, blank=False)

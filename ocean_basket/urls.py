@@ -16,7 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from online_booking import views
-#from online_booking.views import RegisteredUser
 
 urlpatterns = [
     path('admin/', admin.site.urls),

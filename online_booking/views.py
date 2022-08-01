@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.views import View
-from .forms import BookingForm
+#from .forms import BookingForm
 # from .models import CustomerDetails
+from .models import BookingInformation
 
 # Create your views here.
 
@@ -26,10 +27,12 @@ class RegisteredUser(View):
 
     def get(self, request):
         """This function will display the registration page"""
+        bookings = BookingInformation.objects.all()
+        context = {
+                "bookings": bookings
+            }
         return render(
             request,
             "online_booking/registered_user.html",
-            {
-                "booking_form": BookingForm()
-            }
+            context
         )
