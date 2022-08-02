@@ -3,6 +3,7 @@ from allauth.account.forms import SignupForm
 from .models import BookingInformation
 
 
+
 class CustomSignupForm(SignupForm):
     """This will add custom fields to the standard django
     allauth signup form - Taken from GeeksforGeeks.org
@@ -23,5 +24,5 @@ class CustomSignupForm(SignupForm):
 class BookingForm(forms.ModelForm):
     class Meta:
         model = BookingInformation
-        fields = ('booking_title', 'number_of_seats', 'contact_number', 'date',
-                  'username',)
+        fields = ('booking_title', 'number_of_seats',
+                  'contact_number', 'date', 'service')

@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.views import View
+from django.contrib.auth.models import User
 from .forms import BookingForm
 # from .models import CustomerDetails
-from .models import BookingInformation
+#from .models import BookingInformation
 
 # Create your views here.
 
@@ -30,8 +31,31 @@ class CreateBooking(View):
         booking_form = {
                 "booking_form": BookingForm()
             }
+
         return render(
             request,
             "online_booking/create_booking.html",
             booking_form
         )
+
+    def post(self, request):
+        booking_form = BookingForm(data=request.POST)
+
+        if booking_form.is_valid():
+            booking_form.instance.username = request.user.username
+            booking_form.save()
+        else:
+            booking_form = BookingForm()
+
+        return render(
+            request,
+            "online_booking/view_booking.html",
+        )
+
+
+class ViewBooking(View):
+    """This function will display the home page"""
+
+    def get(self, request):
+        """This function will display the home page"""
+        return render(request, "online_booking/view_booking.html")

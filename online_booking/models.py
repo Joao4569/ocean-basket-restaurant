@@ -2,7 +2,7 @@
 Import models folder in order to create tables for our database
 """
 from django.db import models
-#from django.http import HttpRequest
+
 
 
 class BookingInformation(models.Model):
@@ -21,7 +21,7 @@ class BookingInformation(models.Model):
         max_length=2,
         choices=SERVICE_CHOICES,
     )
-    username = models.CharField(max_length=191)
+    username = models.CharField(max_length=150)
     booking_title = models.CharField(max_length=50)
     number_of_seats = models.SmallIntegerField(null=False, blank=False)
     date = models.DateField(null=False, blank=False)
