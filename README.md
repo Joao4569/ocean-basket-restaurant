@@ -284,6 +284,7 @@ I created a superuser in order to access the admin functions with the following 
   - Extra large screens, TV: 1201px and more
 - Made use of Chrome developer tools for previewing and testing new designs for media queries as well as UX aspects.
 - I have tested all buttons and links, they are all acting as intended.
+- I found a bug with how I used Django template language, instead of using `(list name)|length` I used `(list name).length`.
 
 ### Validator Testing
 
