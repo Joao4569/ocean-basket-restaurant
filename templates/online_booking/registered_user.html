@@ -6,10 +6,12 @@
 
 <h1>test successfull</h1>
 
+{{  }}
+
 <div>
   <table>
   {% if bookings.length > 0 %}
-  {% for booking in bookings %}
+    {% for booking in bookings %}
     
     <tr>
       <td>{{ booking.booking_title }}</td>
@@ -19,7 +21,7 @@
       <td>{{ booking.contact_number }}</td>
     </tr>
     
-  {% endfor %}
+    {% endfor %}
   {% endif %}
   </table>
 </div>
