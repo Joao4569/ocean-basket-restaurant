@@ -1,20 +1,7 @@
 from django.shortcuts import render
 from django.views import View
-from django.contrib.auth.models import User
 from .forms import BookingForm
-# from .models import CustomerDetails
-#from .models import BookingInformation
-
-# Create your views here.
-
-
-# def get_home_page(request):
-# """This function will display the home page"""
-# """bookings = CustomerBookingDetails.objects.all()
-# context = {
-# 'bookings': bookings
-# }"""
-# return render(request, 'online_booking/index.html')#, context)
+from .models import BookingInformation
 
 
 class HomePage(View):
@@ -58,4 +45,8 @@ class ViewBooking(View):
 
     def get(self, request):
         """This function will display the home page"""
-        return render(request, "online_booking/view_booking.html")
+        bookings = BookingInformation.objects.all()
+        context = {
+            'bookings': bookings
+        }
+        return render(request, "online_booking/view_booking.html", context)

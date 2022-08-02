@@ -4,7 +4,6 @@ Import models folder in order to create tables for our database
 from django.db import models
 
 
-
 class BookingInformation(models.Model):
     """
     Create a database model for storing online booking details

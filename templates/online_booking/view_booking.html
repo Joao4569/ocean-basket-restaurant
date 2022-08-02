@@ -6,23 +6,31 @@
 
 <h1>test successfull</h1>
 
-<!--<div>
+{{ bookings.length }}
+
+{% if bookings.length > 0 %}
+
+<div>
   <table>
-  {% if bookings.length > 0 %}
     {% for booking in bookings %}
-    
-    <tr>
-      <td>{{ booking.booking_title }}</td>
-      <td>{{ booking.date }}</td>
-      <td>{{ booking.service }}</td>
-      <td>{{ booking.number_of_seats }}</td>
-      <td>{{ booking.contact_number }}</td>
-    </tr>
-    
+      <tr>
+        <td>{{ booking.booking_title }}</td>
+        <td>{{ booking.date }}</td>
+        <td>{{ booking.service }}</td>
+        <td>{{ booking.number_of_seats }}</td>
+        <td>{{ booking.contact_number }}</td>
+      </tr>
     {% endfor %}
-  {% endif %}
   </table>
-</div>-->
+</div>
+
+{% else %}
+
+  <div>
+    <p>You have no bookings to view</p>
+  </div>
+
+{% endif %}
 
   {% if user.is_authenticated %}
     <a href="{% url 'account_logout' %}">
