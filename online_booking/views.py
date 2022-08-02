@@ -23,7 +23,7 @@ class HomePage(View):
         return render(request, "online_booking/index.html")
 
 
-class RegisteredUser(View):
+class CreateBooking(View):
 
     def get(self, request):
         """This function will display the registration page"""
@@ -33,6 +33,6 @@ class RegisteredUser(View):
             }
         return render(
             request,
-            "online_booking/registered_user.html",
+            "online_booking/create_booking.html",
             context
         )

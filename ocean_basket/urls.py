@@ -20,6 +20,6 @@ from online_booking import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.HomePage.as_view(), name='Home'),
-    path('registered_user/', views.RegisteredUser.as_view(), name='Registered User'),
+    path('create_booking/', views.CreateBooking.as_view(), name='Create Booking'),
     path('accounts/', include('allauth.urls')),
 ]
