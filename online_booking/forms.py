@@ -4,6 +4,9 @@ from .models import BookingInformation
 
 
 class CustomSignupForm(SignupForm):
+    """This will add custom fields to the standard django
+    allauth signup form - Taken from GeeksforGeeks.org
+    credited in README.md"""
     first_name = forms.CharField(
         max_length=25, label='First Name')
     last_name = forms.CharField(

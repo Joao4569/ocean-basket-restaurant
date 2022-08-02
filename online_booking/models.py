@@ -9,7 +9,7 @@ class BookingInformation(models.Model):
     """
     Create a database model for storing online booking details
     """
-    # Choices field for selection of lunch or dinner service
+    # Choices field for selection of service taken from stackoverflow
     LUNCH = 'LH'
     DINNER = 'DN'
 
@@ -25,6 +25,7 @@ class BookingInformation(models.Model):
     booking_title = models.CharField(max_length=50)
     number_of_seats = models.SmallIntegerField(null=False, blank=False)
     date = models.DateField(null=False, blank=False)
+    # Contact number field recommendation taken from stackoverflow.com
     contact_number = models.CharField(max_length=12, null=False, blank=False)
 
     def __str__(self):

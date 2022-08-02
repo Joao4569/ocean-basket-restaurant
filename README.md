@@ -301,6 +301,10 @@ I created a superuser in order to access the admin functions with the following 
  - All wireframes used in this project were designed by making use of [Balsamiq](https://balsamiq.com/).
  - I sourced my Google font pairing suggestion from [GoVisually](https://govisually.com/blog/2020s-top-20-google-font-pairs-for-your-next-project/), I decided to use the pairing suggestion of Elsie with Roboto fonts.
  - I learned how to use `inline code blocks` in a Markdown file on [RIP Tutorial](https://riptutorial.com/markdown/example/1802/inline-code).
+ - Code for adding custom fields to standard Django Allauth signup form taken from [GeeksforGeeks.org](https://www.geeksforgeeks.org/python-extending-and-customizing-django-allauth/).
+ - Recommendation for contact number form field taken from [stackoverflow](https://stackoverflow.com/questions/15465356/django-storing-mobile-number-what-field-to-use).
+ - I learned how to implement a choices field in a form from [stackoverflow](https://stackoverflow.com/questions/18676156/how-to-properly-use-the-choices-field-option-in-django).
+
 
 
 
