@@ -4,10 +4,14 @@
 
 {% load crispy_forms_tags %}
 
-<div>
-  <h1>hello</h1>
-  {{ booking_form | crispy }}
-  </div>
+<div class="container form border border-dark rounded p-3">
+  <h1 class="text-center font-elsie form-text-bold">Make a New Booking</h1>
+  <form method="Post">
+    {{ booking_form | crispy }}
+    {% csrf_token %}
+    <button class="font-elsie form-text-bold allauth-btn px-3" type="submit">Create Booking</button>
+  </form>
+</div>
 
 
 {% endblock %}
