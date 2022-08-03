@@ -6,42 +6,41 @@
 
 <h2>Your Bookings:</h2>
 
-{% if bookings|length > 0 %}
 
-  <div class="booking_table table-responsive mx-auto">
-    <table class="table table-sm table-bordered table-hover">
-      <thead class="thead-dark">
+
+<div class="booking_table table-responsive mx-auto">
+  <table class="table table-sm table-bordered table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th class="text-center" scope="col">Booking Name</th>
+        <th class="text-center" scope="col">Date</th>
+        <th class="text-center" scope="col">Service</th>
+        <th class="text-center" scope="col">Seats</th>
+        <th class="text-center" scope="col">Contact</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for booking in bookings %}
+      {% if booking.username == user.username %}
         <tr>
-          <th class="text-center" scope="col">Booking Name</th>
-          <th class="text-center" scope="col">Date</th>
-          <th class="text-center" scope="col">Service</th>
-          <th class="text-center" scope="col">Seats</th>
-          <th class="text-center" scope="col">Contact</th>
+          <td class="text-center">{{ booking.booking_title }}</td>
+          <td class="text-center">{{ booking.date }}</td>
+          <td class="text-center">{{ booking.service }}</td>
+          <td class="text-center">{{ booking.number_of_seats }}</td>
+          <td class="text-center">{{ booking.contact_number }}</td>
+          <td>
+            <a href="/edit_booking/{{ booking.id }}">
+              <button>Edit</button>
+            </a>
+          </td>
         </tr>
-      </thead>
-      <tbody>
-      {% for booking in bookings %}
-        {% if booking.username == user.username %}
-          <tr>
-            <td class="text-center">{{ booking.booking_title }}</td>
-            <td class="text-center">{{ booking.date }}</td>
-            <td class="text-center">{{ booking.service }}</td>
-            <td class="text-center">{{ booking.number_of_seats }}</td>
-            <td class="text-center">{{ booking.contact_number }}</td>
-          </tr>
-        {% endif %}
-      {% endfor %}
-      </tbody>
-    </table>
-  </div>
+      {% endif %}
+    
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
 
-{% else %}
-
-  <div>
-    <p>You have no bookings to view</p>
-  </div>
-
-{% endif %}
 
 {% if user.is_authenticated %}
   <a href="{% url 'account_logout' %}">

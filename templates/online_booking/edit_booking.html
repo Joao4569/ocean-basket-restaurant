@@ -1,0 +1,17 @@
+{% extends "online_booking/base.html" %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<div class="container form border border-dark rounded p-3">
+  <h1 class="text-center font-elsie form-text-bold">Edit your Booking</h1>
+  <form method="Post">
+    {{ edit_form | crispy }}
+    {% csrf_token %}
+    <button class="font-elsie form-text-bold allauth-btn px-3" type="submit">Update Booking</button>
+  </form>
+</div>
+
+
+{% endblock %}
