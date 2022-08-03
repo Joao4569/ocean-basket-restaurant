@@ -9,15 +9,15 @@ class BookingInformation(models.Model):
     Create a database model for storing online booking details
     """
     # Choices field for selection of service taken from stackoverflow
-    LUNCH = 'LH'
-    DINNER = 'DN'
+    LUNCH = 'Lunch'
+    DINNER = 'Dinner'
 
     SERVICE_CHOICES = [
         (LUNCH, 'Lunch 13:00'),
         (DINNER, 'Dinner 19:00'),
     ]
     service = models.CharField(
-        max_length=2,
+        max_length=6,
         choices=SERVICE_CHOICES,
     )
     username = models.CharField(max_length=150)

@@ -11,13 +11,15 @@
 <div>
   <table>
     {% for booking in bookings %}
-      <tr>
-        <td>{{ booking.booking_title }}</td>
-        <td>{{ booking.date }}</td>
-        <td>{{ booking.service }}</td>
-        <td>{{ booking.number_of_seats }}</td>
-        <td>{{ booking.contact_number }}</td>
-      </tr>
+      {% if booking.username == user.username %}
+        <tr>
+          <td>{{ booking.booking_title }}</td>
+          <td>{{ booking.date }}</td>
+          <td>{{ booking.service }}</td>
+          <td>{{ booking.number_of_seats }}</td>
+          <td>{{ booking.contact_number }}</td>
+        </tr>
+      {% endif %}
     {% endfor %}
   </table>
 </div>
