@@ -60,9 +60,9 @@ class EditBooking(View):
     """This function will display the edit booking page"""
     def get(self, request, booking_id):
         """This function will display the home page"""
-        booking_id = get_object_or_404(BookingInformation, id=booking_id)
+        booking_identifier = get_object_or_404(BookingInformation, id=booking_id) #Change variable name !! EVERYWHERE!!!
         edit_form = {
-                "edit_form": BookingForm(instance=booking_id)
+                "edit_form": BookingForm(instance=booking_identifier)
             }
         return render(request, "online_booking/edit_booking.html", edit_form)
 
@@ -85,3 +85,22 @@ class EditBooking(View):
             request,
             "online_booking/view_booking.html", context
         )
+
+
+class DeleteBooking(View):
+    """This view will allow the user to delete his booking"""
+    def get(self, request, booking_id):
+        """This function will display the home page"""
+        booking_identifier = get_object_or_404(BookingInformation, id=booking_id)
+        booking_identifier.delete()
+
+        bookings = BookingInformation.objects.all()
+        context = {
+            'bookings': bookings
+        }
+
+        return render(
+            request,
+            "online_booking/view_booking.html", context
+        )
+
