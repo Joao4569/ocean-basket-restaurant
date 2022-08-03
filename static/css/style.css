@@ -39,11 +39,7 @@ footer {
   color: black;
 }
 
-/* index.html */
-
-.main-paragraph-text {
-  font-size: 1.25rem;
-}
+/* templates */
 
 .font-elsie {
   font-family: 'Elsie', cursive;
@@ -51,6 +47,28 @@ footer {
 
 .btn-lg {
   font-size: 2rem;
+}
+
+.heading {
+  font-size: 4rem;
+}
+
+.sub-heading {
+  font-size: 2rem;
+}
+
+.button-font {
+  font-size: 2rem;
+}
+
+/* index.html */
+
+.main-paragraph-text {
+  font-size: 1.5rem;
+}
+
+.responsive-width {
+  width: 50%;
 }
 
 /* forms */
@@ -68,7 +86,7 @@ footer {
   font-size: 2rem;
 }
 
-/* bookings table */
+/* view_booking.html */
 
 .booking_table {
   width: 80%;
@@ -83,6 +101,12 @@ footer {
 
   .form {
     width: 50%;
+  }
+
+  /* index.html */
+
+  .responsive-width {
+    width: 70%;
   }
 
 }
@@ -110,6 +134,23 @@ footer {
 
   .form {
     width: 70%;
+  }
+
+  /* index.html */
+
+  .main-paragraph-text {
+    font-size: 1rem;
+  }
+
+  
+  /* templates */
+
+  .heading {
+    font-size: 3rem;
+  }
+
+  .sub-heading {
+    font-size: 1.25rem;
   }
 
 }
