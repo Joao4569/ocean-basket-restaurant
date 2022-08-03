@@ -4,25 +4,36 @@
 
 {% block content %}
 
-<h1>test successfull</h1>
+<h2>Your Bookings:</h2>
 
 {% if bookings|length > 0 %}
 
-<div>
-  <table>
-    {% for booking in bookings %}
-      {% if booking.username == user.username %}
+  <div class="booking_table table-responsive mx-auto">
+    <table class="table table-sm table-bordered table-hover">
+      <thead class="thead-dark">
         <tr>
-          <td>{{ booking.booking_title }}</td>
-          <td>{{ booking.date }}</td>
-          <td>{{ booking.service }}</td>
-          <td>{{ booking.number_of_seats }}</td>
-          <td>{{ booking.contact_number }}</td>
+          <th class="text-center" scope="col">Booking Name</th>
+          <th class="text-center" scope="col">Date</th>
+          <th class="text-center" scope="col">Service</th>
+          <th class="text-center" scope="col">Seats</th>
+          <th class="text-center" scope="col">Contact</th>
         </tr>
-      {% endif %}
-    {% endfor %}
-  </table>
-</div>
+      </thead>
+      <tbody>
+      {% for booking in bookings %}
+        {% if booking.username == user.username %}
+          <tr>
+            <td class="text-center">{{ booking.booking_title }}</td>
+            <td class="text-center">{{ booking.date }}</td>
+            <td class="text-center">{{ booking.service }}</td>
+            <td class="text-center">{{ booking.number_of_seats }}</td>
+            <td class="text-center">{{ booking.contact_number }}</td>
+          </tr>
+        {% endif %}
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
 
 {% else %}
 
@@ -32,10 +43,10 @@
 
 {% endif %}
 
-  {% if user.is_authenticated %}
-    <a href="{% url 'account_logout' %}">
+{% if user.is_authenticated %}
+  <a href="{% url 'account_logout' %}">
     <button type="button" class="btn-lg btn-dark font-elsie font-weight-bold">Logout</button>
-    </a>
-  {% endif %}
+  </a>
+{% endif %}
 
 {% endblock %}

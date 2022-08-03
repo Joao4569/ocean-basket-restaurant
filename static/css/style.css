@@ -68,6 +68,12 @@ footer {
   font-size: 2rem;
 }
 
+/* bookings table */
+
+.booking_table {
+  width: 80%;
+}
+
 /* media queries */
 
 /* for screen width less than 1200px */
