@@ -4,12 +4,9 @@
 
 {% if user.is_authenticated %}
 
-  <div class="container-fluid text-center w-50">
-    <h2 class="display-4 mt-5">Welcome</h2>
-    <h3 class="text-muted  font-italic">{{ user.first_name }} {{ user.last_name }}</h3>
-    <p class="main-paragraph-text text-center mx-auto mt-5">
-      How would you like to proceed?
-    </p>
+  <div class="container text-center responsive-width">
+    <h2 class="heading mt-5 mb-3 font-elsie">Welcome</h2>
+    <h3 class="sub-heading text-muted pb-5 font-elsie">{{ user.first_name }} {{ user.last_name }}</h3>
   </div>
 
   <div class="container w-50 my-5">
