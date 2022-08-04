@@ -4,7 +4,32 @@
 
 {% block content %}
 
-{% if user.is_authenticated %}
+{% if user.is_authenticated and user.is_staff %}
+
+  {% for booking in bookings %}
+  <div class="booking_table table-responsive mx-auto">
+    <table class="table table-sm table-bordered table-hover">
+      <tbody>
+        <tr>
+          <td>{{ booking.date }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+    
+
+  {% endfor %}
+  
+
+<h2>Lunch:</h2>
+
+<div class="col-12 py-3">
+  <a href="{% url 'account_logout' %}">
+    <button type="button" class="btn-lg btn-outline-dark font-elsie font-weight-bold">Logout</button>
+  </a>
+</div>
+
+{% elif user.is_authenticated %}
 
   <div class="container text-center responsive-width">
     <h2 class="heading mt-5 mb-3 font-elsie pb-3">Your Bookings:</h2>
