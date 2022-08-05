@@ -19,7 +19,6 @@
           <th class="text-center" scope="col">Contact</th>
           <th class="text-center" scope="col">Username</th>
           <th class="text-center" scope="col">Email</th>
-          <th class="text-center" scope="col" colspan="2">Options:</th>
         </tr>
       </thead>
       <tbody>
@@ -32,16 +31,6 @@
             <td class="text-center">{{ booking.contact_number }}</td>
             <td class="text-center">{{ booking.username }}</td>
             <td class="text-center">{{ booking.email }}</td>
-            <td class="text-center">
-              <a href="/edit_booking/{{ booking.id }}">
-                <button class="btn-sm btn-outline-success font-weight-bold">Change</button>
-              </a>
-            </td>
-            <td class="text-center">
-              <a href="/delete_booking/{{ booking.id }}">
-                <button class="btn-sm btn-outline-danger font-weight-bold">Delete</button>
-              </a>
-            </td>
           </tr>
         {% endif %}
       {% endfor %}
@@ -62,7 +51,6 @@
           <th class="text-center" scope="col">Contact</th>
           <th class="text-center" scope="col">Username</th>
           <th class="text-center" scope="col">Email</th>
-          <th class="text-center" scope="col" colspan="2">Options:</th>
         </tr>
       </thead>
       <tbody>
@@ -75,16 +63,6 @@
             <td class="text-center">{{ booking.contact_number }}</td>
             <td class="text-center">{{ booking.username }}</td>
             <td class="text-center">{{ booking.email }}</td>
-            <td class="text-center">
-              <a href="/edit_booking/{{ booking.id }}">
-                <button class="btn-sm btn-outline-success font-weight-bold">Change</button>
-              </a>
-            </td>
-            <td class="text-center">
-              <a href="/delete_booking/{{ booking.id }}">
-                <button class="btn-sm btn-outline-danger font-weight-bold">Delete</button>
-              </a>
-            </td>
           </tr>
         {% endif %}
       {% endfor %}
