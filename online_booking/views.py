@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import View
-from .forms import BookingForm, DateForm
+from .forms import BookingForm
 from .models import BookingInformation
 
 
@@ -105,15 +105,15 @@ class DeleteBooking(View):
         )
 
 
-class FilterBySelectedDate(View):
-    """This view will allow the user to delete his booking"""
+class ViewBookingEmployee(View):
+    """This function will display the home page"""
+
     def get(self, request):
         """This function will display the home page"""
+        bookings = BookingInformation.objects.all()
         context = {
-            'date_form': DateForm()
+            'bookings': bookings,
         }
+        return render(request, "online_booking/view_booking.html", context)
 
-        return render(
-            request,
-            "online_booking/view_booking.html", context
-        )
+
