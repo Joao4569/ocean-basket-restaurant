@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import View
+from datetime import date
 from .forms import BookingForm
 from .models import BookingInformation
 
@@ -110,7 +111,8 @@ class ViewBookingEmployee(View):
 
     def get(self, request):
         """This function will display the home page"""
-        bookings = BookingInformation.objects.all()
+        today = date.today()
+        bookings = BookingInformation.objects.filter(date=today)
         context = {
             'bookings': bookings,
         }
