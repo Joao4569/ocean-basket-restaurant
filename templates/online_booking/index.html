@@ -4,12 +4,23 @@
 
 {% if user.is_authenticated and user.is_staff %}
 
-  <h1>Welcome Employee</h1>
+  <div class="container text-center responsive-width">
+  <h2 class="heading mt-5 mb-3 font-elsie">Welcome Employee</h2>
+  </div>
 
-  <div class="col-12 py-3">
-    <a href="view_booking/">
-      <button type="button" class="btn-lg btn-outline-dark font-elsie font-weight-bold">View Todays Bookings</button>
-    </a>
+  <div class="container w-50 my-5">
+    <div class="row text-center">
+      <div class="col-12 col-lg-6 py-3">
+        <a href="view_booking/">
+          <button type="button" class="button-font btn btn-outline-dark font-elsie font-weight-bold">View Todays Bookings</button>
+        </a>
+      </div>
+      <div class="col-12 col-lg-6 py-3">
+        <a href="{% url 'account_logout' %}">
+          <button type="button" class="button-font btn btn-outline-dark font-elsie font-weight-bold">Logout</button>
+        </a>
+      </div>
+    </div>
   </div>
 
 {% elif user.is_authenticated %}
@@ -23,17 +34,17 @@
     <div class="row text-center">
       <div class="col-12 col-lg-4 py-3">
         <a href="create_booking/">
-          <button type="button" class="btn-lg btn-outline-dark font-elsie font-weight-bold">Make a booking</button>
+          <button type="button" class="button-font btn btn-outline-dark font-elsie font-weight-bold">Make a booking</button>
         </a>
       </div>
       <div class="col-12 col-lg-4 py-3">
         <a href="view_booking/">
-          <button type="button" class="btn-lg btn-outline-dark font-elsie font-weight-bold">Manage Bookings</button>
+          <button type="button" class="button-font btn btn-outline-dark font-elsie font-weight-bold">Manage Bookings</button>
         </a>
       </div>
       <div class="col-12 col-lg-4 py-3">
         <a href="{% url 'account_logout' %}">
-          <button type="button" class="btn-lg btn-outline-dark font-elsie font-weight-bold">Logout</button>
+          <button type="button" class="button-font btn btn-outline-dark font-elsie font-weight-bold">Logout</button>
         </a>
       </div>
     </div>
