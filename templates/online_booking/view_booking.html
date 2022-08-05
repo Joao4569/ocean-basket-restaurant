@@ -4,9 +4,101 @@
 
 {% block content %}
 
-{% load crispy_forms_tags %}
+{% if user.is_authenticated and user.is_staff and user.username == "StoreManager" %}
 
-{% if user.is_authenticated and user.is_staff %}
+  <div class="container text-center responsive-width">
+    <h2 class="heading mt-5 mb-3 font-elsie pb-3">Lunch</h2>
+  </div>
+  <div class="booking_table table-responsive mx-auto">
+    <table class="table table-sm table-bordered table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th class="text-center" scope="col">Booking Title</th>
+          <th class="text-center" scope="col">Date</th>
+          <th class="text-center" scope="col">Seats</th>
+          <th class="text-center" scope="col">Contact</th>
+          <th class="text-center" scope="col">Username</th>
+          <th class="text-center" scope="col">Email</th>
+          <th class="text-center" scope="col" colspan="2">Options:</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for booking in bookings %}
+        {% if booking.service == "Lunch (13:00)" %}
+          <tr>
+            <td class="text-center">{{ booking.booking_title }}</td>
+            <td class="text-center">{{ booking.date }}</td>
+            <td class="text-center">{{ booking.number_of_seats }}</td>
+            <td class="text-center">{{ booking.contact_number }}</td>
+            <td class="text-center">{{ booking.username }}</td>
+            <td class="text-center">{{ booking.email }}</td>
+            <td class="text-center">
+              <a href="/edit_booking/{{ booking.id }}">
+                <button class="btn-sm btn-outline-success font-weight-bold">Change</button>
+              </a>
+            </td>
+            <td class="text-center">
+              <a href="/delete_booking/{{ booking.id }}">
+                <button class="btn-sm btn-outline-danger font-weight-bold">Delete</button>
+              </a>
+            </td>
+          </tr>
+        {% endif %}
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="container text-center responsive-width">
+    <h2 class="heading mt-5 mb-3 font-elsie pb-3">Dinner</h2>
+  </div>
+  <div class="booking_table table-responsive mx-auto">
+    <table class="table table-sm table-bordered table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th class="text-center" scope="col">Booking Title</th>
+          <th class="text-center" scope="col">Date</th>
+          <th class="text-center" scope="col">Seats</th>
+          <th class="text-center" scope="col">Contact</th>
+          <th class="text-center" scope="col">Username</th>
+          <th class="text-center" scope="col">Email</th>
+          <th class="text-center" scope="col" colspan="2">Options:</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for booking in bookings %}
+        {% if booking.service == "Dinner (19:00)" %}
+          <tr>
+            <td class="text-center">{{ booking.booking_title }}</td>
+            <td class="text-center">{{ booking.date }}</td>
+            <td class="text-center">{{ booking.number_of_seats }}</td>
+            <td class="text-center">{{ booking.contact_number }}</td>
+            <td class="text-center">{{ booking.username }}</td>
+            <td class="text-center">{{ booking.email }}</td>
+            <td class="text-center">
+              <a href="/edit_booking/{{ booking.id }}">
+                <button class="btn-sm btn-outline-success font-weight-bold">Change</button>
+              </a>
+            </td>
+            <td class="text-center">
+              <a href="/delete_booking/{{ booking.id }}">
+                <button class="btn-sm btn-outline-danger font-weight-bold">Delete</button>
+              </a>
+            </td>
+          </tr>
+        {% endif %}
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col-12 py-3 text-center">
+    <a href="{% url 'account_logout' %}">
+      <button type="button" class="button-font btn btn-outline-dark font-elsie font-weight-bold">Logout</button>
+    </a>
+  </div>
+
+{% elif user.is_authenticated and user.is_staff %}
   <div class="container text-center responsive-width">
     <h2 class="heading mt-5 mb-3 font-elsie pb-3">Lunch</h2>
   </div>
