@@ -4,7 +4,17 @@
 
 {% block content %}
 
-{% if user.is_authenticated and user.is_staff %}
+{% load crispy_forms_tags %}
+
+{% if user.is_authenticated and user.is_staff %} <!--Indent this section once done-->
+
+<div class="container form border border-dark rounded p-3">
+  <form method="Post">
+    {{ date_form|crispy }}
+    {% csrf_token %}
+    <button class="button-font btn btn-outline-dark font-elsie font-weight-bold" type="submit">View Details &raquo;</button>
+  </form>
+</div>
 
   <div class="booking_table table-responsive mx-auto">
     <table class="table table-sm table-bordered table-hover">

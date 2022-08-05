@@ -1,4 +1,5 @@
 from django import forms
+from datetime import datetime
 from allauth.account.forms import SignupForm
 from .models import BookingInformation
 
@@ -33,3 +34,11 @@ class BookingForm(forms.ModelForm):
         widgets={
             'date': DateInput(),
             }
+
+
+class DateForm(forms.Form):
+
+    select_date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date', 'min': datetime.now().date()}))
+
+    class Meta:
+        fields = ('select_date')
