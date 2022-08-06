@@ -92,7 +92,7 @@ I did this in order to have some basic structure and goals laid out which I coul
 
 ### Project Logic
 
-Once I had a basic idea of what I wanted to create, I then proceeded to draw up a flowchart in order to visualise the logic behind the functionality required for the project. This I believe will be extremely helpfull throughout production of the applicaton bby giving myself a specific plan to follow and avoid any unnecessary detours during construction.
+Once I had a basic idea of what I wanted to create, I then proceeded to draw up a flowchart in order to visualise the logic behind the functionality required for the project. This I believe will be extremely helpfull throughout production of the applicaton bby giving myself a specific plan to follow and avoid any unnecessary distractions during construction.
 
 ***Logic flowchart placeholder***
 
@@ -117,7 +117,7 @@ This is how I approached the challenge:
     - I made use of Github issues to create and manage my user stories and for future defects if they arise.
     - I also came up with user story acceptance criteria which I added to the user stories on Github issues.
     - I allocated each user story with user story points, just as good practice.
-    - A product backlog was also created using Github molestones, and managed throughout the development of the project in order to structure my development process.
+    - A product backlog was also created using Github milestones, and managed throughout the development of the project in order to structure my development process.
     - As the build developed I would make refinements to the backlog.
     - I also created an iteration milestone on Github for use in this project as a timebox.
     - I made use of MoSCow prioritization by creating labels on Github and allocating them to the relevant user stories.
