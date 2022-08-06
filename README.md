@@ -2,7 +2,9 @@
 
 ## Introduction
 
-Content here.........
+Ocean Basket Restaurant is the name of my project, it is a project showcasing the use of a fullstack toolkit that I used for creating a minimal viable product in its first iteration according to the projects users goal. The idea was to create a basic website with only the functionality to allow users to create and manage their online bookings at the restaurant with a set of user authentication designed to allow customers, floor staff and management to access various levels of information concerning the online booking application.
+
+The project is aimed at being usefull to the user by allowing customers to have full CRUD functionality concerning their bookings while interacting with their information stored in the database and allowing restaurant employees at different levels to view relevant usefull information without accessing the admin site.
 
 ## Table of Contents
 
@@ -56,14 +58,14 @@ My thinking was that given the requirements of the project, it would be very ben
 I made use of the following resources in order to plan and visualise my project, named Ocean Basket:
  - I made use of [Lucidchart](https://www.lucidchart.com/pages/) to design flowcharts in order to visualise the scope and logic of my ideas and thought processes.
  - I also made use [Lucidchart](https://www.lucidchart.com/pages/) to plan my use of Agile methodology and common practices, taught to me by Code Institute.
- - [Lucidchart](https://www.lucidchart.com/pages/) has a ERD diagram template which I used to plan Ocean Basket's models.
+ - [Lucidchart](https://www.lucidchart.com/pages/) has a ERD diagram template which I used to plan Ocean Basket's model.
  - I made use of [Balsamiq](https://balsamiq.com/) in order to create a basic wireframe design for Ocean Basket's webpages.
 
 ### Project Scope
 
-After reading the requirements for the project and the User's goal for the idea that I chose, I started working on flowcharts in order to visualise my idea and the thought processes behind it. I came up with four main categories of requirements for the project: functionality required from the application, data needed for the required functionality, data models which will store the data required and technologies that I would make use of for the construction of the project.
+After reading the requirements for the project and the User's goal for the idea that I chose, I started working on flowcharts in order to visualise my idea and the thought processes behind it. I came up with four main categories of requirements for the project: functionality required from the application, data needed for the required functionality, a data model which will store the data required and technologies that I would make use of for the construction of the project.
 
-I did this in order to have some basic structure and goals laid out which I could use as a guideline for the construction of the project and as a checklist which I could use to keep track of my progression as I proceed with the constsruction of the project.
+I did this in order to have some basic structure and goals laid out which I could use as a guideline for the construction of the project and as a checklist which I could use to keep track of my progress as I proceeded with the constsruction of the project.
 
 ***Scope flowchart placeholder***
 
@@ -75,9 +77,13 @@ I did this in order to have some basic structure and goals laid out which I coul
 
 ***Data flowchart placeholder***
 
- - My next logical step was to come up with some basic idea of how to organise and store important data in relational databases designed for different user's needs, namely clients and employees in a way that was logical as well as neccessary for the required functionality of the project. I decided two basic tables were needed, one for storing booking data and another for using some of that data in a usefull manner for various employee's needs.
+ - My next logical step was to come up with some basic idea of how to organise and store important data in a model designed for different user's needs, namely clients and employees in a way that was logical as well as neccessary for the required functionality of the project. I decided two basic tables were needed, one for storing booking data and another for using some of that data in a usefull manner for various employee's needs.
 
-***Data-table flowchart placeholder***
+ ***Data-table flowchart placeholder***
+
+ - I later decided on using only one totally custom model and adding additional fields to the standard Django Allauth forms for the additional information that I needed. This was due to my lack of understanding prior to building this project which was a steep learning curve for me concerning how I viewed Djangos functionality and stucture.
+
+***Data-table flowchart placeholder revised***
 
   - And next I had to decide on which technologies to use for the project in order to best suite it's requirements and application, I would have to use multiple languages and a MVC Framework. The languages would be HTML, CSS, Javascript and Python, and I chose Django as the Fullstack MVC framework and possibly also make use of Bootstrap for some UX and design features at a later stage.
 
