@@ -232,15 +232,59 @@ These were my guidelines for deployment:
 
 ### Models
 
-My first custom model is for storing customer booking details
+My only fully custom model is for storing customer booking details as follows:
 
 ***ERD placeholder***
 
+I extended the Django Allauth signup form to accept addtional information as required for my intended functionality.
+
+***Django allauth sign up form placeholder***
+
 ### Views
 
-1. Create view code
-2. create template to render the view
-3. connect up to our URL's 
+1. HomePage
+
+- Get function:
+  - Render template `index.html`.
+
+2. CreateBooking
+
+- Get Function:
+  - Extract `BookingForm` from `forms.py`.
+  - Render template`create_booking.html`.
+
+- Post Function:
+  - Capture users username and allocate to `BookingForm`.
+  - Save data if form is valid.
+  - Render template `view_booking.html`.
+
+3. ViewBooking
+
+- Get function:
+  - Extract booking details from `BookingInformation` model.
+  - Render template `view_booking.html`
+
+4. EditBooking
+
+- Get Function:
+  - Capture the booking ID for the selected booking data.
+  - Render template`edit_booking.html` with `BookingForm` displaying the data related to the booking ID.
+
+- Post Function:
+  - if the form is valid then use the booking ID to update the correct data in the `BookingInformation` model.
+  - Render template `view_booking.html` with updated data.
+
+5. DeleteBooking
+
+- Get Function:
+  - Capture the booking ID for the selected booking data.
+  - Render template`view_booking.html` with updated data.
+
+5. DeleteBooking
+
+- Get Function:
+  - Capture the current days date.
+  - Render template`view_booking.html`.
 
 ### Templates
 
