@@ -288,8 +288,57 @@ I extended the Django Allauth signup form to accept addtional information as req
 
 ### Templates
 
-1. Base.html
-2. Index.html
+#### Django Allauth Templates
+
+1. account/login.html
+
+  - Displays a customised version of the original form using custom styling and Django Crispy forms in order to provide a better UX and allowing the user to log in to the site.
+
+
+2. account/logout.html
+
+  - Displays a customised version of the original form using custom styling and Django Crispy forms in order to provide a better UX and allowing the user to log out of the site.
+
+2. account/signup.html
+
+  - Displays a customised version of the original form using custom styling and Django Crispy forms in order to provide a better UX and allow a new user to register as a user on the site.
+  - I added additional fields for the user to add their first and last names to the form by creating the `CustomSignupForm` in forms.py.
+
+#### Project Custom Templates
+
+1. base.html
+
+  - This is a template which contains all document elements, head element, header element, footer element, link elements and script elements which all other templates will use and extend from.
+
+2. create_booking.html
+
+  - If the user is authenticated then this template will display the `BookingForm` from `forms.py` in order for the user to input all the required data needed in order to create a booking.
+  - If not authenticated then the user will be displayed an alternate display allowing the user to sign up or sign in.
+
+3. edit_booking.html
+
+  - This template will display the user with the `BookingForm` from `forms.py` related to the captured booking ID and prepopulated it with the relevant booking data in order for the user to review and make changes where neccessary.
+
+4. index.html
+
+  - If the user is logged in as the Store Manager then the template will display a simple landing page with buttons allowing the user to either view a detailed view of the days bookings or to log out of the site.
+  
+  - If the user is logged in as a normal employee then the template will display a simple landing page with buttons allowing the user to either view the days bookings or to log out of the site.
+
+  - If the user is logged in as a normal user(customer), then the template will display the users first and last names with buttons allowing the user to either make a booking, manage their bookings or log out of the site.
+
+  - If the user has not yet been authenticated then a basic landing page will be displayed with a welcome message notifying the user that online bookings are now available and presenting the user with buttons to either register(signup) or login to the site.
+
+
+4. view_booking.html
+
+  - If the user is logged in as the Store Manager then the template will display 2 tables containing the days bookings with more detailed information than a normal employee, for the 2 services at the restaurant with a button allowing the user to log out of the site once done.
+  
+  - If the user is logged in as a normal employee then the template will display 2 tables containing the days bookings with less details than the store manager, for the 2 services at the restaurant with a button allowing the user to log out of the site once done.
+
+  - If the user is logged in as a normal user(customer), then the template will display a table containing only their bookings to date with buttons allowing the user to either make a new booking or log out of the site.
+
+  - If the user has not yet been authenticated then a basic page will be displayed the user with buttons to either register(signup) or login to the site.
 
 ## Access Control
 
