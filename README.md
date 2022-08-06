@@ -132,15 +132,15 @@ This is my diagram of my Agile methodology used for this project:
 After completing the basic conception of my idea and designing some basic structure to it, I then proceeded to setting up my IDE for the project using the steps recommended by Code Institute, namely:
 1. Install Django and supported libraries
 2. Create new Django project and app
-3. Deploy project to Heroku --- 4)??
-4. Set project to use Cloudinary and PostgreSQL --- 3)??
+3. Deploy project to Heroku
+4. Set project to use Cloudinary and PostgreSQL
 
 ### Installing Django and supporting libraries
 
 1. Install Django version 3.2 which is the Long Term Support version of Django and recommended by Code Institute for the use on our projects.
 2. Installed gunicorn as the server to run Django on Heroku.
-3. I Installed the supporting libraries, dj_database_url and psycopg2 in order to run PostgreSQL!!!!!!!!SQLite3.
-4. Installed supporting library , in order to run cloudinary as storage for the project's images (dj3-cloudinary-storage)????
+3. I Installed the supporting libraries, dj_database_url and psycopg2 in order to run PostgreSQL (SQLite3 as per Django documentation).
+4. Installed supporting library , in order to run cloudinary as storage for the project's images.
 
 ### Create new Django project and app
 
@@ -226,7 +226,7 @@ These were my guidelines for deployment:
 ## Deployment Testing
 
 1. Once the app was successfully built and deployed, I then clicked on the view button and viewed the app in order to test if the initial deployment was successfull.
-2. On the initial deployment my CSS link in base.html did not work with Heroku as it was a link using Django template language, I replaced it with a standard HTML link element to get the CSS woking as intended on the deployed page.
+2. Before fianl deployment testing I set the `DEBUG` value in `settings.py` to `False` and removed the key of `DATABASE_COLLECT_STATIC` and its value of `1` from the Heroku apps configaration variables.
 
 ## MVT Architecture
 
