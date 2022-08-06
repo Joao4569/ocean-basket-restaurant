@@ -5,14 +5,14 @@
 {% if user.is_authenticated and user.is_staff and user.username == "StoreManager" %}
 
   <div class="container text-center responsive-width">
-    <h2 class="heading mt-5 mb-3 font-elsie">Welcome Store MAnager</h2>
+    <h2 class="heading mt-5 mb-3 font-elsie">Welcome Store Manager</h2>
   </div>
 
   <div class="container w-50 my-5">
     <div class="row text-center">
       <div class="col-12 col-lg-6 py-3">
         <a href="view_booking_employee/">
-          <button type="button" class="button-font btn btn-outline-dark font-elsie font-weight-bold">View Today's Bookings</button>
+          <button type="button" class="button-font btn btn-outline-dark font-elsie font-weight-bold">Today's Bookings</button>
         </a>
       </div>
       <div class="col-12 col-lg-6 py-3">
@@ -33,7 +33,7 @@
     <div class="row text-center">
       <div class="col-12 col-lg-6 py-3">
         <a href="view_booking_employee/">
-          <button type="button" class="button-font btn btn-outline-dark font-elsie font-weight-bold">View Today's Bookings</button>
+          <button type="button" class="button-font btn btn-outline-dark font-elsie font-weight-bold">Today's Bookings</button>
         </a>
       </div>
       <div class="col-12 col-lg-6 py-3">
@@ -53,17 +53,17 @@
 
   <div class="container w-50 my-5">
     <div class="row text-center">
-      <div class="col-12 col-lg-4 py-3">
+      <div class="col-12 py-3">
         <a href="create_booking/">
           <button type="button" class="button-font btn btn-outline-dark font-elsie font-weight-bold">Make a booking</button>
         </a>
       </div>
-      <div class="col-12 col-lg-4 py-3">
+      <div class="col-12 py-3">
         <a href="view_booking/">
           <button type="button" class="button-font btn btn-outline-dark font-elsie font-weight-bold">Manage Bookings</button>
         </a>
       </div>
-      <div class="col-12 col-lg-4 py-3">
+      <div class="col-12 py-3">
         <a href="{% url 'account_logout' %}">
           <button type="button" class="button-font btn btn-outline-dark font-elsie font-weight-bold">Logout</button>
         </a>
