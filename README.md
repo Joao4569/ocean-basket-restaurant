@@ -219,7 +219,8 @@ These were my guidelines for deployment:
 
 ## Deployment Testing
 
-Once the app was successfully built and deployed, I then clicked on the view button and viewed the app in order to test if the initial deployment was successfull.
+1. Once the app was successfully built and deployed, I then clicked on the view button and viewed the app in order to test if the initial deployment was successfull.
+2. On the initial deployment my CSS link in base.html did not work with Heroku as it was a link using Django template language, I replaced it with a standard HTML link element to get the CSS woking as intended on the deployed page.
 
 ## MVT Architecture
 
