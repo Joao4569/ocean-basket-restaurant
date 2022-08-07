@@ -53,10 +53,10 @@ The project is aimed at being usefull to the user by allowing customers to have 
 
 ## Conception
 
-My thinking was that given the requirements of the project, it would be very beneficial to formulate some kind of plan which would lay out the basic scope, logic and design of my project in order to have some kind of structure with which to work with in order to avoid missing any crucial steps during construction and make the whole construction process as efficient as possible.
+My thinking was that given the requirements of the project, it would be very beneficial to formulate some kind of plan which would lay out the basic scope and design of my project in order to have some kind of structure with which to work with in order to avoid missing any crucial steps during construction and make the whole construction process as efficient as possible.
 
 I made use of the following resources in order to plan and visualise my project, named Ocean Basket:
- - I made use of [Lucidchart](https://www.lucidchart.com/pages/) to design flowcharts in order to visualise the scope and logic of my ideas and thought processes.
+ - I made use of [Lucidchart](https://www.lucidchart.com/pages/) to design flowcharts in order to visualise the scope of my ideas and thought processes.
  - I also made use [Lucidchart](https://www.lucidchart.com/pages/) to plan my use of Agile methodology and common practices, taught to me by Code Institute.
  - [Lucidchart](https://www.lucidchart.com/pages/) has a ERD diagram template which I used to plan Ocean Basket's model.
  - I made use of [Balsamiq](https://balsamiq.com/) in order to create a basic wireframe design for Ocean Basket's webpages.
@@ -67,35 +67,25 @@ After reading the requirements for the project and the User's goal for the idea 
 
 I did this in order to have some basic structure and goals laid out which I could use as a guideline for the construction of the project and as a checklist which I could use to keep track of my progress as I proceeded with the constsruction of the project.
 
-***Scope flowchart placeholder***
+![scope](static/images/readme/diagrams/scope.png)
 
  - Functionality was divided into two categories. The first was for functionality that was needed in order to meet the clients requirements as per the User's goal, labeled as "Must have's" in red, and the second was for functionality that I thought may be useful for the business and also logical next steps after meeting the basic requirements of the project, labelled as "Could have's" in green.
 
-***Functionality flowchart placeholder***
+![scope-functionality](static/images/readme/diagrams/scope-functionality.png)
 
  - I divided Data into three categories which made up different entities that needed data attributed to them in order for the business logic behind the project to make sense to a client and owner, in a real world situation, given the requirements of the project and it's goal.
 
-***Data flowchart placeholder***
+![scope-data](static/images/readme/diagrams/scope-data.png)
 
  - My next logical step was to come up with some basic idea of how to organise and store important data in a model designed for different user's needs, namely clients and employees in a way that was logical as well as neccessary for the required functionality of the project. I decided two basic tables were needed, one for storing booking data and another for using some of that data in a usefull manner for various employee's needs.
 
- ***Data-table flowchart placeholder***
-
  - I later decided on using only one totally custom model and adding additional fields to the standard Django Allauth forms for the additional information that I needed. This was due to my lack of understanding prior to building this project which was a steep learning curve for me concerning how I viewed Djangos functionality and stucture.
 
-***Data-table flowchart placeholder revised***
+ ![scope-models](static/images/readme/diagrams/scope-models.png)
 
   - And next I had to decide on which technologies to use for the project in order to best suite it's requirements and application, I would have to use multiple languages and a MVC Framework. The languages would be HTML, CSS, Javascript and Python, and I chose Django as the Fullstack MVC framework and possibly also make use of Bootstrap for some UX and design features at a later stage.
 
-***Technologies flowchart placeholder***
-
-
-### Project Logic
-
-Once I had a basic idea of what I wanted to create, I then proceeded to draw up a flowchart in order to visualise the logic behind the functionality required for the project. This I believe will be extremely helpfull throughout production of the applicaton bby giving myself a specific plan to follow and avoid any unnecessary distractions during construction.
-
-***Logic flowchart placeholder***
-
+![scope-technologies](static/images/readme/diagrams/scope-technologies.png)
 
 ### Basic Wireframe Design
 
@@ -125,7 +115,17 @@ This is how I approached the challenge:
 
 This is my diagram of my Agile methodology used for this project:
 
-***Agile wireframe placeholder***
+![agile](static/images/readme/diagrams/agile.png)
+
+![agile](static/images/readme/diagrams/agile-user-goal.png)
+
+![agile](static/images/readme/diagrams/agile-themes.png)
+
+![agile](static/images/readme/diagrams/agile-epics.png)
+
+![agile](static/images/readme/diagrams/agile-user-stories.png)
+
+![agile](static/images/readme/diagrams/agile-tasks.png)
 
 ## Project Setup
 
@@ -226,132 +226,286 @@ These were my guidelines for deployment:
 ## Deployment Testing
 
 1. Once the app was successfully built and deployed, I then clicked on the view button and viewed the app in order to test if the initial deployment was successfull.
+
+![django-deploy-success](static/images/readme/testing/django-deploy-test.png)
+
 2. Before fianl deployment testing I set the `DEBUG` value in `settings.py` to `False` and removed the key of `DATABASE_COLLECT_STATIC` and its value of `1` from the Heroku apps configaration variables.
+
+# Features - Existing Features
 
 ## MVT Architecture
 
 ### Models
 
-My only fully custom model is for storing customer booking details as follows:
+My only fully custom model is for storing customer booking information as follows:
 
-***ERD placeholder***
+![erd](static/images/readme/diagrams/erd.png)
 
-I extended the Django Allauth signup form to accept addtional information as required for my intended functionality.
+I extended the Django Allauth signup form to accept addtional information as required for my intended functionality, namely to ask for the users first and last names.
 
-***Django allauth sign up form placeholder***
+![signup](static/images/readme/screenshots/signup.png)
 
 ### Views
 
-1. HomePage
+1. #### HomePage
 
-- Get function:
+- **Get function:**
   - Render template `index.html`.
 
 2. CreateBooking
 
-- Get Function:
+- **Get Function:**
   - Extract `BookingForm` from `forms.py`.
   - Render template`create_booking.html`.
 
-- Post Function:
+- **Post Function:**
   - Capture users username and allocate to `BookingForm`.
   - Save data if form is valid.
   - Render template `view_booking.html`.
 
 3. ViewBooking
 
-- Get function:
+- **Get function:**
   - Extract booking details from `BookingInformation` model.
   - Render template `view_booking.html`
 
 4. EditBooking
 
-- Get Function:
+- **Get Function:**
   - Capture the booking ID for the selected booking data.
   - Render template`edit_booking.html` with `BookingForm` displaying the data related to the booking ID.
 
-- Post Function:
+- **Post Function:**
   - if the form is valid then use the booking ID to update the correct data in the `BookingInformation` model.
   - Render template `view_booking.html` with updated data.
 
 5. DeleteBooking
 
-- Get Function:
+- **Get Function:**
   - Capture the booking ID for the selected booking data.
   - Render template`view_booking.html` with updated data.
 
-5. DeleteBooking
+5. ViewBookingEmployee
 
-- Get Function:
+- **Get Function:**
   - Capture the current days date.
   - Render template`view_booking.html`.
 
 ### Templates
 
+This is a list of all the templates with their screenshots and the relevant lighthouse tests for desktop and mobile. All the lighthouse test results for best practices have the same issue, due to vulnerabilities in the loaded bootstrap framework. The framework and version thereof is what was recommended by Code Institute.
+
 #### Django Allauth Templates
 
-1. account/login.html
+**1.account/login.html**
 
   - Displays a customised version of the original form using custom styling and Django Crispy forms in order to provide a better UX and allowing the user to log in to the site.
 
+  **Screenshot**
 
-2. account/logout.html
+  ![login](static/images/readme/screenshots/login.png)
+
+  **Lighthouse Desktop**
+
+  ![login-desk](static/images/readme/screenshots/login-desk.png)
+
+  **Lighthouse Mobile**
+
+  ![login-mobile](static/images/readme/screenshots/login-mob.png)
+
+**2.account/logout.html**
 
   - Displays a customised version of the original form using custom styling and Django Crispy forms in order to provide a better UX and allowing the user to log out of the site.
 
-2. account/signup.html
+  **Screenshot**
+
+  ![logout](static/images/readme/screenshots/logout.png)
+
+  **Lighthouse Desktop**
+
+  ![logout-desk](static/images/readme/screenshots/logout-desk.png)
+
+  **Lighthouse Mobile**
+
+  ![logout-mobile](static/images/readme/screenshots/logout-mob.png)
+
+**3.account/signup.html**
 
   - Displays a customised version of the original form using custom styling and Django Crispy forms in order to provide a better UX and allow a new user to register as a user on the site.
   - I added additional fields for the user to add their first and last names to the form by creating the `CustomSignupForm` in forms.py.
 
+  **Screenshot**
+
+  ![signup](static/images/readme/screenshots/signup.png)
+
+  **Lighthouse Desktop**
+
+  ![signup-desk](static/images/readme/screenshots/signup-desk.png)
+
+  **Lighthouse Mobile**
+
+  ![signup-mobile](static/images/readme/screenshots/signup-mob.png)
+
 #### Project Custom Templates
 
-1. base.html
+**1.base.html**
 
   - This is a template which contains all document elements, head element, header element, footer element, link elements and script elements which all other templates will use and extend from.
 
-2. create_booking.html
+**2.create_booking.html**
 
   - If the user is authenticated then this template will display the `BookingForm` from `forms.py` in order for the user to input all the required data needed in order to create a booking.
   - If not authenticated then the user will be displayed an alternate display allowing the user to sign up or sign in.
 
-3. edit_booking.html
+  **Screenshot**
+
+  ![create](static/images/readme/screenshots/create.png)
+
+  **Lighthouse Desktop**
+
+  ![create-desk](static/images/readme/screenshots/create-desk.png)
+
+  **Lighthouse Mobile**
+
+  ![create-mobile](static/images/readme/screenshots/create-mob.png)
+
+**3.edit_booking.html**
 
   - This template will display the user with the `BookingForm` from `forms.py` related to the captured booking ID and prepopulated it with the relevant booking data in order for the user to review and make changes where neccessary.
 
-4. index.html
+
+
+**4.index.html**
 
   - If the user is logged in as the Store Manager then the template will display a simple landing page with buttons allowing the user to either view a detailed view of the days bookings or to log out of the site.
+
+  **Screenshot**
+
+  ![index-manager](static/images/readme/screenshots/index-manager.png)
+
+  **Lighthouse Desktop**
+
+  ![index-manager-desk](static/images/readme/screenshots/index-manager-desk.png)
+
+  **Lighthouse Mobile**
+
+  ![index-manager-mobile](static/images/readme/screenshots/index-manager-mob.png)
   
   - If the user is logged in as a normal employee then the template will display a simple landing page with buttons allowing the user to either view the days bookings or to log out of the site.
 
+  **Screenshot**
+
+  ![index-employee](static/images/readme/screenshots/index-employee.png)
+
+  **Lighthouse Desktop**
+
+  ![index-employee-desk](static/images/readme/screenshots/index-employee-desk.png)
+
+  **Lighthouse Mobile**
+
+  ![index-employee-mobile](static/images/readme/screenshots/index-employee-mob.png)
+
   - If the user is logged in as a normal user(customer), then the template will display the users first and last names with buttons allowing the user to either make a booking, manage their bookings or log out of the site.
+
+  **Screenshot**
+
+  ![index-customer](static/images/readme/screenshots/index-customer.png)
+
+  **Lighthouse Desktop**
+
+  ![index-customer-desk](static/images/readme/screenshots/index-customer-desk.png)
+
+  **Lighthouse Mobile**
+
+  ![index-customer-mobile](static/images/readme/screenshots/index-customer-mob.png)
 
   - If the user has not yet been authenticated then a basic landing page will be displayed with a welcome message notifying the user that online bookings are now available and presenting the user with buttons to either register(signup) or login to the site.
 
+  **Screenshot**
+
+  ![index](static/images/readme/screenshots/index.png)
+
+  **Lighthouse Desktop**
+
+  ![index-desk](static/images/readme/screenshots/index-desk.png)
+
+  **Lighthouse Mobile**
+
+  ![index-mobile](static/images/readme/screenshots/index-mob.png)
 
 4. view_booking.html
 
-  - If the user is logged in as the Store Manager then the template will display 2 tables containing the days bookings with more detailed information than a normal employee, for the 2 services at the restaurant with a button allowing the user to log out of the site once done.
-  
-  - If the user is logged in as a normal employee then the template will display 2 tables containing the days bookings with less details than the store manager, for the 2 services at the restaurant with a button allowing the user to log out of the site once done.
+  - If the user is logged in as the Store Manager then the template will display 2 tables containing the days bookings(current day) with more detailed information than a normal employee, for the 2 services at the restaurant with a button allowing the user to log out of the site once done.
 
-  - If the user is logged in as a normal user(customer), then the template will display a table containing only their bookings to date with buttons allowing the user to either make a new booking or log out of the site.
+  **Screenshot**
+
+  ![view-manager](static/images/readme/screenshots/view-manager.png)
+
+  **Lighthouse Desktop**
+
+  ![view-manager-desk](static/images/readme/screenshots/view-manager-desk.png)
+
+  **Lighthouse Mobile**
+
+  ![view-manager-mobile](static/images/readme/screenshots/view-manager-mob.png)
+  
+  - If the user is logged in as a normal employee then the template will display 2 tables containing the days bookings(current day) with less details than the store manager, for the 2 services at the restaurant with a button allowing the user to log out of the site once done.
+
+  **Screenshot**
+
+  ![view-employee](static/images/readme/screenshots/view-employee.png)
+
+  **Lighthouse Desktop**
+
+  ![view-employee-desk](static/images/readme/screenshots/view-employee-desk.png)
+
+  **Lighthouse Mobile**
+
+  ![view-employee-mobile](static/images/readme/screenshots/view-employee-mob.png)
+
+  - If the user is logged in as a normal user(customer), then the template will display a table containing only their bookings to date including coloured buttons for editing or deleting bookings, and with buttons allowing the user to either make a new booking or log out of the site.
+
+  **Screenshot**
+
+  ![view](static/images/readme/screenshots/view.png)
+
+  **Lighthouse Desktop**
+
+  ![view-desk](static/images/readme/screenshots/view-desk.png)
+
+  **Lighthouse Mobile**
+
+  ![view-mobile](static/images/readme/screenshots/view-mob.png)
 
   - If the user has not yet been authenticated then a basic page will be displayed the user with buttons to either register(signup) or login to the site.
 
 ## Access Control
 
-I created a superuser in order to access the admin functions with the following credentials:
- - Username: **AdminSuper**
- - Password: **OceanBasketSuper**
+I have created a few users which will be helpfull for testing the project:
 
+**Superuser**
 
-## Features
+I created a Superuser in order to access the admin functions of Django. The Superuser is also what I use to create employees, as it is now a new employee can register his or her self the same way as a customer and with the Superuser logged in, one can allocate the "is Staff" property on the admin site.
 
-### Existing Features
+ Credentials:
+   - Username: **AdminSuper**
+   - Password: **OceanBasketSuper**
 
-- __The Landing Page__
+**Store Manager**
+
+This store manager I created is a universal store manager user which can access more detailed information for the current days bookings via the application in order to be able to access customers contact details if needed for managerial purposes. This username can be allocated a new password if a new store manager is employed, this allocation must be done by the superuser.
+
+Credentials:
+   - Username: **StoreManager**
+   - Password: **Joao4569**
+
+**Floor Staff**
+
+This employee I created is a universal position for any floor staff which can access basic information for the current days bookings via the application in order to plan for the days services and group numbers.
+
+Credentials:
+   - Username: **FloorStaff**
+   - Password: **OceanBasketStaff**
 
 ### Features Left to Implement
 
@@ -367,16 +521,14 @@ I created a superuser in order to access the admin functions with the following 
 - After creating the base.html and index.html I manually tested if the templates rendered as expected.
 - Once the custom CSS file was created, I did a manual test by changing the colour of the text in order to test if it is working as intended, no errors found.
 - Throughout development I made many manual tests using Google developer tools in order to test for responsiveness and visual appeal in order to have a successfull UX design.
+- I made use of the Lighthouse features in Google developer tools in order to test all templates.
 - I tested my various HTML templates manually buy creating test headings when each file was created in order to test if their URL's were wired up correctly.
 - Once Django-allauth authentication was added, I tested it buy manually typing in the the URL's and testing if they would direct and re-direct as I expected.
 - Once I installed crispy forms I also did manual testing of all the current forms in order to test if all forms were behaving as expected.
 - Once custom fields were added to the standard Django allauth Signup form, I procedeeded with manually signing up and seeing if the extra fields were captured by the application.
 - All form redirects and associated linking of buttons were tested for the expected functionality.
 - After creating a basic table with the logged in users booking, I made use of the built in Django admin panel to create users and test if the data for the tables were displaying as intended i.e. only the logged in users data displayed and if there is no data then an alternate message will display.
-
-- Found bug 
-  - **Resolved** 
-- Sourced most common media breakpoint widths on [www.freecodecamp.org](https://www.freecodecamp.org/news/css-media-queries-breakpoints-media-types-standard-resolutions-and-more/.) and made the site responsive down to minimum width of 320 pixels.
+- I Sourced most common media breakpoint widths on [www.freecodecamp.org](https://www.freecodecamp.org/news/css-media-queries-breakpoints-media-types-standard-resolutions-and-more/.) and made the site responsive down to minimum width of 320 pixels.
   - Mobile devices: 320px — 480px
   - iPads, Tablets: 481px — 768px
   - Small screens, laptops: 769px — 1024px
@@ -384,7 +536,7 @@ I created a superuser in order to access the admin functions with the following 
   - Extra large screens, TV: 1201px and more
 - Made use of Chrome developer tools for previewing and testing new designs for media queries as well as UX aspects.
 - I have tested all buttons and links, they are all acting as intended.
-- I found a bug with how I used Django template language, instead of using `(list name)|length` I used `(list name).length`.
+- I found a bug with how I used Django template language, instead of using `(list name)|length` I used `(list name).length`. **Resolved**
 
 ### Validator Testing
 
@@ -405,8 +557,5 @@ I created a superuser in order to access the admin functions with the following 
  - Code for adding custom fields to standard Django Allauth signup form taken from [GeeksforGeeks.org](https://www.geeksforgeeks.org/python-extending-and-customizing-django-allauth/).
  - Recommendation for contact number form field taken from [stackoverflow](https://stackoverflow.com/questions/15465356/django-storing-mobile-number-what-field-to-use).
  - I learned how to implement a choices field in a form from [stackoverflow](https://stackoverflow.com/questions/18676156/how-to-properly-use-the-choices-field-option-in-django).
-
-
-
 
 ### Media
