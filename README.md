@@ -90,7 +90,39 @@ I did this in order to have some basic structure and goals laid out which I coul
 
 Once I had the basic scope and logic in place, I then proceeded to design a visual representation of what is needed for the basic functionality of the project from a user's point of view and how I would represent that.
 
-***Wireframe placeholder***
+![wireframe1](static/images/readme/wireframe/wireframe1.png)
+
+![wireframe2](static/images/readme/wireframe/wireframe2.png)
+
+![wireframe3](static/images/readme/wireframe/wireframe3.png)
+
+![wireframe4](static/images/readme/wireframe/wireframe4.png)
+
+![wireframe5](static/images/readme/wireframe/wireframe5.png)
+
+![wireframe6](static/images/readme/wireframe/wireframe6.png)
+
+![wireframe7](static/images/readme/wireframe/wireframe7.png)
+
+![wireframe8](static/images/readme/wireframe/wireframe8.png)
+
+![wireframe9](static/images/readme/wireframe/wireframe9.png)
+
+![wireframe10](static/images/readme/wireframe/wireframe10.png)
+
+![wireframe11](static/images/readme/wireframe/wireframe11.png)
+
+![wireframe12](static/images/readme/wireframe/wireframe12.png)
+
+![wireframe13](static/images/readme/wireframe/wireframe13.png)
+
+![wireframe14](static/images/readme/wireframe/wireframe14.png)
+
+![wireframe15](static/images/readme/wireframe/wireframe15.png)
+
+![wireframe16](static/images/readme/wireframe/wireframe16.png)
+
+![wireframe17](static/images/readme/wireframe/wireframe17.png)
 
 ### Agile
 
@@ -111,6 +143,8 @@ This is how I approached the challenge:
     - I also created an iteration milestone on Github for use in this project as a timebox.
     - I made use of MoSCow prioritization by creating labels on Github and allocating them to the relevant user stories.
     - I created a Kanban board for use as an information radiator in this project by using "projects" on Github.
+
+    ![kanban](static/images/readme/kanban/kanban.png)
 
 This is my diagram of my Agile methodology used for this project:
 
@@ -372,7 +406,17 @@ This is a list of all the templates with their screenshots and the relevant ligh
 
   - This template will display the user with the `BookingForm` from `forms.py` related to the captured booking ID and prepopulated it with the relevant booking data in order for the user to review and make changes where neccessary.
 
+  **Screenshot**
 
+  ![edit](static/images/readme/screenshots/edit.png)
+
+  **Lighthouse Desktop**
+
+  ![edit-desk](static/images/readme/screenshots/edit-desk.png)
+
+  **Lighthouse Mobile**
+
+  ![edit-mobile](static/images/readme/screenshots/edit-mob.png)
 
 **4.index.html**
 
@@ -478,6 +522,18 @@ This is a list of all the templates with their screenshots and the relevant ligh
 
   - If the user has not yet been authenticated then a basic page will be displayed the user with buttons to either register(signup) or login to the site.
 
+  **Screenshot**
+
+  ![view-unauthorised](static/images/readme/screenshots/view-unauthorised.png)
+
+  **Lighthouse Desktop**
+
+  ![view-unauthorised-desk](static/images/readme/screenshots/view-unauthorised-desk.png)
+
+  **Lighthouse Mobile**
+
+  ![view-unauthorised-mobile](static/images/readme/screenshots/view-unauthorised-mob.png)
+
 ## Access Control
 
 I have created a few users which will be helpfull for testing the project:
@@ -536,6 +592,7 @@ Credentials:
 - Made use of Chrome developer tools for previewing and testing new designs for media queries as well as UX aspects.
 - I have tested all buttons and links, they are all acting as intended.
 - I found a bug with how I used Django template language, instead of using `(list name)|length` I used `(list name).length`. **Resolved**
+- Tested all links in Readme.md - all working as expected.
 
 ## Validator Testing
 
