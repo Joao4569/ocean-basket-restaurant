@@ -20,10 +20,14 @@ from online_booking import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.HomePage.as_view(), name='Home'),
-    path('create_booking/', views.CreateBooking.as_view(), name='Create Booking'),
+    path('create_booking/', views.CreateBooking.as_view(),
+         name='Create Booking'),
     path('accounts/', include('allauth.urls')),
     path('view_booking/', views.ViewBooking.as_view(), name='View Booking'),
-    path('edit_booking/<booking_id>', views.EditBooking.as_view(), name='Edit Booking'),
-    path('delete_booking/<booking_id>', views.DeleteBooking.as_view(), name='Delete Booking'),
-    path('view_booking_employee/', views.ViewBookingEmployee.as_view(), name='View Day Bookings'),
+    path('edit_booking/<booking_id>', views.EditBooking.as_view(),
+         name='Edit Booking'),
+    path('delete_booking/<booking_id>', views.DeleteBooking.as_view(),
+         name='Delete Booking'),
+    path('view_booking_employee/', views.ViewBookingEmployee.as_view(),
+         name='View Day Bookings'),
 ]

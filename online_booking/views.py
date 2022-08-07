@@ -1,21 +1,24 @@
+"""Import required object classes needed for views to function as intended
+i.e. render views, get objects,get model and get form"""
+from datetime import date
 from django.shortcuts import render, get_object_or_404
 from django.views import View
-from datetime import date
 from .forms import BookingForm
 from .models import BookingInformation
 
 
 class HomePage(View):
-    """This function will display the home page"""
+    """This will display the home view"""
     def get(self, request):
-        """This function will display the home page"""
+        """This function will handle get requests for this view"""
         return render(request, "online_booking/index.html")
 
 
 class CreateBooking(View):
-
+    """This will display the create booking view"""
     def get(self, request):
-        """This function will display the registration page"""
+        """This function will handle get requests for this view
+        and allocate the form to render"""
         booking_form = {
                 "booking_form": BookingForm()
             }
@@ -27,6 +30,9 @@ class CreateBooking(View):
         )
 
     def post(self, request):
+        """This function will handle post requests for this view, allocate
+        which form to render, specify what to do if the form is valid and
+        what information to send to the template as its context"""
         booking_form = BookingForm(data=request.POST)
 
         if booking_form.is_valid():
@@ -41,15 +47,16 @@ class CreateBooking(View):
         }
 
         return render(request,
-            "online_booking/view_booking.html", context
-        )
+                      "online_booking/view_booking.html", context
+                      )
 
 
 class ViewBooking(View):
-    """This function will display the home page"""
+    """This will display the view booking view"""
 
     def get(self, request):
-        """This function will display the home page"""
+        """This function will handle post requests for this view
+        and what information to send to the template as its context"""
         bookings = BookingInformation.objects.all()
         context = {
             'bookings': bookings
@@ -58,16 +65,22 @@ class ViewBooking(View):
 
 
 class EditBooking(View):
-    """This function will display the edit booking page"""
+    """This will display the create booking view"""
     def get(self, request, booking_id):
-        """This function will display the home page"""
-        booking_identifier = get_object_or_404(BookingInformation, id=booking_id) #Change variable name !! EVERYWHERE!!!
+        """This function will handle get requests for this view, allocate
+        a booking entry identifier and allocate which form to render as
+        well as allocate which entry to edit"""
+        booking_identifier = get_object_or_404(BookingInformation,
+                                               id=booking_id)
         edit_form = {
                 "edit_form": BookingForm(instance=booking_identifier)
             }
         return render(request, "online_booking/edit_booking.html", edit_form)
 
     def post(self, request, booking_id):
+        """This function will handle post requests for this view, allocate
+        which form to render, specify what to do if the form is valid and
+        what information to send to the template as its context"""
         edit_form = BookingForm(data=request.POST)
 
         if edit_form.is_valid():
@@ -91,8 +104,11 @@ class EditBooking(View):
 class DeleteBooking(View):
     """This view will allow the user to delete his booking"""
     def get(self, request, booking_id):
-        """This function will display the home page"""
-        booking_identifier = get_object_or_404(BookingInformation, id=booking_id)
+        """This function will handle get requests for this view, allocate
+        a booking entry identifier, allocate which entry to delete and
+        what information to send to the template"""
+        booking_identifier = get_object_or_404(BookingInformation,
+                                               id=booking_id)
         booking_identifier.delete()
 
         bookings = BookingInformation.objects.all()
@@ -117,5 +133,3 @@ class ViewBookingEmployee(View):
             'bookings': bookings,
         }
         return render(request, "online_booking/view_booking.html", context)
-
-

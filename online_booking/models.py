@@ -1,12 +1,12 @@
 """
-Import models folder in order to create tables for our database
-"""
+Import models class from Django database object in order
+to create tables for our database"""
 from django.db import models
 
 
 class BookingInformation(models.Model):
     """
-    Create a database model for storing online booking details
+    Create a custom database model for storing online booking details
     """
     # Choices field for selection of service taken from stackoverflow
     LUNCH = 'Lunch (13:00)'
@@ -29,6 +29,6 @@ class BookingInformation(models.Model):
 
     def __str__(self):
         """This will modify the standard Django string method for
-        personalisation"""
+        personalisation on admin site"""
         return (f'{self.booking_title} {self.contact_number} table for '
                 f'{self.number_of_seats} on {self.date}')
