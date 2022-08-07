@@ -597,6 +597,7 @@ Features left to implement can be found on the repositories issues under the Pro
 - I have tested all buttons and links, they are all acting as intended.
 - I found a bug with how I used Django template language, instead of using `(list name)|length` I used `(list name).length`. **Resolved**
 - Tested all links in Readme.md - all working as expected.
+- All url's and views were tested continously by myself in order to confirm they all worked as intended.
 
 ## Validator Testing
 
@@ -717,4 +718,5 @@ None that I am aware of.
  - Code for adding custom fields to standard Django Allauth signup form taken from [GeeksforGeeks.org](https://www.geeksforgeeks.org/python-extending-and-customizing-django-allauth/).
  - Recommendation for contact number form field taken from [stackoverflow](https://stackoverflow.com/questions/15465356/django-storing-mobile-number-what-field-to-use).
  - I learned how to implement a choices field in a form from [stackoverflow](https://stackoverflow.com/questions/18676156/how-to-properly-use-the-choices-field-option-in-django).
+ - Method for adding a date picker widget taken from [stackoverflow](https://stackoverflow.com/questions/3367091/whats-the-cleanest-simplest-to-get-running-datepicker-in-django)
 

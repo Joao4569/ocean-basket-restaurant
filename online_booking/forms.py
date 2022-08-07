@@ -29,7 +29,9 @@ class DateInput(forms.DateInput):
 
 
 class BookingForm(forms.ModelForm):
-    """This will import the fields from the BookingForm model"""
+    """This will import the fields from the BookingForm model
+    (method for creating date picker widget taken from
+    stackoverflow - credited in readme"""
     class Meta:
         """This will set the Meta variables needed for the custom
         form to display as required"""
