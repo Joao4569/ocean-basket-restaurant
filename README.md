@@ -596,7 +596,8 @@ Credentials:
 
 ## Validator Testing
 
-- Made use of the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/) for the CSS file and the official [W3C validator](https://validator.w3.org/) for all HTML file testing.
+- I Made use of the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/) for the CSS file and the official [W3C validator](https://validator.w3.org/) for all HTML file testing.
+- I made use of [PEP8 online checker](http://pep8online.com/) to validate all python code.
 
 ### Initial Validator Tests
 
@@ -624,6 +625,30 @@ Credentials:
 - Except for expected errors (i.e Django template language and elements missing which are in base.html):
   - Errors found for button element being descendants of anchor elements.
 
+**style.css**
+
+ - No errors found.
+
+**urls.py**
+
+ - No errors found.
+
+**wsgi.py**
+
+ - No errors found.
+
+**forms.py**
+
+ - No errors found.
+
+**models.py**
+
+ - No errors found.
+
+**views.py**
+
+ - No errors found.
+
 ### Final Validator tests
 
 **base.html**
@@ -633,7 +658,7 @@ Credentials:
 **create_booking.html**
 
 - Except for expected errors (i.e Django template language and elements missing which are in base.html):
-  - .
+  - No errors found.
 
 **edit_booking.html**
 
@@ -642,12 +667,36 @@ Credentials:
 **index.html**
 
 - Except for expected errors (i.e Django template language and elements missing which are in base.html):
-  - .
+  - No errors found.
 
 **view_booking.html**
 
 - Except for expected errors (i.e Django template language and elements missing which are in base.html):
-  - .
+  - No errors found.
+
+**style.css**
+
+ - Not required.
+
+**urls.py**
+
+ - Not required.
+
+**wsgi.py**
+
+ - Not required.
+
+**forms.py**
+
+ - Not required.
+
+**models.py**
+
+ - Not required.
+
+**views.py**
+
+ - Not required.
 
 ## Unfixed Bugs
 
