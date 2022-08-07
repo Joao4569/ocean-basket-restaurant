@@ -71,12 +71,13 @@
   </div>
 
   <div class="col-12 py-3 text-center">
-    <a href="{% url 'account_logout' %}">
-      <button type="button" class="button-font btn btn-outline-dark font-elsie font-weight-bold">Logout</button>
+    <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
+      Logout
     </a>
   </div>
 
 {% elif user.is_authenticated and user.is_staff %}
+
   <div class="container text-center responsive-width">
     <h2 class="heading mt-5 mb-3 font-elsie pb-3">Lunch</h2>
   </div>
@@ -130,8 +131,8 @@
   </div>
 
   <div class="col-12 py-3 text-center">
-    <a href="{% url 'account_logout' %}">
-      <button type="button" class="button-font btn btn-outline-dark font-elsie font-weight-bold">Logout</button>
+    <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
+      Logout
     </a>
   </div>
 
@@ -163,13 +164,13 @@
             <td class="text-center">{{ booking.number_of_seats }}</td>
             <td class="text-center">{{ booking.contact_number }}</td>
             <td class="text-center">
-              <a href="/edit_booking/{{ booking.id }}">
-                <button class="btn-sm btn-outline-success font-weight-bold">Change</button>
+              <a href="/edit_booking/{{ booking.id }}" class="btn-sm btn-outline-success font-weight-bold">
+                Change
               </a>
             </td>
             <td class="text-center">
-              <a href="/delete_booking/{{ booking.id }}">
-                <button class="btn-sm btn-outline-danger font-weight-bold">Delete</button>
+              <a href="/delete_booking/{{ booking.id }}" class="btn-sm btn-outline-danger font-weight-bold">
+                Delete
               </a>
             </td>
           </tr>
@@ -182,13 +183,13 @@
   <div class="container w-50 my-5">
     <div class="row text-center">
       <div class="col-12 col-lg-6 py-3">
-        <a href="/create_booking">
-          <button type="button" class="button-font btn btn-outline-dark font-elsie font-weight-bold">Make a booking</button>
+        <a href="/create_booking" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
+          Make a booking
         </a>
       </div>
       <div class="col-12 col-lg-6 py-3">
-        <a href="{% url 'account_logout' %}">
-          <button type="button" class="button-font btn btn-outline-dark font-elsie font-weight-bold">Logout</button>
+        <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
+          Logout
         </a>
       </div>
     </div>
@@ -206,13 +207,13 @@
   <div class="container w-50 my-5">
     <div class="row text-center">
       <div class="col-12 col-md-6 py-3">
-        <a href="{% url 'account_signup' %}">
-          <button type="button" class="button-font btn btn-outline-dark font-elsie font-weight-bold">Sign Up</button>
+        <a href="{% url 'account_signup' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
+          Sign Up
         </a>
       </div>
       <div class="col-12 col-md-6 py-3">
-        <a href="{% url 'account_login' %}">
-          <button type="button" class="button-font btn btn-outline-dark font-elsie font-weight-bold">Login</button>
+        <a href="{% url 'account_login' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
+          Login
         </a>
       </div>
     </div>
