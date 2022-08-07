@@ -564,6 +564,10 @@ Credentials:
 
 # Features - Features Left To Impliment
 
+Features left to implement can be found on the repositories issues under the Product Backlog Milestone.
+
+![product-backlog](static/images/readme/kanban/product-backlog.png)
+
 # Testing
 
 ## Manual Testing
@@ -700,6 +704,8 @@ Credentials:
 
 ## Unfixed Bugs
 
+None that I am aware of.
+
 ## Credits
 
 ### Content
@@ -712,4 +718,3 @@ Credentials:
  - Recommendation for contact number form field taken from [stackoverflow](https://stackoverflow.com/questions/15465356/django-storing-mobile-number-what-field-to-use).
  - I learned how to implement a choices field in a form from [stackoverflow](https://stackoverflow.com/questions/18676156/how-to-properly-use-the-choices-field-option-in-django).
 
-### Media
