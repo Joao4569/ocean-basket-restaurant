@@ -596,9 +596,58 @@ Credentials:
 
 ## Validator Testing
 
+- Made use of the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/) for the CSS file and the official [W3C validator](https://validator.w3.org/) for all HTML file testing.
+
 ### Initial Validator Tests
 
+**base.html**
+
+- Only one error found for Django template language used for `href` attribute.
+
+**create_booking.html**
+
+- Except for expected errors (i.e Django template language and elements missing which are in base.html):
+  - Errors found for button element being descendants of anchor elements.
+
+**edit_booking.html**
+
+- Except for expected errors (i.e Django template language and elements missing which are in base.html):
+  - No errors found.
+
+**index.html**
+
+- Except for expected errors (i.e Django template language and elements missing which are in base.html):
+  - Errors found for button element being descendants of anchor elements.
+
+**view_booking.html**
+
+- Except for expected errors (i.e Django template language and elements missing which are in base.html):
+  - Errors found for button element being descendants of anchor elements.
+
 ### Final Validator tests
+
+**base.html**
+
+- Not required.
+
+**create_booking.html**
+
+- Except for expected errors (i.e Django template language and elements missing which are in base.html):
+  - .
+
+**edit_booking.html**
+
+- Not required.
+
+**index.html**
+
+- Except for expected errors (i.e Django template language and elements missing which are in base.html):
+  - .
+
+**view_booking.html**
+
+- Except for expected errors (i.e Django template language and elements missing which are in base.html):
+  - .
 
 ## Unfixed Bugs
 
