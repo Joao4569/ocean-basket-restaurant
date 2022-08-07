@@ -10,7 +10,6 @@ The project is aimed at being usefull to the user by allowing customers to have 
 
 * [Conception](#Conception)
   * [Project Scope](#Project-Scope)
-  * [Project Logic](#Project-Logic)
   * [Basic Wireframe Design](#Basic-Wireframe-Design)
   * [Agile](#Agile)
 
@@ -26,6 +25,8 @@ The project is aimed at being usefull to the user by allowing customers to have 
 
 * [Deployment Testing](#Deployment-Testing)
 
+* [Features - Existing Features](#features---existing-features)
+
 * [MVT Architecture](#MVT-Architecture)
   * [Models](#Models)
   * [Views](#Views)
@@ -33,9 +34,7 @@ The project is aimed at being usefull to the user by allowing customers to have 
 
 * [Access Control](#Access-Control)
 
-* [Features](#Features)
-  * [Existing Features](#Existing-Features)
-  * [Features Left to Implement](#Features-Left-to-Implement)
+* [Features - Features Left To Implement](#features---features-left-to-impliment)
 
 * [Testing](#Testing)
   * [Manual Testing](#Manual-Testing)
@@ -46,7 +45,7 @@ The project is aimed at being usefull to the user by allowing customers to have 
 
 * [Credits](#Credits)
   * [Content](#Content)
-  * [Content](#Content)
+  * [Media](#media)
 
 
 
@@ -247,12 +246,12 @@ I extended the Django Allauth signup form to accept addtional information as req
 
 ### Views
 
-1. #### HomePage
+#### 1.HomePage
 
 - **Get function:**
   - Render template `index.html`.
 
-2. CreateBooking
+#### 2.CreateBooking
 
 - **Get Function:**
   - Extract `BookingForm` from `forms.py`.
@@ -263,13 +262,13 @@ I extended the Django Allauth signup form to accept addtional information as req
   - Save data if form is valid.
   - Render template `view_booking.html`.
 
-3. ViewBooking
+#### 3.ViewBooking
 
 - **Get function:**
   - Extract booking details from `BookingInformation` model.
   - Render template `view_booking.html`
 
-4. EditBooking
+#### 4.EditBooking
 
 - **Get Function:**
   - Capture the booking ID for the selected booking data.
@@ -279,13 +278,13 @@ I extended the Django Allauth signup form to accept addtional information as req
   - if the form is valid then use the booking ID to update the correct data in the `BookingInformation` model.
   - Render template `view_booking.html` with updated data.
 
-5. DeleteBooking
+#### 5.DeleteBooking
 
 - **Get Function:**
   - Capture the booking ID for the selected booking data.
   - Render template`view_booking.html` with updated data.
 
-5. ViewBookingEmployee
+#### 6.ViewBookingEmployee
 
 - **Get Function:**
   - Capture the current days date.
@@ -507,11 +506,11 @@ Credentials:
    - Username: **FloorStaff**
    - Password: **OceanBasketStaff**
 
-### Features Left to Implement
+# Features - Features Left To Impliment
 
-## Testing
+# Testing
 
-### Manual Testing
+## Manual Testing
 
 - After creating the `online_booking` app, I tested it buy running the application and recieved visual confirmation that the application is working successfully from Django.
 - Once the database was initially linked to the Heroku app, I followed the Heroku Postgres link, in the resources section, in order to check that the database was connected and working after my initial migrations were done.
@@ -538,13 +537,13 @@ Credentials:
 - I have tested all buttons and links, they are all acting as intended.
 - I found a bug with how I used Django template language, instead of using `(list name)|length` I used `(list name).length`. **Resolved**
 
-### Validator Testing
+## Validator Testing
 
-#### Initial Validator Tests
+### Initial Validator Tests
 
-#### Final Validator tests
+### Final Validator tests
 
-### Unfixed Bugs
+## Unfixed Bugs
 
 ## Credits
 
