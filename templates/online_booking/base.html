@@ -33,24 +33,26 @@
     {% endblock content %}
   </main>
 
-  <footer class="row border-top border-dark pt-5">
-    <div class="col-12 col-md-4 d-flex justify-content-center">
+  <footer class="container-fluid fixed-bottom border-top border-dark">
+    <div class="row">
+      <div class="col-12 col-md-4 text-center my-auto">
       {% if user.is_authenticated %}
-        <p class="mt-3">Logged in as <span class="font-weight-bold">{{ user }}</span></p>
+        <p>Logged in as <span class="font-weight-bold">{{ user }}</span></p>
       {% else %}
-        <p class="mt-3">Logged in as <span class="font-weight-bold">Guest</span></p>
+        <p>Logged in as <span class="font-weight-bold">Guest</span></p>
       {% endif %}
-    </div>
-    <div id="social-links" class="col-12 col-md-4 d-flex justify-content-center">
+      </div>
+      <div id="social-links" class="col-12 col-md-4 text-center my-auto">
       <a href="https://facebook.com" target="_blank" rel="noopener"
-        aria-label="Visit our Facebook page (opens in a new tab)"><i class="fa-brands fa-facebook px-3"></i></a>
+        aria-label="Visit our Facebook page (opens in a new tab)"><i class="fa-brands fa-facebook px-3 my-auto"></i></a>
       <a href="https://instagram.com" target="_blank" rel="noopener"
-        aria-label="Visit our Instagram page (opens in a new tab)"><i class="fa-brands fa-instagram-square px-3"></i></a>
+        aria-label="Visit our Instagram page (opens in a new tab)"><i class="fa-brands fa-instagram-square px-3 my-auto"></i></a>
       <a href="https://twitter.com" target="_blank" rel="noopener"
-        aria-label="Visit our Twitter page (opens in a new tab)"><i class="fa-brands fa-twitter-square px-3"></i></a>
-    </div>
-    <div class="col-12 col-md-4 d-flex justify-content-center mt-3">
+        aria-label="Visit our Twitter page (opens in a new tab)"><i class="fa-brands fa-twitter-square px-3 my-auto"></i></a>
+      </div>
+      <div class="col-12 col-md-4 text-center my-auto">
       <p>Made by J.Rodrigues</p>
+      </div>
     </div>
   </footer>
 

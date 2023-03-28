@@ -30,9 +30,11 @@ body {
 
 /* footer */
 
-footer {
-  height: 5rem;
-}
+/* footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+} */
 
 #social-links a {
   font-size: 3rem;
