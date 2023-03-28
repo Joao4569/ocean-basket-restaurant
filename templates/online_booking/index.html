@@ -4,70 +4,74 @@
 
 {% if user.is_authenticated and user.is_staff and user.username == "StoreManager" %}
 
-  <div class="container text-center responsive-width">
-    <h2 class="heading mt-5 mb-3 font-elsie">Welcome Store Manager</h2>
+  <div class="row text-center">
+    <div class="col-12">
+      <h2 class="heading mt-5 mb-3 font-elsie">Welcome Store Manager</h2>
+    </div>
   </div>
 
-  <div class="container w-50 my-5">
-    <div class="row text-center">
-      <div class="col-12 col-lg-6 py-3">
-        <a href="view_booking_employee/" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
-          Today's Bookings
-        </a>
-      </div>
-      <div class="col-12 col-lg-6 py-3">
-        <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
-          Logout
-        </a>
-      </div>
+  <div class="row text-center my-5">
+    <div class="col-12 py-3">
+      <a href="view_booking_employee/" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
+        Today's Bookings
+      </a>
+    </div>
+    <div class="col-12 py-3">
+      <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
+        Logout
+      </a>
     </div>
   </div>
 
 {% elif user.is_authenticated and user.is_staff %}
 
-  <div class="container text-center responsive-width">
-  <h2 class="heading mt-5 mb-3 font-elsie">Welcome Employee</h2>
+  <div class="row text-center">
+    <div class="col-12">
+      <h2 class="heading mt-5 mb-3 font-elsie">Welcome Employee</h2>
+    </div>
   </div>
 
-  <div class="container w-50 my-5">
-    <div class="row text-center">
-      <div class="col-12 col-lg-6 py-3">
-        <a href="view_booking_employee/" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
-          Today's Bookings
-        </a>
-      </div>
-      <div class="col-12 col-lg-6 py-3">
-        <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
-          Logout
-        </a>
-      </div>
+  <div class="row text-center my-5">
+    <div class="col-12 py-3">
+      <a href="view_booking_employee/" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
+        Today's Bookings
+      </a>
+    </div>
+    <div class="col-12 py-3">
+      <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
+        Logout
+      </a>
     </div>
   </div>
 
 {% elif user.is_authenticated %}
 
-  <div class="container text-center responsive-width">
-    <h2 class="heading mt-5 mb-3 font-elsie">Welcome</h2>
-    <h3 class="sub-heading text-muted pb-5 font-elsie font-weight-bold">{{ user.first_name }} {{ user.last_name }}</h3>
+  <div class="row text-center">
+    <div class="col-12">
+      <h2 class="heading mt-5 mb-3 font-elsie">Welcome</h2>
+    </div>
+  </div>
+  <div class="row text-center">
+    <div class="col-12">
+      <h3 class="sub-heading text-muted pb-5 font-elsie font-weight-bold">{{ user.first_name }} {{ user.last_name }}</h3>
+    </div>
   </div>
 
-  <div class="container w-50 my-5">
-    <div class="row text-center">
-      <div class="col-12 py-3">
-        <a href="create_booking/" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
-          Make a booking
-        </a>
-      </div>
-      <div class="col-12 py-3">
-        <a href="view_booking/" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
-          Manage Bookings
-        </a>
-      </div>
-      <div class="col-12 py-3">
-        <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
-          Logout
-        </a>
-      </div>
+  <div class="row my-5 text-center">
+    <div class="col-12 py-3">
+      <a href="create_booking/" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
+        Make a booking
+      </a>
+    </div>
+    <div class="col-12 py-3">
+      <a href="view_booking/" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
+        Manage Bookings
+      </a>
+    </div>
+    <div class="col-12 py-3">
+      <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
+        Logout
+      </a>
     </div>
   </div>
 
