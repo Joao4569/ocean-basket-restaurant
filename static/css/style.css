@@ -63,10 +63,6 @@ body {
   font-size: 1.5rem;
 }
 
-/*.responsive-width {
-  width: 50%;
-} */
-
 /* forms */
 
 .form {
@@ -124,9 +120,9 @@ body {
 
   /* forms */
 
-  .form {
+  /*.form {
     width: 70%;
-  }
+  }*/
 
   /* index.html */
 
