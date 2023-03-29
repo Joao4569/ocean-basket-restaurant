@@ -7,25 +7,46 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+
+  <!-- form container -->
   <div class="row align-items-center">
-    <div class="col-3"></div>
-    <div class="col-6 border border-dark rounded p-3">
+
+    <!-- left side column -->
+    <div class="col-4"></div>
+
+    <!-- form column -->
+    <div class="col-4 border border-dark rounded p-3">
+
+      <!-- form title -->
       <div class="col-12">
         <h1 class="text-center font-elsie form-text-bold pb-3">{% trans "Welcome" %}</h1>
       </div>
+
+      <!-- form information -->
       <div class="col-12">
         <p class="text-center">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}" class="font-elsie form-text-bold">Log in</a>.{% endblocktrans %}</p>
       </div>
+
+      <!-- form -->
       <form class="signup col-12" id="signup_form" method="post" action="{% url 'account_signup' %}">
+
+        <!-- form fields -->
         {% csrf_token %}
         {{ form | crispy }}
         {% if redirect_field_value %}
           <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <button class="button-font btn btn-outline-dark font-elsie font-weight-bold" type="submit">{% trans "Register" %} &raquo;</button>
+
+        <!-- form button -->
+        <div class="row justify-content-center">
+          <button class="button-font btn btn-outline-dark font-elsie font-weight-bold col-6" type="submit">{% trans "Register" %} &raquo;</button>
+        </div>
+
       </form>
     </div>
-    <div class="col-3"></div>
+
+    <!-- right side column -->
+    <div class="col-4"></div>
   </div>
 
 {% endblock %}
