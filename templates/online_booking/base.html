@@ -31,6 +31,7 @@
       </div>
     </div>
   </header>
+
   <main class="container-fluid">
     {% block content %}
 
@@ -41,26 +42,26 @@
     <div class="row p-3">
 
       <!-- user login status -->
-      <div class="col-12 col-md-4 text-center my-auto">
+      <div class="col-12 col-md-3 text-center my-auto">
       {% if user.is_authenticated %}
-        <p class="m-auto">Logged in as <span class="font-weight-bold">{{ user }}</span></p>
+        <p class="m-auto">Logged in as <span>{{ user }}</span></p>
       {% else %}
         <p class="m-auto">Logged in as a <span class="font-weight-bold">Guest</span></p>
       {% endif %}
       </div>
 
       <!-- social links -->
-      <div id="social-links" class="col-12 col-md-4 text-center my-auto">
+      <div id="social-links" class="col-12 col-md-6 text-center my-auto">
       <a href="https://facebook.com" target="_blank" rel="noopener"
-        aria-label="Visit our Facebook page (opens in a new tab)"><i class="fa-brands fa-facebook px-3 my-auto"></i></a>
+        aria-label="Visit our Facebook page (opens in a new tab)"><i class="fa-brands fa-facebook px-5 my-auto"></i></a>
       <a href="https://instagram.com" target="_blank" rel="noopener"
-        aria-label="Visit our Instagram page (opens in a new tab)"><i class="fa-brands fa-instagram-square px-3 my-auto"></i></a>
+        aria-label="Visit our Instagram page (opens in a new tab)"><i class="fa-brands fa-instagram-square px-5 my-auto"></i></a>
       <a href="https://twitter.com" target="_blank" rel="noopener"
-        aria-label="Visit our Twitter page (opens in a new tab)"><i class="fa-brands fa-twitter-square px-3 my-auto"></i></a>
+        aria-label="Visit our Twitter page (opens in a new tab)"><i class="fa-brands fa-twitter-square px-5 my-auto"></i></a>
       </div>
 
       <!-- creator details -->
-      <div class="col-12 col-md-4 text-center my-auto">
+      <div class="col-12 col-md-3 text-center my-auto">
       <p class="m-auto">Created by Jo&atildeo Rodrigues</p>
       </div>
 
