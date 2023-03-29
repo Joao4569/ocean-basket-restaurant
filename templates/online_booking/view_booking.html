@@ -6,74 +6,101 @@
 
 {% if user.is_authenticated and user.is_staff and user.username == "StoreManager" %}
 
-  <div class="container text-center responsive-width">
-    <h2 class="heading mt-5 mb-3 font-elsie pb-3">Lunch</h2>
-  </div>
-  <div class="booking_table table-responsive mx-auto">
-    <table class="table table-sm table-bordered table-hover">
-      <thead class="thead-dark">
-        <tr>
-          <th class="text-center" scope="col">Booking Title</th>
-          <th class="text-center" scope="col">Date</th>
-          <th class="text-center" scope="col">Seats</th>
-          <th class="text-center" scope="col">Contact</th>
-          <th class="text-center" scope="col">Username</th>
-          <th class="text-center" scope="col">Email</th>
-        </tr>
-      </thead>
-      <tbody>
-      {% for booking in bookings %}
-        {% if booking.service == "Lunch (13:00)" %}
-          <tr>
-            <td class="text-center">{{ booking.booking_title }}</td>
-            <td class="text-center">{{ booking.date }}</td>
-            <td class="text-center">{{ booking.number_of_seats }}</td>
-            <td class="text-center">{{ booking.contact_number }}</td>
-            <td class="text-center">{{ booking.username }}</td>
-            <td class="text-center">{{ booking.email }}</td>
-          </tr>
-        {% endif %}
-      {% endfor %}
-      </tbody>
-    </table>
+  <!-- title lunch -->
+  <div class="row text-center">
+    <div class="col-12">
+      <h2 class="heading mt-5 mb-3 font-elsie">Lunch</h2>
+    </div>
   </div>
 
-  <div class="container text-center responsive-width">
-    <h2 class="heading mt-5 mb-3 font-elsie pb-3">Dinner</h2>
-  </div>
-  <div class="booking_table table-responsive mx-auto">
-    <table class="table table-sm table-bordered table-hover">
-      <thead class="thead-dark">
-        <tr>
-          <th class="text-center" scope="col">Booking Title</th>
-          <th class="text-center" scope="col">Date</th>
-          <th class="text-center" scope="col">Seats</th>
-          <th class="text-center" scope="col">Contact</th>
-          <th class="text-center" scope="col">Username</th>
-          <th class="text-center" scope="col">Email</th>
-        </tr>
-      </thead>
-      <tbody>
-      {% for booking in bookings %}
-        {% if booking.service == "Dinner (19:00)" %}
+  <!-- lunch booking table -->
+  <div class="row">
+    <div class="booking_table table-responsive mx-auto rounded">
+      <table class="table table-sm table-bordered table-hover">
+
+        <!-- lunch table header -->
+        <thead class="thead-dark">
           <tr>
-            <td class="text-center">{{ booking.booking_title }}</td>
-            <td class="text-center">{{ booking.date }}</td>
-            <td class="text-center">{{ booking.number_of_seats }}</td>
-            <td class="text-center">{{ booking.contact_number }}</td>
-            <td class="text-center">{{ booking.username }}</td>
-            <td class="text-center">{{ booking.email }}</td>
+            <th class="text-center" scope="col">Booking Title</th>
+            <th class="text-center" scope="col">Date</th>
+            <th class="text-center" scope="col">Seats</th>
+            <th class="text-center" scope="col">Contact</th>
+            <th class="text-center" scope="col">Username</th>
+            <th class="text-center" scope="col">Email</th>
           </tr>
-        {% endif %}
-      {% endfor %}
-      </tbody>
-    </table>
+        </thead>
+
+        <!-- lunch table body -->
+        <tbody>
+        {% for booking in bookings %}
+          {% if booking.service == "Lunch (13:00)" %}
+            <tr>
+              <td class="text-center">{{ booking.booking_title }}</td>
+              <td class="text-center">{{ booking.date }}</td>
+              <td class="text-center">{{ booking.number_of_seats }}</td>
+              <td class="text-center">{{ booking.contact_number }}</td>
+              <td class="text-center">{{ booking.username }}</td>
+              <td class="text-center">{{ booking.email }}</td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+        </tbody>
+
+      </table>
+    </div>
   </div>
 
-  <div class="col-12 py-3 text-center">
-    <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
-      Logout
-    </a>
+  <!-- title dinner -->
+  <div class="row text-center">
+    <div class="col-12">
+      <h2 class="heading mt-5 mb-3 font-elsie">Dinner</h2>
+    </div>
+  </div>
+
+  <!-- dinner booking table -->
+  <div class="row">
+    <div class="booking_table table-responsive mx-auto rounded">
+      <table class="table table-sm table-bordered table-hover">
+
+        <!-- dinner table header -->
+        <thead class="thead-dark">
+          <tr>
+            <th class="text-center" scope="col">Booking Title</th>
+            <th class="text-center" scope="col">Date</th>
+            <th class="text-center" scope="col">Seats</th>
+            <th class="text-center" scope="col">Contact</th>
+            <th class="text-center" scope="col">Username</th>
+            <th class="text-center" scope="col">Email</th>
+          </tr>
+        </thead>
+
+        <!-- dinner table body -->
+        <tbody>
+        {% for booking in bookings %}
+          {% if booking.service == "Dinner (19:00)" %}
+            <tr>
+              <td class="text-center">{{ booking.booking_title }}</td>
+              <td class="text-center">{{ booking.date }}</td>
+              <td class="text-center">{{ booking.number_of_seats }}</td>
+              <td class="text-center">{{ booking.contact_number }}</td>
+              <td class="text-center">{{ booking.username }}</td>
+              <td class="text-center">{{ booking.email }}</td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+
+  <!-- button -->
+  <div class="row">
+    <div class="col-12 text-center py-3">
+      <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
+        Logout
+      </a>
+    </div>
   </div>
 
 {% elif user.is_authenticated and user.is_staff %}
@@ -138,85 +165,115 @@
 
 {% elif user.is_authenticated %}
 
-  <div class="container text-center responsive-width">
-    <h2 class="heading mt-5 mb-3 font-elsie pb-3">Your Bookings:</h2>
-  </div>
-
-  <div class="booking_table table-responsive mx-auto">
-    <table class="table table-sm table-bordered table-hover">
-      <thead class="thead-dark">
-        <tr>
-          <th class="text-center" scope="col">Booking Title</th>
-          <th class="text-center" scope="col">Date</th>
-          <th class="text-center" scope="col">Service</th>
-          <th class="text-center" scope="col">Seats</th>
-          <th class="text-center" scope="col">Contact</th>
-          <th class="text-center" scope="col" colspan="2">Options:</th>
-        </tr>
-      </thead>
-      <tbody>
-      {% for booking in bookings %}
-        {% if booking.username == user.username %}
-          <tr>
-            <td class="text-center">{{ booking.booking_title }}</td>
-            <td class="text-center">{{ booking.date }}</td>
-            <td class="text-center">{{ booking.service }}</td>
-            <td class="text-center">{{ booking.number_of_seats }}</td>
-            <td class="text-center">{{ booking.contact_number }}</td>
-            <td class="text-center">
-              <a href="/edit_booking/{{ booking.id }}" class="btn-sm btn-outline-success font-weight-bold">
-                Change
-              </a>
-            </td>
-            <td class="text-center">
-              <a href="/delete_booking/{{ booking.id }}" class="btn-sm btn-outline-danger font-weight-bold">
-                Delete
-              </a>
-            </td>
-          </tr>
-        {% endif %}
-      {% endfor %}
-      </tbody>
-    </table>
-  </div>
-
-  <div class="container w-50 my-5">
-    <div class="row text-center">
-      <div class="col-12 col-lg-6 py-3">
-        <a href="/create_booking" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
-          Make a booking
-        </a>
-      </div>
-      <div class="col-12 col-lg-6 py-3">
-        <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
-          Logout
-        </a>
-      </div>
+  <!-- page title -->
+  <div class="row text-center">
+    <div class="col-12">
+      <h2 class="heading mt-5 mb-3 font-elsie">Your Bookings:</h2>
     </div>
+  </div>
+
+  <!-- booking table -->
+  <div class="row">
+    <div class="booking_table table-responsive mx-auto rounded">
+      <table class="table table-sm table-bordered table-hover">
+
+        <!-- table header -->
+        <thead class="thead-dark">
+          <tr>
+            <th class="text-center" scope="col">Booking Title</th>
+            <th class="text-center" scope="col">Date</th>
+            <th class="text-center" scope="col">Service</th>
+            <th class="text-center" scope="col">Seats</th>
+            <th class="text-center" scope="col">Contact</th>
+            <th class="text-center" scope="col" colspan="2">Options:</th>
+          </tr>
+        </thead>
+
+        <!-- table body -->
+        <tbody>
+        {% for booking in bookings %}
+          {% if booking.username == user.username %}
+            <tr>
+              <td class="text-center">{{ booking.booking_title }}</td>
+              <td class="text-center">{{ booking.date }}</td>
+              <td class="text-center">{{ booking.service }}</td>
+              <td class="text-center">{{ booking.number_of_seats }}</td>
+              <td class="text-center">{{ booking.contact_number }}</td>
+              <td class="text-center">
+                <a href="/edit_booking/{{ booking.id }}" class="btn-sm btn-outline-success font-weight-bold">
+                  Change
+                </a>
+              </td>
+              <td class="text-center">
+                <a href="/delete_booking/{{ booking.id }}" class="btn-sm btn-outline-danger font-weight-bold">
+                  Delete
+                </a>
+              </td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+
+  <!-- buttons -->
+  <div class="row">
+
+    <div class="col-0 col-md-3"></div>
+
+    <!-- create booking -->
+    <div class="col-md-3 text-center py-3">
+      <a href="/create_booking" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
+        Make a booking
+      </a>
+    </div>
+
+    <!-- logout -->
+    <div class="col-md-3 text-center py-3">
+      <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
+        Logout
+      </a>
+    </div>
+
+    <div class="col-0 col-md-3"></div>
+
   </div>
 
 {% else %}
 
-  <div class="container text-center responsive-width">
-    <h2 class="heading mt-5 mb-3">You are not logged in</h2>
-    <p class="main-paragraph-text text-center mx-auto pt-2 pb-5">
-      Please login or Sign up to view the contents of this page.
-    </p>
+  <!-- page title -->
+  <div class="row">
+    <h2 class="col-12 heading text-center mt-5 mb-3">You are not logged in!</h2>
   </div>
 
-  <div class="container w-50 my-5">
-    <div class="row text-center">
-      <div class="col-12 col-md-6 py-3">
-        <a href="{% url 'account_signup' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
-          Sign Up
-        </a>
-      </div>
-      <div class="col-12 col-md-6 py-3">
-        <a href="{% url 'account_login' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
-          Login
-        </a>
-      </div>
+  <!-- page secondary title -->
+  <div class="row">
+    <h3 class="col-12 sub-heading text-center text-muted font-italic pb-5 font-elsie font-weight-bold">Please login or Register to view the contents of this page.</h3>
+  </div>
+
+  <!-- buttons -->
+  <div class="row">
+
+    <div class="col-0 col-md-3"></div>
+
+    <!-- sign up -->
+    <div class="col-md-3 text-center py-3">
+      <a href="{% url 'account_signup' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
+        Sign Up
+      </a>
     </div>
+
+    <!-- login -->
+    <div class="col-md-3 text-center py-3">
+      <a href="{% url 'account_login' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
+        Login
+      </a>
+    </div>
+
+    <div class="col-0 col-md-3"></div>
+
   </div>
 
 {% endif %}
