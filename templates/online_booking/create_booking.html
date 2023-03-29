@@ -6,37 +6,71 @@
 
 {% if user.is_authenticated %}
 
-  <div class="container form border border-dark rounded p-3">
-    <h1 class="text-center font-elsie form-text-bold pb-3">Make a New Booking</h1>
-    <form method="Post">
-      {{ booking_form | crispy }}
-      {% csrf_token %}
-      <button class="button-font btn btn-outline-dark font-elsie font-weight-bold" type="submit">Create Booking &raquo;</button>
-    </form>
+  <!-- form container -->
+  <div class="row align-items-center">
+
+    <!-- left side column -->
+    <div class="col-4"></div>
+
+    <!-- form column -->
+    <div class="col-4 border border-dark rounded p-3 m-auto">
+
+      <!-- form title -->
+      <div class="col-12">
+        <h1 class="text-center font-elsie form-text-bold pb-3">Make a New Booking</h1>
+      </div>
+      
+      <!-- form -->
+      <form method="Post">
+
+        <!-- form fields -->
+        {% csrf_token %}
+        {{ booking_form | crispy }}
+
+        <!-- form button -->
+        <div class="row justify-content-center">
+          <button class="button-font btn btn-outline-dark font-elsie font-weight-bold col-6" type="submit">Create Booking &raquo;</button>
+        </div>
+
+      </form>
+    </div>
+
+    <!-- right side column -->
+    <div class="col-4"></div>
+
   </div>
 
 {% else %}
 
-  <div class="container text-center responsive-width">
-    <h2 class="heading mt-5 mb-3">You are not logged in</h2>
-    <p class="main-paragraph-text text-center mx-auto pt-2 pb-5">
-      Please login or Sign up to view the contents of this page.
-    </p>
+  <!-- page title -->
+  <div class="row">
+    <h2 class="col-12 heading text-center mt-5 mb-3">You are not logged in!</h2>
   </div>
 
-  <div class="container w-50 my-5">
-    <div class="row text-center">
-      <div class="col-12 col-md-6 py-3">
-        <a href="{% url 'account_signup' %}" class="button-font btn btnoutline-dark font-elsie font-weight-bold">
-          Sign Up
-        </a>
-      </div>
-      <div class="col-12 col-md-6 py-3">
-        <a href="{% url 'account_login' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
-          Login
-        </a>
-      </div>
+  <!-- page secondary title -->
+  <div class="row">
+    <h3 class="col-12 sub-heading text-center text-muted font-italic pb-5 font-elsie font-weight-bold">Please login or Register to view the contents of this page.</h3>
+  </div>
+
+  <!-- buttons -->
+  <div class="row">
+
+    <div class="col-0 col-md-3"></div>
+
+    <div class="col-md-3 text-center py-3">
+      <a href="{% url 'account_signup' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
+        Sign Up
+      </a>
     </div>
+
+    <div class="col-md-3 text-center py-3">
+      <a href="{% url 'account_login' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
+        Login
+      </a>
+    </div>
+
+    <div class="col-0 col-md-3"></div>
+
   </div>
 
 {% endif %}
