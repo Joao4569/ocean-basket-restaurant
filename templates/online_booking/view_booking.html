@@ -105,62 +105,89 @@
 
 {% elif user.is_authenticated and user.is_staff %}
 
-  <div class="container text-center responsive-width">
-    <h2 class="heading mt-5 mb-3 font-elsie pb-3">Lunch</h2>
-  </div>
-  <div class="booking_table table-responsive mx-auto">
-    <table class="table table-sm table-bordered table-hover">
-      <thead class="thead-dark">
-        <tr>
-          <th class="text-center" scope="col">Date</th>
-          <th class="text-center" scope="col">Contact</th>
-          <th class="text-center" scope="col">Seats</th>
-        </tr>
-      </thead>
-      <tbody>
-      {% for booking in bookings %}
-        {% if booking.service == "Lunch (13:00)" %}
-          <tr>
-            <td class="text-center">{{ booking.date }}</td>
-            <td class="text-center">{{ booking.contact_number }}</td>
-            <td class="text-center">{{ booking.number_of_seats }}</td>
-          </tr>
-        {% endif %}
-      {% endfor %}
-      </tbody>
-    </table>
+  <!-- title lunch -->
+  <div class="row text-center">
+    <div class="col-12">
+      <h2 class="heading mt-5 mb-3 font-elsie">Lunch</h2>
+    </div>
   </div>
 
-  <div class="container text-center responsive-width">
-    <h2 class="heading mt-5 mb-3 font-elsie pb-3">Dinner</h2>
-  </div>
-  <div class="booking_table table-responsive mx-auto">
-    <table class="table table-sm table-bordered table-hover">
-      <thead class="thead-dark">
-        <tr>
-          <th class="text-center" scope="col">Date</th>
-          <th class="text-center" scope="col">Contact</th>
-          <th class="text-center" scope="col">Seats</th>
-        </tr>
-      </thead>
-      <tbody>
-      {% for booking in bookings %}
-        {% if booking.service == "Dinner (19:00)" %}
+  <!-- lunch booking table -->
+  <div class="row">
+    <div class="booking_table table-responsive mx-auto rounded">
+      <table class="table table-sm table-bordered table-hover">
+
+        <!-- lunch table header -->
+        <thead class="thead-dark">
           <tr>
-            <td class="text-center">{{ booking.date }}</td>
-            <td class="text-center">{{ booking.contact_number }}</td>
-            <td class="text-center">{{ booking.number_of_seats }}</td>
+            <th class="text-center" scope="col">Date</th>
+            <th class="text-center" scope="col">Contact</th>
+            <th class="text-center" scope="col">Seats</th>
           </tr>
-        {% endif %}
-      {% endfor %}
-      </tbody>
-    </table>
+        </thead>
+
+        <!-- lunch table body -->
+        <tbody>
+        {% for booking in bookings %}
+          {% if booking.service == "Lunch (13:00)" %}
+            <tr>
+              <td class="text-center">{{ booking.date }}</td>
+              <td class="text-center">{{ booking.contact_number }}</td>
+              <td class="text-center">{{ booking.number_of_seats }}</td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+        </tbody>
+
+      </table>
+    </div>
   </div>
 
-  <div class="col-12 py-3 text-center">
-    <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
-      Logout
-    </a>
+  <!-- title dinner -->
+  <div class="row text-center">
+    <div class="col-12">
+      <h2 class="heading mt-5 mb-3 font-elsie">Dinner</h2>
+    </div>
+  </div>
+
+  <!-- dinner booking table -->
+  <div class="row">
+    <div class="booking_table table-responsive mx-auto rounded">
+      <table class="table table-sm table-bordered table-hover">
+  
+        <!-- dinner table header -->
+        <thead class="thead-dark">
+          <tr>
+            <th class="text-center" scope="col">Date</th>
+            <th class="text-center" scope="col">Contact</th>
+            <th class="text-center" scope="col">Seats</th>
+          </tr>
+        </thead>
+
+        <!-- dinner table body -->
+        <tbody>
+        {% for booking in bookings %}
+          {% if booking.service == "Dinner (19:00)" %}
+            <tr>
+              <td class="text-center">{{ booking.date }}</td>
+              <td class="text-center">{{ booking.contact_number }}</td>
+              <td class="text-center">{{ booking.number_of_seats }}</td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+
+  <!-- button -->
+  <div class="row">
+    <div class="col-12 text-center py-3">
+      <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
+        Logout
+      </a>
+    </div>
   </div>
 
 {% elif user.is_authenticated %}
