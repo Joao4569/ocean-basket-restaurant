@@ -17,7 +17,7 @@
 </head>
 
 <body>
-  <header class="container-fluid border-bottom border-dark">
+  <header class="container-fluid border-bottom border-dark mb-5">
     <div class="row">
       <div class="col-12 text-center">
         <a class="nav-link" href="/" aria-label="Link to Home page">
@@ -38,14 +38,18 @@
   </main>
 
   <footer class="container-fluid fixed-bottom border-top border-dark">
-    <div class="row">
+    <div class="row py-auto">
+
+      <!-- user login status -->
       <div class="col-12 col-md-4 text-center my-auto">
       {% if user.is_authenticated %}
-        <p>Logged in as <span class="font-weight-bold">{{ user }}</span></p>
+        <p class="m-auto">Logged in as <span class="font-weight-bold">{{ user }}</span></p>
       {% else %}
-        <p>Logged in as a <span class="font-weight-bold">Guest</span></p>
+        <p class="m-auto">Logged in as a <span class="font-weight-bold">Guest</span></p>
       {% endif %}
       </div>
+
+      <!-- social links -->
       <div id="social-links" class="col-12 col-md-4 text-center my-auto">
       <a href="https://facebook.com" target="_blank" rel="noopener"
         aria-label="Visit our Facebook page (opens in a new tab)"><i class="fa-brands fa-facebook px-3 my-auto"></i></a>
@@ -54,9 +58,12 @@
       <a href="https://twitter.com" target="_blank" rel="noopener"
         aria-label="Visit our Twitter page (opens in a new tab)"><i class="fa-brands fa-twitter-square px-3 my-auto"></i></a>
       </div>
+
+      <!-- creator details -->
       <div class="col-12 col-md-4 text-center my-auto">
-      <p>Created by Jo&atildeo Rodrigues</p>
+      <p class="m-auto">Created by Jo&atildeo Rodrigues</p>
       </div>
+
     </div>
   </footer>
 
