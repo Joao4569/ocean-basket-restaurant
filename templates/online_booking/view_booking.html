@@ -95,13 +95,19 @@
     </div>
   </div>
 
-  <!-- button -->
+  <!-- logout button -->
   <div class="row">
-    <div class="col-12 text-center py-3">
-      <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
+
+    <div class="col-0 col-md-5"></div>
+
+    <div class="col-md-2 text-center py-3">
+      <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block">
         Logout
       </a>
     </div>
+
+    <div class="col-0 col-md-5"></div>
+
   </div>
 
 <!-- authenticated employee -->
@@ -183,13 +189,19 @@
     </div>
   </div>
 
-  <!-- button -->
+  <!-- logout button -->
   <div class="row">
-    <div class="col-12 text-center py-3">
-      <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
+
+    <div class="col-0 col-md-5"></div>
+
+    <div class="col-md-2 text-center py-3">
+      <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block">
         Logout
       </a>
     </div>
+
+    <div class="col-0 col-md-5"></div>
+
   </div>
 
 <!-- authenticated user -->
@@ -198,7 +210,7 @@
   <!-- page title -->
   <div class="row text-center">
     <div class="col-12">
-      <h2 class="heading my-5 font-elsie">Your Bookings:</h2>
+      <h2 class="heading my-5 font-elsie">Your Bookings</h2>
     </div>
   </div>
 
@@ -248,26 +260,33 @@
     </div>
   </div>
 
-  <!-- buttons -->
+  <!-- create booking button -->
   <div class="row">
 
-    <div class="col-0 col-md-3"></div>
+    <div class="col-0 col-md-4"></div>
 
-    <!-- create booking -->
-    <div class="col-md-3 text-center py-3">
-      <a href="/create_booking" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
+    <div class="col-md-4 text-center py-3">
+      <a href="create_booking/" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block">
         Make a booking
       </a>
     </div>
 
-    <!-- logout -->
-    <div class="col-md-3 text-center py-3">
-      <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
+    <div class="col-0 col-md-4"></div>
+
+  </div>
+
+  <!-- logout button -->
+  <div class="row">
+
+    <div class="col-0 col-md-5"></div>
+
+    <div class="col-md-2 text-center py-3">
+      <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block">
         Logout
       </a>
     </div>
 
-    <div class="col-0 col-md-3"></div>
+    <div class="col-0 col-md-5"></div>
 
   </div>
 
