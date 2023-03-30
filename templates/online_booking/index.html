@@ -2,6 +2,7 @@
 
 {% block content %}
 
+<!-- authenticated store manager -->
 {% if user.is_authenticated and user.is_staff and user.username == "StoreManager" %}
 
   <div class="row text-center">
@@ -26,6 +27,7 @@
     </div>
   </div>
 
+<!-- authenticated employee -->
 {% elif user.is_authenticated and user.is_staff %}
 
   <div class="row text-center">
@@ -51,6 +53,7 @@
     </div>
   </div>
 
+<!-- authenticated user -->
 {% elif user.is_authenticated %}
 
   <div class="row text-center">
@@ -93,6 +96,7 @@
     </div>
   </div>
 
+<!-- guest user -->
 {% else %}
 
   <!-- page title -->

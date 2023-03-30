@@ -4,6 +4,7 @@
 
 {% load crispy_forms_tags %}
 
+<!-- authenticated user -->
 {% if user.is_authenticated %}
 
   <!-- form container -->
@@ -40,6 +41,7 @@
 
   </div>
 
+<!-- guest user -->
 {% else %}
 
   <!-- page title -->
