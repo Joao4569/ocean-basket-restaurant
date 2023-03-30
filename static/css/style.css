@@ -45,6 +45,11 @@ footer {
   color: white;
 }
 
+#social-links a:hover {
+  color: black;
+  background-color: white;
+}
+
 /* templates */
 
 .font-elsie {
@@ -103,9 +108,9 @@ footer {
 
   /* index.html */
 
-  .responsive-width {
+  /*.responsive-width {
     width: 70%;
-  }
+  }*/
 
 }
 
