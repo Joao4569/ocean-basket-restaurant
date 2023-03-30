@@ -8,21 +8,48 @@
 
 {% block content %}
 
-<div class="container form border border-dark rounded p-3">
-  <h1 class="text-center font-elsie form-text-bold pb-3">Welcome</h1>
+<!-- form container -->
+<div class="row align-items-center">
 
-  <p class="text-center">{% blocktrans %}If you have not created an account yet, then please
-  <a class="font-elsie form-text-bold" href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+  <!-- left side column -->
+  <div class="col-4"></div>
 
+  <!-- form column -->
+  <div class="col-4 border border-dark rounded p-3 m-auto">
 
-  <form class="login" method="POST" action="{% url 'account_login' %}">
-    {% csrf_token %}
-    {{ form | crispy }}
-    {% if redirect_field_value %}
-      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-    {% endif %}
-    <button class="primaryAction button-font btn btn-outline-dark font-elsie font-weight-bold" type="submit">{% trans "Sign In" %} &raquo;</button>
-  </form>
+    <!-- form title -->
+    <div class="col-12">
+      <h1 class="text-center font-elsie form-text-bold pb-3">{% trans "Welcome" %}</h1>
+    </div>
+
+    <!-- form information -->
+    <div class="col-12">
+      <p class="text-center">{% blocktrans %}If you have not created an account yet, then please
+        <a class="font-elsie form-text-bold" href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
+      </p>
+    </div>
+
+    <!-- form -->
+    <form class="login col-12" method="POST" action="{% url 'account_login' %}">
+    
+      <!-- form fields -->
+      {% csrf_token %}
+      {{ form | crispy }}
+      {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+      {% endif %}
+
+      <!-- form button -->
+      <div class="row justify-content-center">
+        <button class="primaryAction button-font btn btn-outline-dark font-elsie font-weight-bold col-6" type="submit">{% trans "Sign In" %} &raquo;</button>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- right side column -->
+  <div class="col-4"></div>
+  
 </div>
 
 {% endblock %}
