@@ -36,7 +36,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ocean-basket.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = [
+    'ocean-basket.herokuapp.com', 'localhost',
+    '8000-joao4569-oceanbasketres-vyum8fxjs1x.ws-eu100.gitpod.io',
+    ]
 
 
 # Application definition
