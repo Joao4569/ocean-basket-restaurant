@@ -7,7 +7,7 @@
 
   <!-- page title -->
   <div class="row">
-    <h2 class="col-12 heading my-5 font-elsie text-center">Welcome Employee</h2>
+    <h2 class="col-12 heading my-5 font-elsie text-center">Welcome Store Manager</h2>
   </div>
 
   <!-- today's booking button -->
@@ -83,13 +83,13 @@
 
   <!-- page title -->
   <div class="row">
-    <h2 class="col-12 heading my-5 font-elsie text-center">Welcome</h2>
+    <h2 class="col-12 heading my-5 font-elsie text-center">Welcome {{ user.first_name }}</h2>
   </div>
 
   <!-- page secondary title -->
   <div class="row">
-    <h3 class="col-12 sub-heading text-muted pb-5 font-elsie font-weight-bold text-center font-italic">
-      {{ user.first_name }} {{ user.last_name }}
+    <h3 class="col-12 sub-heading text-muted pb-5 font-elsie font-weight-bold text-center">
+      What would you like to do?
     </h3>
   </div>
 
@@ -99,8 +99,8 @@
     <div class="col-0 col-md-4"></div>
 
     <div class="col-md-4 text-center py-3">
-      <a href="create_booking/" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block">
-        Make a booking
+      <a href="create_booking/" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block" role="button">
+        <span>Make a reservation &nbsp;&nbsp;</span><i class="fa-solid fa-calendar-plus"></i>
       </a>
     </div>
 
@@ -114,8 +114,8 @@
     <div class="col-0 col-md-4"></div>
 
     <div class="col-md-4 text-center py-3">
-      <a href="view_booking/" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block">
-        Manage Bookings
+      <a href="view_booking/" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block text-truncate" role="button">
+        <span>Manage your reservations &nbsp;&nbsp;</span><i class="fa-solid fa-calendar-days"></i>
       </a>
     </div>
 
@@ -129,8 +129,8 @@
     <div class="col-0 col-md-5"></div>
 
     <div class="col-md-2 text-center py-3">
-      <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block">
-        Logout
+      <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block" role="button">
+        <span>Logout &nbsp;&nbsp;</span><i class="fa-solid fa-right-from-bracket"></i>
       </a>
     </div>
 
