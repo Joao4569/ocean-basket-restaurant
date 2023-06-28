@@ -27,7 +27,12 @@
     </div>
     <div class="row">
       <div class="col-12">
-        <h6 id="logo-sub-text" class="text-center pb-4">Fine Dining Seafood Restaurant</h6>
+        <h5 id="logo-sub-text" class="text-center">Fine Dining Seafood Restaurant</h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <h6 id="logo-sub-text-sm" class="text-center pb-4 font-elsie">Since 2003</h6>
       </div>
     </div>
   </header>
@@ -38,11 +43,11 @@
     {% endblock content %}
   </main>
 
-  <footer class="container-fluid fixed-bottom">
+  <footer class="container-fluid mt-5">
     <div class="row p-3">
 
       <!-- user login status -->
-      <div class="col-12 col-md-3 text-center my-auto">
+      <div class="col-12 col-md-3 text-center my-auto order-2 order-md-1 pb-3">
       {% if user.is_authenticated %}
         <p class="m-auto">Logged in as <span class="font-weight-bold">{{ user }}</span></p>
       {% else %}
@@ -51,17 +56,37 @@
       </div>
 
       <!-- social links -->
-      <div id="social-links" class="col-12 col-md-6 text-center my-auto">
-      <a href="https://www.facebook.com" target="_blank" rel="noopener" class="rounded"
-        aria-label="Visit our Facebook page (opens in a new tab)"><i class="fa-brands fa-facebook mx-5 my-auto"></i></a>
-      <a href="https://www.instagram.com" target="_blank" rel="noopener" class="rounded"
-        aria-label="Visit our Instagram page (opens in a new tab)"><i class="fa-brands fa-instagram-square mx-5 my-auto"></i></a>
-      <a href="https://www.twitter.com" target="_blank" rel="noopener" class="rounded"
-        aria-label="Visit our Twitter page (opens in a new tab)"><i class="fa-brands fa-twitter-square mx-5 my-auto"></i></a>
+      <div id="social-links" class="col-12 col-md-6 text-center order-1 order-md-2 py-3">
+        <div class="row">
+
+          <!-- facebook -->
+          <div class="col-4 col-md-4 text-md-right">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener" class="rounded-circle p-1"
+              aria-label="Visit our Facebook page (opens in a new tab)">
+              <i class="fa-brands fa-facebook p-1"></i>
+            </a>
+          </div>
+
+          <!-- instagram -->
+          <div class="col-4 col-md-4">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener" class="rounded-circle p-1"
+              aria-label="Visit our Instagram page (opens in a new tab)">
+              <i class="fa-brands fa-instagram p-1"></i>
+            </a>
+          </div>
+
+          <!-- twitter -->
+          <div class="col-4 col-md-4 text-md-left">
+            <a href="https://www.twitter.com" target="_blank" rel="noopener" class="rounded-circle p-1"
+              aria-label="Visit our Twitter page (opens in a new tab)">
+              <i class="fa-brands fa-twitter p-1"></i>
+            </a>
+          </div>
+        </div>
       </div>
 
       <!-- creator details -->
-      <div class="col-12 col-md-3 text-center my-auto">
+      <div class="col-12 col-md-3 text-center my-auto order-3 pb-3">
       <p class="m-auto">Created by Jo&atildeo Rodrigues</p>
       </div>
 

@@ -38,7 +38,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'ocean-basket.herokuapp.com', 'localhost',
-    '8000-joao4569-oceanbasketres-vyum8fxjs1x.ws-eu100.gitpod.io',
+    '8000-joao4569-oceanbasketres-vyum8fxjs1x.ws-eu101.gitpod.io',
     ]
 
 
