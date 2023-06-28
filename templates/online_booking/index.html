@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<!-- authenticated store manager -->
+<!-- store manager -->
 {% if user.is_authenticated and user.is_staff and user.username == "StoreManager" %}
 
   <!-- page title -->
@@ -40,7 +40,7 @@
 
   </div>
 
-<!-- authenticated employee -->
+<!-- employee -->
 {% elif user.is_authenticated and user.is_staff %}
 
   <!-- page title -->
@@ -93,48 +93,48 @@
     </h3>
   </div>
 
-  <!-- create booking button -->
+  <!-- make a reservation button -->
   <div class="row">
 
-    <div class="col-0 col-md-4"></div>
+    <div class="col-0 col-md-2"></div>
 
-    <div class="col-md-4 text-center py-3">
+    <div class="col-md-8 text-center py-3">
       <a href="create_booking/" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block" role="button">
         <span>Make a reservation &nbsp;&nbsp;</span><i class="fa-solid fa-calendar-plus"></i>
       </a>
     </div>
 
-    <div class="col-0 col-md-4"></div>
+    <div class="col-0 col-md-2"></div>
 
   </div>
 
-  <!-- manage booking button -->
+  <!-- manage your reservation button -->
   <div class="row">
 
-    <div class="col-0 col-md-4"></div>
+    <div class="col-0 col-md-2"></div>
 
-    <div class="col-md-4 text-center py-3">
+    <div class="col-md-8 text-center py-3">
       <a href="view_booking/" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block text-truncate" role="button">
         <span>Manage your reservations &nbsp;&nbsp;</span><i class="fa-solid fa-calendar-days"></i>
       </a>
     </div>
 
-    <div class="col-0 col-md-4"></div>
+    <div class="col-0 col-md-2"></div>
 
   </div>
 
   <!-- logout button -->
   <div class="row">
 
-    <div class="col-0 col-md-5"></div>
+    <div class="col-0 col-md-4"></div>
 
-    <div class="col-md-2 text-center py-3">
+    <div class="col-12 col-md-4 text-center py-3">
       <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block" role="button">
         <span>Logout &nbsp;&nbsp;</span><i class="fa-solid fa-right-from-bracket"></i>
       </a>
     </div>
 
-    <div class="col-0 col-md-5"></div>
+    <div class="col-0 col-md-4"></div>
 
   </div>
 
@@ -161,30 +161,30 @@
   <!-- signup button -->
   <div class="row">
 
-    <div class="col-0 col-md-5"></div>
+    <div class="col-0 col-md-4"></div>
 
-    <div class="col-md-2 text-center py-3">
+    <div class=" col-12 col-md-4 text-center py-3">
       <a href="{% url 'account_signup' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block">
-        Sign Up
+        <span>Sign Up &nbsp;&nbsp;</span><i class="fa-regular fa-address-card"></i>
       </a>
     </div>
 
-    <div class="col-0 col-md-5"></div>
+    <div class="col-0 col-md-4"></div>
 
   </div>
 
   <!-- login button -->
-  <div class="row">
+  <div class="row mb-5">
 
-    <div class="col-0 col-md-5"></div>
+    <div class="col-0 col-md-4"></div>
 
-    <div class="col-md-2 text-center py-3">
+    <div class="col-12 col-md-4 text-center py-3">
       <a href="{% url 'account_login' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block">
-        Login
+        <span>Login &nbsp;&nbsp;</span><i class="fa-solid fa-right-to-bracket"></i>
       </a>
     </div>
 
-    <div class="col-0 col-md-5"></div>
+    <div class="col-0 col-md-4"></div>
 
   </div>
 

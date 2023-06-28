@@ -210,7 +210,7 @@
   <!-- page title -->
   <div class="row text-center">
     <div class="col-12">
-      <h2 class="heading my-5 font-elsie">Your Bookings</h2>
+      <h2 class="heading my-5 font-elsie">Your Reservations</h2>
     </div>
   </div>
 
@@ -220,7 +220,7 @@
       <table class="table table-sm table-bordered table-hover">
 
         <!-- table header -->
-        <thead class="thead-dark">
+        <thead class="thead-dark font-elsie">
           <tr>
             <th class="text-center" scope="col">Booking Title</th>
             <th class="text-center" scope="col">Date</th>
@@ -243,7 +243,7 @@
               <td class="text-center">{{ booking.contact_number }}</td>
               <td class="text-center">
                 <a href="/edit_booking/{{ booking.id }}" class="btn-sm btn-outline-dark font-elsie font-weight-bold">
-                  Edit
+                  Change
                 </a>
               </td>
               <td class="text-center">
@@ -260,14 +260,29 @@
     </div>
   </div>
 
-  <!-- create booking button -->
+  <!-- make reservation button -->
+  <div class="row">
+
+    <div class="col-0 col-md-3"></div>
+
+    <div class="col-12 col-md-6 text-center py-3">
+      <a href="../create_booking" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block">
+        <span>Make a reservation &nbsp;&nbsp;</span><i class="fa-solid fa-calendar-plus"></i>
+      </a>
+    </div>
+
+    <div class="col-0 col-md-3"></div>
+
+  </div>
+
+  <!-- home button -->
   <div class="row">
 
     <div class="col-0 col-md-4"></div>
 
-    <div class="col-md-4 text-center py-3">
-      <a href="../create_booking" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block">
-        Make a booking
+    <div class="col-12 col-md-4 text-center py-3">
+      <a href="/" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block" role="button">
+        <span>Home &nbsp;&nbsp;</span><i class="fa-solid fa-arrow-right fa-2xs"></i>&nbsp;&nbsp;<i class="fa-solid fa-house"></i>
       </a>
     </div>
 
@@ -275,18 +290,19 @@
 
   </div>
 
+
   <!-- logout button -->
   <div class="row">
 
-    <div class="col-0 col-md-5"></div>
+    <div class="col-0 col-md-4"></div>
 
-    <div class="col-md-2 text-center py-3">
+    <div class="col-12 col-md-4 text-center py-3">
       <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block">
-        Logout
+        <span>Logout &nbsp;&nbsp;</span><i class="fa-solid fa-right-from-bracket"></i>
       </a>
     </div>
 
-    <div class="col-0 col-md-5"></div>
+    <div class="col-0 col-md-4"></div>
 
   </div>
 
@@ -295,7 +311,7 @@
 
   <!-- page title -->
   <div class="row">
-    <h2 class="col-12 heading text-center my-5">You are not logged in!</h2>
+    <h2 class="col-12 heading mb-5 font-elsie text-center">You are not logged in!</h2>
   </div>
 
   <!-- page secondary title -->
@@ -311,14 +327,14 @@
     <!-- sign up -->
     <div class="col-md-3 text-center py-3">
       <a href="{% url 'account_signup' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
-        Sign Up
+        <span>Register &nbsp;&nbsp;</span><i class="fa-regular fa-address-card"></i>
       </a>
     </div>
 
     <!-- login -->
     <div class="col-md-3 text-center py-3">
       <a href="{% url 'account_login' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
-        Login
+        <span>Login &nbsp;&nbsp;</span><i class="fa-solid fa-right-to-bracket"></i>
       </a>
     </div>
 

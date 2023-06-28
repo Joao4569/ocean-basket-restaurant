@@ -67,6 +67,7 @@ footer {
 
 .heading {
   font-size: 4rem;
+  font-weight: 500;
 }
 
 .sub-heading {
@@ -98,6 +99,10 @@ footer {
 
 .booking_table {
   width: 80%;
+}
+
+thead {
+  letter-spacing: 1px;
 }
 
 /* media queries */

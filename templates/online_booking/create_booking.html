@@ -11,10 +11,10 @@
   <div class="row align-items-center">
 
     <!-- left side column -->
-    <div class="col-4"></div>
+    <div class="col-0 col-md-2"></div>
 
     <!-- form column -->
-    <div class="col-4 border-0 border-dark rounded p-3 m-auto">
+    <div class="col-12 col-md-8 border-0 border-dark rounded p-3 m-auto">
 
       <!-- form title -->
       <div class="col-12">
@@ -29,17 +29,70 @@
         {{ booking_form | crispy }}
 
         <!-- form button -->
-        <div class="row justify-content-center">
-          <button class="button-font btn btn-outline-dark font-elsie font-weight-bold col-6" type="submit">
-            Reserve &nbsp;&nbsp;<i class="fa-solid fa-calendar-plus"></i>
-          </button>
+        <div class="row">
+
+          <div class="col-0 col-md-2"></div>
+      
+          <div class="col-12 col-md-8 text-center py-3">
+            <button class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block" type="submit">
+              <span>Reserve &nbsp;&nbsp;</span><i class="fa-solid fa-calendar-plus"></i>
+            </button>
+          </div>
+      
+          <div class="col-0 col-md-2"></div>
+      
         </div>
 
       </form>
     </div>
 
     <!-- right side column -->
-    <div class="col-4"></div>
+    <div class="col-0 col-md-2"></div>
+
+  </div>
+
+  <!-- view reservations button -->
+  <div class="row">
+
+    <div class="col-0 col-md-3"></div>
+
+    <div class="col-12 col-md-6 text-center py-3">
+      <a href="../view_booking/" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block text-truncate" role="button">
+        <span>View reservations &nbsp;&nbsp;</span><i class="fa-solid fa-calendar-days"></i>
+      </a>
+    </div>
+
+    <div class="col-0 col-md-3"></div>
+
+  </div>
+
+  <!-- home button -->
+  <div class="row">
+
+    <div class="col-0 col-md-4"></div>
+
+    <div class="col-12 col-md-4 text-center py-3">
+      <a href="/" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block" role="button">
+        <span>Home &nbsp;&nbsp;</span><i class="fa-solid fa-arrow-right fa-2xs"></i>&nbsp;&nbsp;<i class="fa-solid fa-house"></i>
+      </a>
+    </div>
+
+    <div class="col-0 col-md-4"></div>
+
+  </div>
+
+  <!-- logout button -->
+  <div class="row">
+
+    <div class="col-0 col-md-4"></div>
+
+    <div class="col-12 col-md-4 text-center py-3">
+      <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block" role="button">
+        <span>Logout &nbsp;&nbsp;</span><i class="fa-solid fa-right-from-bracket"></i>
+      </a>
+    </div>
+
+    <div class="col-0 col-md-4"></div>
 
   </div>
 
@@ -48,7 +101,7 @@
 
   <!-- page title -->
   <div class="row">
-    <h2 class="col-12 heading text-center my-5">You are not logged in!</h2>
+    <h2 class="col-12 heading mb-5 font-elsie text-center">You are not logged in!</h2>
   </div>
 
   <!-- page secondary title -->
@@ -64,14 +117,14 @@
     <!-- sign up -->
     <div class="col-md-3 text-center py-3">
       <a href="{% url 'account_signup' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
-        Sign Up
+        <span>Register &nbsp;&nbsp;</span><i class="fa-regular fa-address-card"></i>
       </a>
     </div>
 
     <!-- login -->
     <div class="col-md-3 text-center py-3">
       <a href="{% url 'account_login' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
-        Login
+        <span>Login &nbsp;&nbsp;</span><i class="fa-solid fa-right-to-bracket"></i>
       </a>
     </div>
 
