@@ -20,6 +20,8 @@
 
   <!-- header -->
   <header class="container-fluid mb-5 pt-3">
+
+    <!-- logo -->
     <div class="row">
       <div class="col-12 text-center">
         <a class="nav-link" href="/" aria-label="Link to Home page">
@@ -27,14 +29,18 @@
         </a>
       </div>
     </div>
+
+    <!-- logo text -->
     <div class="row">
       <div class="col-12">
-        <h5 id="logo-sub-text" class="text-center">Fine Dining Seafood Restaurant</h5>
+        <h5 id="logo-text" class="text-center">Fine Dining Seafood Restaurant</h5>
       </div>
     </div>
+
+    <!-- logo text small -->
     <div class="row">
       <div class="col-12">
-        <h6 id="logo-sub-text-sm" class="text-center pb-4 font-elsie">Since 2003</h6>
+        <h6 id="logo-text-sm" class="text-center pb-4 font-elsie">Since 2003</h6>
       </div>
     </div>
   </header>
@@ -50,7 +56,7 @@
     <div class="row p-3">
 
       <!-- user login status -->
-      <div class="col-12 col-md-3 text-center my-auto order-2 order-md-1 pb-3">
+      <div class="col-12 col-md-3 text-center my-auto order-2 order-md-1 pb-3 footer-text">
       {% if user.is_authenticated %}
         <p class="m-auto">Logged in as <span class="font-weight-bold">{{ user }}</span></p>
       {% else %}
@@ -89,8 +95,11 @@
       </div>
 
       <!-- creator details -->
-      <div class="col-12 col-md-3 text-center my-auto order-3 pb-3">
-      <p class="m-auto">Created by Jo&atildeo Rodrigues</p>
+      <div class="col-12 col-md-3 text-center my-auto order-3 pb-3 footer-text">
+      <p class="m-auto">
+        Created by Jo&atildeo Rodrigues<br>
+        For educational purposes only!
+      </p>
       </div>
 
     </div>
