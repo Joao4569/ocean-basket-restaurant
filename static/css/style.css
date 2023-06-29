@@ -172,16 +172,32 @@ thead {
 
   /* header */
   .logo {
-    font-size: 2.5rem;
+    font-size: 2.7rem !important;
   }
 
-  #logo-sub-text {
+  #logo-text {
+    font-size: 0.8rem !important;
+  }
+
+  #logo-text-sm {
     font-size: 0.75rem;
+  }
+
+  /* templates */
+
+  .heading {
+    font-size: 2.2rem;
+    font-weight: 600;
   }
 
   /* footer */
 
   #social-links a {
+    font-size: 1.5rem;
+  }
+
+  /* buttons */
+  .button-font {
     font-size: 1.5rem;
   }
 
