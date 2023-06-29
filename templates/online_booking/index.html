@@ -53,9 +53,9 @@
 
     <div class="col-0 col-md-4"></div>
 
-    <div class="col-md-4 text-center py-3">
-      <a href="view_booking_employee/" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block">
-        Today's Bookings
+    <div class="col-12 col-md-4 text-center py-3">
+      <a href="view_booking_employee/" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block" role="button">
+        <span>Today's Bookings &nbsp;&nbsp;</span><i class="fa-solid fa-calendar-days"></i>
       </a>
     </div>
 
@@ -66,15 +66,15 @@
   <!-- logout button -->
   <div class="row">
 
-    <div class="col-0 col-md-5"></div>
+    <div class="col-0 col-md-4"></div>
 
-    <div class="col-md-2 text-center py-3">
-      <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block">
-        Logout
+    <div class="col-12 col-md-4 text-center py-3">
+      <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block" role="button">
+        <span>Logout &nbsp;&nbsp;</span><i class="fa-solid fa-right-from-bracket"></i>
       </a>
     </div>
 
-    <div class="col-0 col-md-5"></div>
+    <div class="col-0 col-md-4"></div>
 
   </div>
 

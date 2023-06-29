@@ -126,7 +126,7 @@
       <table class="table table-sm table-bordered table-hover">
 
         <!-- lunch table header -->
-        <thead class="thead-dark">
+        <thead class="thead-dark font-elsie">
           <tr>
             <th class="text-center" scope="col">Date</th>
             <th class="text-center" scope="col">Contact</th>
@@ -164,7 +164,7 @@
       <table class="table table-sm table-bordered table-hover">
   
         <!-- dinner table header -->
-        <thead class="thead-dark">
+        <thead class="thead-dark font-elsie">
           <tr>
             <th class="text-center" scope="col">Date</th>
             <th class="text-center" scope="col">Contact</th>
@@ -189,18 +189,33 @@
     </div>
   </div>
 
-  <!-- logout button -->
+  <!-- home button -->
   <div class="row">
 
-    <div class="col-0 col-md-5"></div>
+    <div class="col-0 col-md-4"></div>
 
-    <div class="col-md-2 text-center py-3">
-      <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block">
-        Logout
+    <div class="col-12 col-md-4 text-center py-3">
+      <a href="/" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block" role="button">
+        <span>Home &nbsp;</span><i class="fa-solid fa-arrow-right fa-2xs"></i>&nbsp;&nbsp;<i class="fa-solid fa-house"></i>
       </a>
     </div>
 
-    <div class="col-0 col-md-5"></div>
+    <div class="col-0 col-md-4"></div>
+
+  </div>
+
+  <!-- logout button -->
+  <div class="row">
+
+    <div class="col-0 col-md-4"></div>
+
+    <div class="col-12 col-md-4 text-center py-3">
+      <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block" role="button">
+        <span>Logout &nbsp;&nbsp;</span><i class="fa-solid fa-right-from-bracket"></i>
+      </a>
+    </div>
+
+    <div class="col-0 col-md-4"></div>
 
   </div>
 
@@ -282,7 +297,7 @@
 
     <div class="col-12 col-md-4 text-center py-3">
       <a href="/" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block" role="button">
-        <span>Home &nbsp;&nbsp;</span><i class="fa-solid fa-arrow-right fa-2xs"></i>&nbsp;&nbsp;<i class="fa-solid fa-house"></i>
+        <span>Home &nbsp;</span><i class="fa-solid fa-arrow-right fa-2xs"></i>&nbsp;&nbsp;<i class="fa-solid fa-house"></i>
       </a>
     </div>
 
