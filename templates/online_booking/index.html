@@ -1,0 +1,188 @@
+{% extends "online_booking/base.html" %}
+
+{% block content %}
+
+<!-- store manager -->
+{% if user.is_authenticated and user.is_staff and user.username == "StoreManager" %}
+
+  <!-- page title -->
+  <div class="row">
+    <h2 class="col-12 heading my-5 font-elsie text-center">Welcome Store Manager</h2>
+  </div>
+
+  <!-- today's booking button -->
+  <div class="row">
+
+    <div class="col-1 col-sm-3 col-xl-4"></div>
+
+    <div class="col-10 col-sm-6 col-xl-4 text-center py-3">
+      <a href="view_booking_employee/" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block" role="button">
+        <span>Today's Bookings &nbsp;&nbsp;</span><i class="fa-solid fa-calendar-days"></i>
+      </a>
+    </div>
+
+    <div class="col-1 col-sm-3 col-xl-4"></div>
+
+  </div>
+
+  <!-- logout button -->
+  <div class="row">
+
+    <div class="col-3 col-sm-4 col-xl-5"></div>
+
+    <div class="col-6 col-sm-4 col-xl-2 text-center py-3">
+      <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block" role="button">
+        <span>Logout &nbsp;&nbsp;</span><i class="fa-solid fa-right-from-bracket"></i>
+      </a>
+    </div>
+
+    <div class="col-3 col-sm-4 col-xl-5"></div>
+
+  </div>
+
+<!-- employee -->
+{% elif user.is_authenticated and user.is_staff %}
+
+  <!-- page title -->
+  <div class="row">
+    <h2 class="col-12 heading my-5 font-elsie text-center">Welcome Employee</h2>
+  </div>
+
+  <!-- today's booking button -->
+  <div class="row">
+
+    <div class="col-1 col-sm-3 col-xl-4"></div>
+
+    <div class="col-10 col-sm-6 col-xl-4 text-center py-3">
+      <a href="view_booking_employee/" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block" role="button">
+        <span>Today's Bookings &nbsp;&nbsp;</span><i class="fa-solid fa-calendar-days"></i>
+      </a>
+    </div>
+
+    <div class="col-1 col-sm-3 col-xl-4"></div>
+
+  </div>
+
+  <!-- logout button -->
+  <div class="row">
+
+    <div class="col-3 col-sm-4 col-xl-5"></div>
+
+    <div class="col-6 col-sm-4 col-xl-2 text-center py-3">
+      <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block" role="button">
+        <span>Logout &nbsp;&nbsp;</span><i class="fa-solid fa-right-from-bracket"></i>
+      </a>
+    </div>
+
+    <div class="col-3 col-sm-4 col-xl-5"></div>
+
+  </div>
+
+<!-- authenticated user -->
+{% elif user.is_authenticated %}
+
+  <!-- page title -->
+  <div class="row">
+    <h2 class="col-12 heading my-5 font-elsie text-center">Welcome {{ user.first_name }}</h2>
+  </div>
+
+  <!-- page secondary title -->
+  <div class="row">
+    <h3 class="col-12 sub-heading text-muted pb-5 font-elsie font-weight-bold text-center">
+      What would you like to do?
+    </h3>
+  </div>
+
+  <!-- make a reservation button -->
+  <div class="row">
+
+    <div class="col-1 col-sm-2 col-md-3 col-xl-4"></div>
+
+    <div class="col-10 col-sm-8 col-md-6 col-xl-4 text-center py-3">
+      <a href="create_booking/" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block" role="button">
+        <span>Make a reservation &nbsp;&nbsp;</span><i class="fa-solid fa-calendar-plus"></i>
+      </a>
+    </div>
+
+    <div class="col-1 col-sm-2 col-md-3 col-xl-4"></div>
+
+  </div>
+
+  <!-- manage reservations button -->
+  <div class="row">
+
+    <div class="col-1 col-sm-2 col-md-3 col-xl-4"></div>
+
+    <div class="col-10 col-sm-8 col-md-6 col-xl-4 text-center py-3">
+      <a href="view_booking/" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block text-truncate" role="button">
+        <span>Manage reservations &nbsp;&nbsp;</span><i class="fa-solid fa-calendar-days"></i>
+      </a>
+    </div>
+
+    <div class="col-1 col-sm-2 col-md-3 col-xl-4"></div>
+
+  </div>
+
+  <!-- logout button -->
+  <div class="row">
+
+    <div class="col-3 col-sm-4 col-xl-5"></div>
+
+    <div class="col-6 col-sm-4 col-xl-2 text-center py-3">
+      <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block" role="button">
+        <span>Logout &nbsp;&nbsp;</span><i class="fa-solid fa-right-from-bracket"></i>
+      </a>
+    </div>
+
+    <div class="col-3 col-sm-4 col-xl-5"></div>
+
+  </div>
+
+<!-- guest user -->
+{% else %}
+
+  <!-- page title -->
+  <div class="row">
+    <h2 class="col-12 heading mb-5 font-elsie text-center">Online Reservations</h2><!--col-12 heading text-center my-5-->
+  </div>
+
+  <!-- page paragraph -->
+  <div class="row">
+    <p class="col-12 main-paragraph-text text-center pt-2 pb-5 px-5">
+      Welcome to our new online reservations portal, now you can make your reservations at your own convenience and from any device.
+    </p>
+  </div>
+  
+  <!-- signup button -->
+  <div class="row">
+
+    <div class="col-2 col-sm-4 col-xl-5"></div>
+
+    <div class=" col-8 col-sm-4 col-xl-2 text-center py-3">
+      <a href="{% url 'account_signup' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block">
+        <span>Sign Up &nbsp;&nbsp;</span><i class="fa-regular fa-address-card"></i>
+      </a>
+    </div>
+
+    <div class="col-2 col-sm-4 col-xl-5"></div>
+
+  </div>
+
+  <!-- login button -->
+  <div class="row mb-5">
+
+    <div class="col-3 col-sm-4 col-xl-5"></div>
+
+    <div class="col-6 col-sm-4 col-xl-2 text-center py-3">
+      <a href="{% url 'account_login' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block">
+        <span>Login &nbsp;&nbsp;</span><i class="fa-solid fa-right-to-bracket"></i>
+      </a>
+    </div>
+
+    <div class="col-3 col-sm-4 col-xl-5"></div>
+
+  </div>
+
+{% endif %}
+
+{% endblock %}
