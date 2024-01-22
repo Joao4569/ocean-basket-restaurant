@@ -4,13 +4,89 @@
 
 {% block content %}
 
-<div class="container form border border-dark rounded p-3">
-  <h1 class="text-center font-elsie form-text-bold pb-3">Edit your Booking</h1>
-  <form method="Post">
-    {{ edit_form | crispy }}
-    {% csrf_token %}
-    <button class="btn-lg btn-outline-dark font-elsie font-weight-bold" type="submit">Update Booking</button>
-  </form>
-</div>
+<!-- authenticated user -->
+{% if user.is_authenticated %}
+
+  <!-- form container -->
+  <div class="row align-items-center">
+
+    <!-- left side column -->
+    <div class="col-0 col-md-4"></div>
+
+    <!-- form column -->
+    <div class="col-12 col-md-4 border-0 border-dark rounded p-3 m-auto">
+
+      <!-- form title -->
+      <div class="col-12">
+        <h1 class="text-center font-elsie form-text-bold pb-3">Edit your Reservation</h1>
+      </div>
+      
+      <!-- form -->
+      <form method="Post">
+
+        <!-- form fields -->
+        {% csrf_token %}
+        {{ edit_form | crispy }}
+
+        <!-- form button -->
+        <div class="row">
+
+          <div class="col-0"></div>
+      
+          <div class="col-12 text-center py-3">
+            <button class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block" type="submit">
+              <span>Update Info &nbsp;&nbsp;</span><i class="fa-solid fa-pen-to-square"></i>
+            </button>
+          </div>
+      
+          <div class="col-0"></div>
+      
+        </div>
+
+      </form>
+    </div>
+
+    <!-- right side column -->
+    <div class="col-0 col-md-4"></div>
+
+  </div>
+
+<!-- guest user -->
+{% else %}
+
+  <!-- page title -->
+  <div class="row">
+    <h2 class="col-12 heading mb-5 font-elsie text-center">You are not logged in!</h2>
+  </div>
+
+  <!-- page secondary title -->
+  <div class="row">
+    <h3 class="col-12 sub-heading text-center text-muted font-italic pb-5 font-elsie font-weight-bold">Please login or Register to view the contents of this page.</h3>
+  </div>
+
+  <!-- buttons -->
+  <div class="row">
+
+    <div class="col-0 col-md-3"></div>
+
+    <!-- sign up -->
+    <div class="col-md-3 text-center py-3">
+      <a href="{% url 'account_signup' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
+        <span>Register &nbsp;&nbsp;</span><i class="fa-regular fa-address-card"></i>
+      </a>
+    </div>
+
+    <!-- login -->
+    <div class="col-md-3 text-center py-3">
+      <a href="{% url 'account_login' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
+        <span>Login &nbsp;&nbsp;</span><i class="fa-solid fa-right-to-bracket"></i>
+      </a>
+    </div>
+
+    <div class="col-0 col-md-3"></div>
+
+  </div>
+
+{% endif %}
 
 {% endblock %}

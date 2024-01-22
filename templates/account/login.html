@@ -8,21 +8,65 @@
 
 {% block content %}
 
-<div class="container form border border-dark rounded p-3">
-  <h1 class="text-center font-elsie form-text-bold pb-3">Welcome</h1>
+<!-- form container -->
+<div class="row align-items-center">
 
-  <p class="text-center">{% blocktrans %}If you have not created an account yet, then please
-  <a class="font-elsie form-text-bold" href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+  <!-- left side column -->
+  <div class="col-0 col-sm-2 col-lg-4"></div>
 
+  <!-- form column -->
+  <div class="col-12 col-sm-8 col-lg-4 border-4 border-dark rounded p-3 m-auto">
 
-  <form class="login" method="POST" action="{% url 'account_login' %}">
-    {% csrf_token %}
-    {{ form | crispy }}
-    {% if redirect_field_value %}
-      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-    {% endif %}
-    <button class="primaryAction button-font btn btn-outline-dark font-elsie font-weight-bold" type="submit">{% trans "Sign In" %} &raquo;</button>
-  </form>
+    <!-- form title -->
+    <div class="col-12">
+      <h1 class="text-center font-elsie form-text-bold pb-3">{% trans "Welcome" %}</h1>
+    </div>
+
+    <!-- form information -->
+    <div class="col-12">
+      <p class="text-center">{% blocktrans %}If you have not created an account yet, then please
+        <a class="font-elsie form-text-bold" href="{{ signup_url }}">Register</a> first.{% endblocktrans %}
+      </p>
+    </div>
+
+    <!-- form -->
+    <form class="login col-12" method="POST" action="{% url 'account_login' %}">
+    
+      <!-- form fields -->
+      {% csrf_token %}
+      {{ form | crispy }}
+      {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+      {% endif %}
+
+      <!-- form button -->
+      <div class="row justify-content-center pt-3">
+        <button class="primaryAction button-font btn btn-outline-dark font-elsie font-weight-bold col-6 col-lg-12 col-xl-6" type="submit">
+          <span>{% trans "Sign In" %} &nbsp;&nbsp;</span><i class="fa-solid fa-right-to-bracket"></i></button>
+      </div>
+
+    </form>
+
+  </div>
+
+  <!-- right side column -->
+  <div class="col-0 col-sm-2 col-lg-4"></div>
+  
+</div>
+
+<!-- home button -->
+<div class="row">
+
+  <div class="col-3 col-sm-4 col-xl-5"></div>
+
+  <div class="col-6 col-sm-4 col-xl-2 text-center py-3">
+    <a href="/" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block" role="button">
+      <span>Home &nbsp;</span><i class="fa-solid fa-arrow-right fa-2xs"></i>&nbsp;&nbsp;<i class="fa-solid fa-house"></i>
+    </a>
+  </div>
+
+  <div class="col-3 col-sm-4 col-xl-5"></div>
+
 </div>
 
 {% endblock %}

@@ -17,40 +17,91 @@
 </head>
 
 <body>
-  <header class="row border-bottom border-dark">
-    <div class="container-fluid text-center">
-      <a class="nav-link" href="/" aria-label="Link to Home page">
-        <h1 class="logo font-elsie">Ocean Basket</h1>
-      </a>
+
+  <!-- header -->
+  <header class="container-fluid mb-5 pt-3">
+
+    <!-- logo -->
+    <div class="row">
+      <div class="col-12 text-center">
+        <a class="nav-link" href="/" aria-label="Link to Home page">
+          <h1 class="logo font-elsie">Ocean Basket</h1>
+        </a>
+      </div>
     </div>
-    <div class="container-fluid">
-      <h6 id="logo-sub-text" class="text-center pb-4">Fine Dining Seafood Restaurant</h6>
+
+    <!-- logo text -->
+    <div class="row">
+      <div class="col-12">
+        <h5 id="logo-text" class="text-center">Fine Dining Seafood Restaurant</h5>
+      </div>
+    </div>
+
+    <!-- logo text small -->
+    <div class="row">
+      <div class="col-12">
+        <h6 id="logo-text-sm" class="text-center pb-4 font-elsie">Since 2003</h6>
+      </div>
     </div>
   </header>
-  <main class="flex-shrink-0 main-bg">
+
+  <main class="container-fluid">
     {% block content %}
 
     {% endblock content %}
   </main>
 
-  <footer class="row border-top border-dark pt-5">
-    <div class="col-12 col-md-4 d-flex justify-content-center">
+  <!-- footer -->
+  <footer class="container-fluid mt-5">
+    <div class="row p-3">
+
+      <!-- user login status -->
+      <div class="col-12 col-md-3 text-center my-auto order-2 order-md-1 pb-3 footer-text">
       {% if user.is_authenticated %}
-        <p class="mt-3">Logged in as <span class="font-weight-bold">{{ user }}</span></p>
+        <p class="m-auto">Logged in as <span class="font-weight-bold">{{ user }}</span></p>
       {% else %}
-        <p class="mt-3">Logged in as <span class="font-weight-bold">Guest</span></p>
+        <p class="m-auto">Logged in as a <span class="font-weight-bold">Guest</span></p>
       {% endif %}
-    </div>
-    <div id="social-links" class="col-12 col-md-4 d-flex justify-content-center">
-      <a href="https://facebook.com" target="_blank" rel="noopener"
-        aria-label="Visit our Facebook page (opens in a new tab)"><i class="fa-brands fa-facebook px-3"></i></a>
-      <a href="https://instagram.com" target="_blank" rel="noopener"
-        aria-label="Visit our Instagram page (opens in a new tab)"><i class="fa-brands fa-instagram-square px-3"></i></a>
-      <a href="https://twitter.com" target="_blank" rel="noopener"
-        aria-label="Visit our Twitter page (opens in a new tab)"><i class="fa-brands fa-twitter-square px-3"></i></a>
-    </div>
-    <div class="col-12 col-md-4 d-flex justify-content-center mt-3">
-      <p>Made by J.Rodrigues</p>
+      </div>
+
+      <!-- social links -->
+      <div id="social-links" class="col-12 col-md-6 text-center order-1 order-md-2 py-3">
+        <div class="row">
+
+          <!-- facebook -->
+          <div class="col-4 col-md-4 text-md-right">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener" class="rounded-circle p-1"
+              aria-label="Visit our Facebook page (opens in a new tab)">
+              <i class="fa-brands fa-facebook p-1"></i>
+            </a>
+          </div>
+
+          <!-- instagram -->
+          <div class="col-4 col-md-4">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener" class="rounded-circle p-1"
+              aria-label="Visit our Instagram page (opens in a new tab)">
+              <i class="fa-brands fa-instagram p-1"></i>
+            </a>
+          </div>
+
+          <!-- twitter -->
+          <div class="col-4 col-md-4 text-md-left">
+            <a href="https://www.twitter.com" target="_blank" rel="noopener" class="rounded-circle p-1"
+              aria-label="Visit our Twitter page (opens in a new tab)">
+              <i class="fa-brands fa-twitter p-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- creator details -->
+      <div class="col-12 col-md-3 text-center my-auto order-3 pb-3 footer-text">
+      <p class="m-auto">
+        Created by Jo&atildeo Rodrigues<br>
+        For educational purposes only!
+      </p>
+      </div>
+
     </div>
   </footer>
 

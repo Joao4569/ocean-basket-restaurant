@@ -18,25 +18,47 @@ body {
 
 /* header */
 
-.logo {
-  color: black;
-  font-size: 6rem;
-  font-weight: 800;
+header {
+  background-color: black;
 }
 
-#logo-sub-text {
-  font-size: 1.5rem;
+.logo {
+  color: white;
+  font-size: 5.5rem !important;
+  font-weight: 600 !important;
+}
+
+#logo-text {
+  color: white;
+  font-weight: 400 !important;
+  font-size: 1.3rem;
+}
+
+#logo-text-sm {
+  color: white;
+  font-weight: 600 !important;
+  font-size: 1rem;
 }
 
 /* footer */
 
 footer {
-  height: 5rem;
+  background-color: black;
+  color: white;
 }
 
 #social-links a {
-  font-size: 3rem;
+  font-size: 2rem;
+  color: white;
+}
+
+#social-links a:hover {
   color: black;
+  background-color: white;
+}
+
+.footer-text {
+  font-size: 0.9rem;
 }
 
 /* templates */
@@ -51,6 +73,7 @@ footer {
 
 .heading {
   font-size: 4rem;
+  font-weight: 500;
 }
 
 .sub-heading {
@@ -65,10 +88,6 @@ footer {
 
 .main-paragraph-text {
   font-size: 1.5rem;
-}
-
-.responsive-width {
-  width: 50%;
 }
 
 /* forms */
@@ -88,6 +107,10 @@ footer {
   width: 80%;
 }
 
+thead {
+  letter-spacing: 1px;
+}
+
 /* media queries */
 
 /* for screen width less than 1200px */
@@ -101,9 +124,9 @@ footer {
 
   /* index.html */
 
-  .responsive-width {
+  /*.responsive-width {
     width: 70%;
-  }
+  }*/
 
 }
 
@@ -128,17 +151,10 @@ footer {
 
   /* forms */
 
-  .form {
-    width: 70%;
-  }
-
-  /* index.html */
-
   .main-paragraph-text {
     font-size: 1rem;
   }
 
-  
   /* templates */
 
   .heading {
@@ -156,16 +172,32 @@ footer {
 
   /* header */
   .logo {
-    font-size: 2.5rem;
+    font-size: 2.7rem !important;
   }
 
-  #logo-sub-text {
+  #logo-text {
+    font-size: 0.8rem !important;
+  }
+
+  #logo-text-sm {
     font-size: 0.75rem;
+  }
+
+  /* templates */
+
+  .heading {
+    font-size: 2.2rem;
+    font-weight: 600;
   }
 
   /* footer */
 
   #social-links a {
+    font-size: 1.5rem;
+  }
+
+  /* buttons */
+  .button-font {
     font-size: 1.5rem;
   }
 

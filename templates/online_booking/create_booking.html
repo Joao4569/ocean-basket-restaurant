@@ -1,42 +1,135 @@
 {% extends "online_booking/base.html" %}
 
-{% block content %}
-
 {% load crispy_forms_tags %}
 
+{% block content %}
+
+<!-- authenticated user -->
 {% if user.is_authenticated %}
 
-  <div class="container form border border-dark rounded p-3">
-    <h1 class="text-center font-elsie form-text-bold pb-3">Make a New Booking</h1>
-    <form method="Post">
-      {{ booking_form | crispy }}
-      {% csrf_token %}
-      <button class="button-font btn btn-outline-dark font-elsie font-weight-bold" type="submit">Create Booking &raquo;</button>
-    </form>
+  <!-- form container -->
+  <div class="row align-items-center">
+
+    <!-- left side column -->
+    <div class="col-1 col-sm-2 col-lg-4"></div>
+
+    <!-- form column -->
+    <div class="col-10 col-sm-8 col-lg-4 border-0 border-dark rounded p-3 m-auto">
+
+      <!-- form title -->
+      <div class="col-12">
+        <h1 class="text-center font-elsie form-text-bold pb-3">Reservation Details:</h1>
+      </div>
+      
+      <!-- form -->
+      <form method="Post">
+
+        <!-- form fields -->
+        {% csrf_token %}
+        {{ booking_form | crispy }}
+
+        <!-- form button -->
+        <div class="row">
+
+          <div class="col-0 col-md-2"></div>
+      
+          <div class="col-12 col-md-8 text-center py-3">
+            <button class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block" type="submit">
+              <span>Reserve &nbsp;&nbsp;</span><i class="fa-solid fa-calendar-plus"></i>
+            </button>
+          </div>
+      
+          <div class="col-0 col-md-2"></div>
+      
+        </div>
+
+      </form>
+    </div>
+
+    <!-- right side column -->
+    <div class="col-1 col-sm-2 col-lg-4"></div>
+
   </div>
 
+  <!-- view reservations button -->
+  <div class="row">
+
+    <div class="col-1 col-sm-2 col-md-3 col-xl-4"></div>
+
+    <div class="col-10 col-sm-8 col-md-6 col-xl-4 text-center py-3">
+      <a href="../view_booking/" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block text-truncate" role="button">
+        <span>View reservations &nbsp;&nbsp;</span><i class="fa-solid fa-calendar-days"></i>
+      </a>
+    </div>
+
+    <div class="col-1 col-sm-2 col-md-3 col-xl-4"></div>
+
+  </div>
+
+  <!-- home button -->
+  <div class="row">
+
+    <div class="col-3 col-sm-4 col-xl-5"></div>
+
+    <div class="col-6 col-sm-4 col-xl-2 text-center py-3">
+      <a href="/" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block" role="button">
+        <span>Home &nbsp;</span><i class="fa-solid fa-arrow-right fa-2xs"></i>&nbsp;&nbsp;<i class="fa-solid fa-house"></i>
+      </a>
+    </div>
+
+    <div class="col-3 col-sm-4 col-xl-5"></div>
+
+  </div>
+
+  <!-- logout button -->
+  <div class="row">
+
+    <div class="col-3 col-sm-4 col-xl-5"></div>
+
+    <div class="col-6 col-sm-4 col-xl-2 text-center py-3">
+      <a href="{% url 'account_logout' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold btn-block" role="button">
+        <span>Logout &nbsp;&nbsp;</span><i class="fa-solid fa-right-from-bracket"></i>
+      </a>
+    </div>
+
+    <div class="col-3 col-sm-4 col-md-4 col-xl-5"></div>
+
+  </div>
+
+<!-- guest user -->
 {% else %}
 
-  <div class="container text-center responsive-width">
-    <h2 class="heading mt-5 mb-3">You are not logged in</h2>
-    <p class="main-paragraph-text text-center mx-auto pt-2 pb-5">
-      Please login or Sign up to view the contents of this page.
-    </p>
+  <!-- page title -->
+  <div class="row">
+    <h2 class="col-12 heading mb-5 font-elsie text-center">You are not logged in!</h2>
   </div>
 
-  <div class="container w-50 my-5">
-    <div class="row text-center">
-      <div class="col-12 col-md-6 py-3">
-        <a href="{% url 'account_signup' %}" class="button-font btn btnoutline-dark font-elsie font-weight-bold">
-          Sign Up
-        </a>
-      </div>
-      <div class="col-12 col-md-6 py-3">
-        <a href="{% url 'account_login' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
-          Login
-        </a>
-      </div>
+  <!-- page secondary title -->
+  <div class="row">
+    <h3 class="col-12 sub-heading text-center text-muted font-italic pb-5 font-elsie font-weight-bold">Please login or Register to view the contents of this page.</h3>
+  </div>
+
+  <!-- buttons -->
+  <div class="row">
+
+    <div class="col-0 col-md-3"></div>
+
+    <!-- sign up -->
+    <div class="col-md-3 text-center py-3">
+      <a href="{% url 'account_signup' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
+        <span>Register &nbsp;&nbsp;</span><i class="fa-regular fa-address-card"></i>
+      </a>
     </div>
+
+    <!-- login -->
+    <div class="col-md-3 text-center py-3">
+      <a href="{% url 'account_login' %}" class="button-font btn btn-outline-dark font-elsie font-weight-bold">
+        <span>Login &nbsp;&nbsp;</span><i class="fa-solid fa-right-to-bracket"></i>
+      </a>
+    </div>
+
+    <div class="col-0 col-md-3"></div>
+
   </div>
 
 {% endif %}

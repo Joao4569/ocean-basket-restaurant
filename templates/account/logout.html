@@ -5,20 +5,48 @@
 {% block head_title %}{% trans "Sign Out" %}{% endblock %}
 
 {% block content %}
-<div class="container form border border-dark rounded p-3">
-  <h1 class="text-center font-elsie form-text-bold pb-3">{% trans "Sign Out" %}</h1>
 
-  <p class="text-center">{% trans 'Are you sure you want to sign out?' %}</p>
+<!-- form container -->
+<div class="row align-items-center">
 
-  <form method="post" action="{% url 'account_logout' %}">
+  <!-- left side column -->
+  <div class="col-0 col-md-2"></div>
+
+  <!-- form column -->
+  <div class="col-12 col-md-8 border-0 border-dark rounded p-3 m-auto">
+
+    <!-- form title -->
+    <div class="col-12">
+      <h1 class="text-center font-elsie form-text-bold pb-3">{% trans "Sign Out" %}</h1>
+    </div>
+    
+    <!-- form information -->
+    <div class="col-12">
+      <p class="text-center">{% trans 'Are you sure you want to sign out?' %}</p>
+    </div>
+  
+    <!-- form -->
+    <form method="post" action="{% url 'account_logout' %}">
+
+    <!-- form fields -->
     {% csrf_token %}
     {% if redirect_field_value %}
       <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
     {% endif %}
-    <div class="text-center">
-      <button class="button-font btn btn-outline-dark font-elsie font-weight-bold" type="submit">{% trans 'Yes I am' %} &raquo;</button>
+    
+    <!-- form button -->
+    <div class="row justify-content-center">
+      <button class="button-font btn btn-outline-dark font-elsie font-weight-bold" type="submit">
+        <span>{% trans 'Yes I am' %} &nbsp;&nbsp;</span><i class="fa-solid fa-square-check"></i>
+      </button>
     </div>
-  </form>
+
+    </form>
+  </div>
+
+  <!-- right side column -->
+  <div class="col-0 col-md-2"></div>
+
 </div>
 
 
