@@ -11,14 +11,14 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 Modification:
 Import the os and dj_database_url libraries for referencing the env.py file
-and set a coditional statement to prevent errors due to how the Code Institute
+and set a conditional statement to prevent errors due to how the Code Institute
 IDE template is designed.
 """
 from pathlib import Path
 import os
 import dj_database_url
 if os.path.isfile('env.py'):
-    import env
+    import env  # noqa pylint: disable=import-error disable=unused-import
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -34,7 +34,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'ocean-basket.herokuapp.com',
@@ -153,7 +153,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/ocean_basket/'
+STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
