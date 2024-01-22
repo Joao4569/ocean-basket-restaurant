@@ -588,10 +588,9 @@ Features left to implement can be found on the repositories issues under the Pro
 - All form redirects and associated linking of buttons were tested for the expected functionality.
 - After creating a basic table with the logged in users booking, I made use of the built in Django admin panel to create users and test if the data for the tables were displaying as intended i.e. only the logged in users data displayed and if there is no data then an alternate message will display.
 - I Sourced most common media breakpoint widths on [www.freecodecamp.org](https://www.freecodecamp.org/news/css-media-queries-breakpoints-media-types-standard-resolutions-and-more/.) and made the site responsive down to minimum width of 320 pixels.
-  - Mobile devices: Width 320px  —  480px ,and Height 568px - 736px.
-  - Tablets: Width 768px - 992px ,and Height 992px - 1280px.
-  - Small screens, laptops: Width 768px  —  992px ,and Height 992px - 1280px.
-  - Desktops, large screens: Width 1024px +  ,and Height 1024px +.
+  - Mobile devices: Width 320px  —  480px, and Height 568px - 736px.
+  - Small screens, tablets, and laptops: Width 768px  —  992px, and Height 992px - 1280px.
+  - Desktops, large screens: Width 1024px + , and Height 1024px +.
 - Made use of Chrome developer tools for previewing and testing new designs for media queries as well as UX aspects.
 - I have tested all buttons and links, they are all acting as intended.
 - I found a bug with how I used Django template language, instead of using `(list name)|length` I used `(list name).length`. **Resolved**
