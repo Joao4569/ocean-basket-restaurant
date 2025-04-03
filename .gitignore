@@ -7,6 +7,6 @@ __pycache__/
 node_modules/
 .github/
 cloudinary_python.txt
-ob_vde/
+vde_py3.9/
 dockerfile
 requirementstest.txt
