@@ -7,7 +7,7 @@ WORKDIR /app
 
 COPY requirements.txt .
 
-RUN pip install --upgrade pip
+RUN pip install --upgrade pip==22.0.4
 RUN pip install -r requirements.txt
 
 COPY . .
