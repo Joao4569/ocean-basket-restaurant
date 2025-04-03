@@ -8,5 +8,4 @@ node_modules/
 .github/
 cloudinary_python.txt
 vde_py3.9/
-dockerfile
 requirementstest.txt
