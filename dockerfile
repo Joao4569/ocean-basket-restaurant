@@ -11,6 +11,8 @@ RUN pip install --upgrade pip==22.0.4
 RUN pip install -r requirements.txt
 
 COPY . .
+# This next line is for deployment only, remove it for local development
+RUN python manage.py collectstatic --noinput
 
 EXPOSE 8000
 

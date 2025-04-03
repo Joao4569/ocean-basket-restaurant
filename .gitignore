@@ -9,6 +9,8 @@ node_modules/
 cloudinary_python.txt
 vde_py3.9/
 requirementstest.txt
-dockerfile
-.dockerignore
+Dockerfile
+.
 *.secret
+docker-compose.yml
+dockerfile
