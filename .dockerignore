@@ -1,0 +1,7 @@
+env.py
+vde_py3.9/
+dockerfile
+__pycache__/
+*.py[cod]
+node_modules/
+requirementstest.txt
