@@ -9,3 +9,5 @@ node_modules/
 cloudinary_python.txt
 vde_py3.9/
 requirementstest.txt
+dockerfile
+.dockerignore
