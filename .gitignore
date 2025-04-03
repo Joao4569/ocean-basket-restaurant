@@ -11,3 +11,4 @@ vde_py3.9/
 requirementstest.txt
 dockerfile
 .dockerignore
+*.secret
